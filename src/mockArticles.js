@@ -40,6 +40,6 @@ export function randomChannel() {
     title: randomTitle(),
     description: randomDescription(),
     link: "https://www.google.com",
-    items: randomItems(random(20, 40))
+    items: randomItems(random(40, 100))
   });
 }
