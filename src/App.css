@@ -1,37 +1,78 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
-html {
-  position: absolute;
+:root {
+  --text-color: rgba(0, 0, 0, 0.75);
+  --divider-color: var(--text-color);
 }
 
-body {
-  position: relative;
-}
-
-html, body, #root, .app {
+#root, .app, .page {
   width: 100%;
-  height: 100%;
-  overflow: visible;
+  min-height: 100%;
 }
 
 .app {
   background-image: url('./resources/images/background.jpg');
   background-repeat: repeat;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
-
 .page {
-  min-width: 100%;
-  min-height: 100%;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+}
 
+.page .page-divider {
+  width: 100%;
+  margin-bottom: 2em;
+  border-top: 2px solid var(--divider-color);
+}
+
+.article-column-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.article-column {
+  padding-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-basis: 16%;
+  flex-grow: 0;
+  min-width: 200px;
+  text-align: justify;
+  padding-right: 2em;
+}
+
+.article-column-wider {
+  flex-basis: 32%;
 }
 
 .article {
-  float: left;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.article-knockout {
+  background-color: var(--text-color);
+  color: white;
+  mix-blend-mode: multiply;
   padding: 1em;
-  margin: 1.5em;
+}
+
+.article h1 {
+  
 }

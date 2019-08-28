@@ -5,11 +5,18 @@ import { randomChannel } from './mockArticles';
 
 function App() {
 
-  const channel = randomChannel();
+  const channels = [
+    randomChannel(),
+    randomChannel(),
+    randomChannel(),
+    randomChannel(),
+  ];
 
   return (
     <div className="app">
-      <Page channel={channel}/>
+      {channels.map((channel, index) => (
+        <Page key={index} title="test" channel={channel}/>
+      ))}
     </div>
   );
 }

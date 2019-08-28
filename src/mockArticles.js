@@ -16,7 +16,7 @@ function randomTitle() {
 }
 
 function randomDescription() {
-  return randomText(random(35, 65));
+  return randomText(random(20, 450));
 }
 
 function randomItem() {
@@ -40,6 +40,6 @@ export function randomChannel() {
     title: randomTitle(),
     description: randomDescription(),
     link: "https://www.google.com",
-    items: randomItems(random(40, 100))
+    items: randomItems(random(50, 100))
   });
 }
