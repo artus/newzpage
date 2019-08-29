@@ -1,3 +1,8 @@
+@font-face {
+    font-family:"Tox Typewriter";
+    src: url("./resources/fonts/Tox-Typewriter.ttf")
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -6,7 +11,8 @@
 
 :root {
   --text-color: rgba(0, 0, 0, 0.75);
-  --divider-color: var(--text-color);
+  --border-color: rgba(0, 0, 0, 0.5);
+  --divider-color: var(--border-color);
 }
 
 #root, .app, .page {
@@ -34,6 +40,10 @@
   border-top: 2px solid var(--divider-color);
 }
 
+.page h2 {
+  margin-bottom: 2em;
+}
+
 .article-column-container {
   width: 100%;
   display: flex;
@@ -41,6 +51,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
+
+  border-right: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .article-column {
@@ -49,12 +64,27 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   flex-basis: 16%;
   flex-grow: 0;
   min-width: 200px;
   text-align: justify;
   padding-right: 2em;
+}
+
+.article-column-space-between {
+  justify-content: space-between;
+}
+
+.article-column-flex-end {
+  justify-content: flex-start;
+}
+
+.article-column-flex-end {
+  justify-content: flex-end;
+}
+
+.article-column-center {
+  justify-content: center;
 }
 
 .article-column-wider {
@@ -64,6 +94,12 @@
 .article {
   width: 100%;
   margin-bottom: 2em;
+  word-wrap: break-word;
+  transition: transform 0.1s;
+}
+
+.article:hover {
+  transform: scale(1.05);
 }
 
 .article-knockout {
@@ -73,6 +109,52 @@
   padding: 1em;
 }
 
-.article h1 {
-  
+.article-border {
+  border: 2px solid var(--border-color);
+  padding: 1em;
+  text-align: center;
+}
+
+.article-border-dashed {
+  border: 2px dashed var(--border-color);
+  padding: 1em;
+}
+
+.article-border-right {
+  border-right: 2px solid var(--border-color);
+  padding-right: 1em;
+}
+
+.article-border-top {
+  border-top: 2px solid var(--border-color);
+  padding-top: 1em;
+}
+
+.article-border-bottom {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1em;
+}
+
+.article-border-left {
+  border-left: 2px solid var(--border-color);
+  padding-left: 1em;
+}
+
+.article h3 {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.article h3 a {
+  font-family: 'Tox Typewriter';
+  text-decoration: none;
+  color: inherit;
+}
+
+.article h3 a:hover {
+  text-decoration: underline;
+}
+
+.article p {
+  font-family: 'Tox Typewriter', monospace;
 }

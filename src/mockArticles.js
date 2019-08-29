@@ -35,11 +35,16 @@ function randomItems(amount) {
   return items;
 }
 
-export function randomChannel() {
+function randomChannel() {
   return new Channel({
     title: randomTitle(),
     description: randomDescription(),
     link: "https://www.google.com",
     items: randomItems(random(50, 100))
   });
+}
+
+export default {
+  randomChannel,
+  randomDescription
 }
