@@ -1,5 +1,5 @@
-import Item from "./rss/Item";
-import Channel from "./rss/Channel";
+import Item from "./model/Item";
+import Channel from "./model/Channel";
 
 function random(min, max) {
   return Math.floor(Math.random() * (+max - +min)) + min; 

@@ -6,5 +6,6 @@ export default class Item {
     this.description = properties.description;
     this.image = properties.image;
     this.comments = properties.comments;
+    this.paragraphs = properties.paragraphs;
   }
 }

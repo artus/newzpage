@@ -23,7 +23,7 @@ export default class Column extends React.Component {
     return (
       <div className={this.getClassNames(this.props.isFirstColumn)}>
         {this.props.items.map((item, itemIndex) => (
-          <Article key={itemIndex} title={item.title} description={item.description} link={item.link} />
+          <Article key={itemIndex} item={item} />
         ))}
       </div>
     )

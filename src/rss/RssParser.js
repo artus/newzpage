@@ -1,5 +1,5 @@
-import Channel from './Channel';
-import Item from './Item';
+import Channel from '../model/Channel';
+import Item from '../model/Item';
 import mockArticles from './../mockArticles';
 let Parser = require('rss-parser');
 

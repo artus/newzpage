@@ -1,14 +1,21 @@
 import React from 'react';
 import Page from './components/Page';
 import './App.css';
-import { randomChannel } from './mockArticles';
-import { getChannel } from './rss/RssParser';
+import {getChannel} from './rss/RssParser';
+import NewzpageService from './model/NewzpageService';
 
 export default class App extends React.Component {
 
+  newzpageService = new NewzpageService();
+
   constructor(props) {
     super(props);
-    this.state = {channels: []};
+    this.state = {
+      channels: []
+    };
+  }
+
+  componentDidMount() {
     this.getChannels();
   }
 
@@ -19,12 +26,12 @@ export default class App extends React.Component {
     });
     Promise.all(newChannels).then(channels => {
       this.setState({ channels });
-    })
+    });
   }
 
   urls = [
-    'https://www.reddit.com/.rss',
-    'https://news.ycombinator.com/rss'
+    'https://news.ycombinator.com/rss',
+    'https://www.reddit.com/.rss'
   ];
 
 
