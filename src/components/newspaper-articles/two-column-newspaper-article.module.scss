@@ -1,0 +1,9 @@
+.two_column_newspaper_article {
+
+  max-width: 30rem;
+
+  p {
+    column-count: 2;
+    text-align: justify;
+  }
+}

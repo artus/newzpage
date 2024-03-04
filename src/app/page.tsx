@@ -1,7 +1,14 @@
+import RssSection from "@/components/rss-section/rss-section";
+
+const rssList = [
+  "https://news.ycombinator.com/rss",
+  "https://reddit.com/.rss"
+];
+
 export default function Home() {
   return (
     <main>
-      <h2>Test</h2>
+      {rssList.map((rssLink, index) => (<RssSection key={index} rssLink={rssLink} />))}
     </main>
   );
 }

@@ -1,12 +1,29 @@
 .np_header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   border-top: 3px solid;
   border-bottom: 3px solid;
+
+  a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    svg {
+      width: 2rem;
+    }
+  }
 
   h1 {
     text-transform: uppercase;
     text-align: center;
     font-family: var(--font-traditional-gothic);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
   }
 }

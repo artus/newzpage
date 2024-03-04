@@ -5,8 +5,12 @@ export class Logger {
     console.log(`[${DateTime.now().toISO()}] INFO: ${message}`);
   }
 
-  static error(message: string, error: Error) {
-    console.error(`[${DateTime.now().toISO()}] ERROR: ${message}`, error);
+  static error(message: string, error?: Error) {
+    if (error) {
+      console.error(`[${DateTime.now().toISO()}] ERROR: ${message}`, error);
+    } else {
+      console.error(`[${DateTime.now().toISO()}] ERROR: ${message}`);
+    }
   }
 
   static debug(message: string) {

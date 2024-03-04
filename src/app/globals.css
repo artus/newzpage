@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Labrit";
   src: url("/fonts/LABRIT.ttf");
@@ -15,6 +14,10 @@
   --font-traditional-gothic: "Traditional Gothic", sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   max-width: 60rem;
   margin: 0 auto;
@@ -22,9 +25,65 @@ body {
   background-image: url("/images/paper-texture.jpg");
   background-size: 500px;
   font-family: var(--font-inter);
-}
-
-body * {
   border-color: rgb(var(--foreground-rgb));
   color: rgb(var(--foreground-rgb));
+}
+
+a {
+  border-color: rgb(var(--foreground-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+.random-article-style-1 {
+  border: 5px solid;
+  padding: 1rem;
+}
+
+.random-article-style-2 {
+  border-right: 5px dashed;
+  padding-right: 1rem;
+}
+
+.random-article-style-3 {
+  border-left: 5px dashed;
+  padding-left: 1rem;
+}
+
+.random-article-style-4 {
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    calc(100% - 15px) 0,
+    100% 15px,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0% calc(100% - 15px),
+    0% 15px
+  );
+}
+
+.random-article-style-4 p {
+  background-color: rgb(var(--foreground-rgb));
+  color: white;
+  mix-blend-mode: multiply;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 1rem;
+}
+
+.random-article-style-4 h3 {
+  margin:0;
+  padding: 0;
+}
+
+.random-article-style-4 h3 a {
+  text-align: center;
+  background-color: rgb(var(--foreground-rgb));
+  color: white;
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 1rem;
 }

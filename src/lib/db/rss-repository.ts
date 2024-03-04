@@ -56,6 +56,7 @@ export const getRssFeed = async (url: URL): Promise<Optional<Feed>> => {
       return Optional.empty();
     }
   } catch (error) {
+    Logger.error(`Error in getRssFeed: ${(error as Error).message}`, error as Error);
     return Optional.empty();
   }
 }
