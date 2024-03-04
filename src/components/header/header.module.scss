@@ -1,0 +1,12 @@
+.np_header {
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--font-traditional-gothic);
+  }
+}
