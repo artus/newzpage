@@ -18,9 +18,9 @@ export class Item {
 
   async summarize(length = 50): Promise<ItemWithSummary> {
     if (this.link) {
-      const parsedArticleResult = await getArticle(this.link);
-      if (parsedArticleResult.isSuccess()) {
-        const article = parsedArticleResult.value;
+      const parsedArticleResult = getArticle(this.link);
+      if (await parsedArticleResult.isSuccess()) {
+        const article = await parsedArticleResult.get();
         const summarizedArticle = await OpenAIService.getInstance().summarize(article, length);
         return new ItemWithSummary(this.title, this.pubDate, this.link, this.comments, summarizedArticle.content);
       }

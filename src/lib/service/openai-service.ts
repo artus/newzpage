@@ -38,10 +38,10 @@ export class OpenAIService {
   }
 
   async summarize(article: Article, length = 50): Promise<SummarizedArticle> {
-    const cachedArticle = await getSummary(article.url);
+    const cachedArticle = await getSummary(article.url).get();
     if (cachedArticle.isPresent()) {
       Logger.info(`Using cached article for ${article.url.toString()}`);
-      return cachedArticle.value;
+      return cachedArticle.get();
     } else {
       Logger.info(`Using non-cached article for ${article.url.toString()}`);
       const prompt = await generateChatPrompt(article, length);

@@ -20,7 +20,7 @@ export const POST = async (req: NextRequest) => {
 
     const parsedFeedsPromises = feedUrls.map(parse);
 
-    const parsedFeeds = await Promise.all(parsedFeedsPromises);
+    const parsedFeeds = await Promise.all(parsedFeedsPromises.map(tryFeed => tryFeed.get()));
 
     const feedsWithSummarizedItems = await Promise.all(parsedFeeds.map(feed => feed.toSummarizedFeed(50)));
 
@@ -42,19 +42,19 @@ export const GET = async (req: NextRequest) => {
 
     const link = new URL(url);
 
-    const cachedFeed = await getSummarizedFeed(link);
+    const cachedFeed = await getSummarizedFeed(link).get();
     if (cachedFeed.isPresent()) {
       Logger.info(`Returning cached feed for ${url}`);
-      return NextResponse.json(cachedFeed.value);
+      return NextResponse.json(cachedFeed.get());
     } else {
       Logger.info(`Feed for ${url} not found in cache, fetching.`);
-      const parsedFeed = await parse(new URL(url));
+      const parsedFeed = await parse(new URL(url)).get();
       const feedWithSummarizedItems = await parsedFeed.toSummarizedFeed(50);
       const savedFeed = await saveSummarizedFeed(link, feedWithSummarizedItems);
       return NextResponse.json(savedFeed);
     }
   } catch (error) {
-    Logger.error(`Error occurred while getting feed: ${(error as Error).message}`);
+    Logger.error(`Error occurred while getting feed: ${(error as Error).message}`, error as Error);
     return CustomResponse.internalServerError({ error: (error as Error).message });
   }
 }

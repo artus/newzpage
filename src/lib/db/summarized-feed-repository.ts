@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb"
 import { FeedWithSummarizedItems } from "../domain/feed";
-import { Optional } from "../domain/optional";
+import { AsyncTry, Optional } from "voft";
 import clientPromise from "./mongodb";
 import { CONFIG } from "../config";
 import { DateTime } from "luxon";
@@ -34,8 +34,9 @@ const {
   FEED_COLLECTION
 } = CONFIG.MONGODB;
 
-export const getSummarizedFeed = async (url: URL): Promise<Optional<FeedWithSummarizedItems>> => {
-  try {
+export const getSummarizedFeed = (url: URL): AsyncTry<Optional<FeedWithSummarizedItems>> => {
+  return AsyncTry.of<Optional<FeedWithSummarizedItems>>(async () => {
+
     const client = await clientPromise;
 
     const db = client.db(DB);
@@ -54,10 +55,10 @@ export const getSummarizedFeed = async (url: URL): Promise<Optional<FeedWithSumm
     } else {
       return Optional.empty();
     }
-  } catch (error) {
+  }).recoverWith((error) => {
     Logger.error(`Error in getSummarizedFeed: ${(error as Error).message}`, error as Error);
-    return Optional.empty();
-  }
+    return Optional.empty<FeedWithSummarizedItems>();
+  });
 }
 
 export const saveSummarizedFeed = async (link: URL, feed: FeedWithSummarizedItems, ttl = 1800000) => {

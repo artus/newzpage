@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 import { CONFIG } from "../config";
-import { Optional } from "../domain/optional";
+import { AsyncTry, Optional } from "voft";
 import { SummarizedArticle } from "../domain/summarized-article";
 import clientPromise from "./mongodb";
 import { DateTime } from "luxon";
@@ -20,8 +20,8 @@ type ArticleDocument = {
   timestamp: string
 }
 
-export const getSummary = async (url: URL): Promise<Optional<SummarizedArticle>> => {
-  try {
+export const getSummary = (url: URL): AsyncTry<Optional<SummarizedArticle>> => {
+  return AsyncTry.of<Optional<SummarizedArticle>>(async () => {
     const client = await clientPromise;
 
     const db = client.db(DB)
@@ -41,9 +41,10 @@ export const getSummary = async (url: URL): Promise<Optional<SummarizedArticle>>
     } else {
       return Optional.empty();
     }
-  } catch (error) {
+  }).recoverWith((error) => {
+    Logger.error(`Error in getSummary: ${error.message}`, error);
     return Optional.empty();
-  }
+  });
 }
 
 export const saveSummary = async (article: SummarizedArticle, ttl = 86400000) => {

@@ -6,38 +6,41 @@ import { parseDate } from '../helpers/date-helpers';
 import { CONFIG } from '../config';
 import { getRssFeed, saveRssFeed } from '../db/rss-repository';
 import { Logger } from '../helpers/logger';
+import { AsyncTry } from 'voft';
 
 const {
   ORIGIN
 } = CONFIG;
 
-export const parse = async (url: URL): Promise<Feed> => {
-  const cachedFeed = await getRssFeed(url);
-  if (cachedFeed.isPresent()) {
-    Logger.info(`Using cached feed for ${url.toString()}`);
-    return cachedFeed.value;
-  } else {
-    Logger.info(`Parsing non-cached feed for ${url.toString()}`);
-    const parser = new Parser();
-    const parsedFeed = await parser.parseURL(url.toString());
+export const parse = (url: URL): AsyncTry<Feed> => {
+  return getRssFeed(url).map(async cachedFeed => {
 
-    const items = parsedFeed.items.map(item => {
+    if (cachedFeed.isPresent()) {
+      Logger.info(`Using cached feed for ${url.toString()}`);
+      return cachedFeed.get();
+    } else {
+      Logger.info(`Parsing non-cached feed for ${url.toString()}`);
+      const parser = new Parser();
+      const parsedFeed = await parser.parseURL(url.toString());
 
-      return new Item(
-        item.title || "No title",
-        !!item.pubDate ? parseDate(item.pubDate) : DateTime.invalid("Date is not in a recognized format"),
-        !!item.link ? new URL(item.link) : undefined,
-        item.comments ? new URL(item.comments) : undefined
-      )
-    });
+      const items = parsedFeed.items.map(item => {
 
-    const constructedFeed = new Feed(
-      parsedFeed.title || "No title",
-      !!parsedFeed.link ? new URL(parsedFeed.link) : new URL(ORIGIN),
-      items
-    );
+        return new Item(
+          item.title || "No title",
+          !!item.pubDate ? parseDate(item.pubDate).get() : DateTime.invalid("Date is not in a recognized format"),
+          !!item.link ? new URL(item.link) : undefined,
+          item.comments ? new URL(item.comments) : undefined
+        )
+      });
 
-    Logger.debug(`Saving parsed feed for ${url.toString()}`);
-    return saveRssFeed(url, constructedFeed);
-  }
+      const constructedFeed = new Feed(
+        parsedFeed.title || "No title",
+        !!parsedFeed.link ? new URL(parsedFeed.link) : new URL(ORIGIN),
+        items
+      );
+
+      Logger.debug(`Saving parsed feed for ${url.toString()}`);
+      return saveRssFeed(url, constructedFeed);
+    }
+  });
 }

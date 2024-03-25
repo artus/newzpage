@@ -1,11 +1,11 @@
 import { ObjectId } from "mongodb";
 import { CONFIG } from "../config";
 import { Feed } from "../domain/feed";
-import { Optional } from "../domain/optional";
 import clientPromise from "./mongodb";
-import { DateTime, Duration } from "luxon";
+import { DateTime } from "luxon";
 import { Item } from "../domain/item";
 import { Logger } from "../helpers/logger";
+import { AsyncTry, Optional } from "voft";
 
 type FeedDocument = {
   _id: ObjectId;
@@ -33,9 +33,8 @@ const {
   RSS_COLLECTION
 } = CONFIG.MONGODB;
 
-export const getRssFeed = async (url: URL): Promise<Optional<Feed>> => {
-  try {
-
+export const getRssFeed = (url: URL): AsyncTry<Optional<Feed>> => {
+  return AsyncTry.of<Optional<Feed>>(async () => {
     const client = await clientPromise;
 
     const db = client.db(DB)
@@ -55,10 +54,10 @@ export const getRssFeed = async (url: URL): Promise<Optional<Feed>> => {
     } else {
       return Optional.empty();
     }
-  } catch (error) {
-    Logger.error(`Error in getRssFeed: ${(error as Error).message}`, error as Error);
-    return Optional.empty();
-  }
+  }).recoverWith((error) => {
+    Logger.error(`Error in getRssFeed: ${error.message}`, error);
+    return Optional.empty<Feed>();
+  });
 }
 
 export const saveRssFeed = async (url: URL, feed: Feed, ttl = 3600000) => {
