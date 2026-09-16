@@ -1,4 +1,4 @@
-import { collapseWhitespace, countWords } from "@/lib/util/text";
+import { collapseWhitespace, countWords, decodeEntities, htmlToText } from "@/lib/util/text";
 import type { ImageCandidate } from "./images";
 
 export interface ExtractedArticle {
@@ -123,4 +123,46 @@ export async function extractArticle(html: string, url: string): Promise<Extract
   } finally {
     dom.window.close();
   }
+}
+
+function metaContent(html: string, key: string): string | undefined {
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const patterns = [
+    new RegExp(`<meta\\b[^>]*(?:property|name)=["']${escaped}["'][^>]*content=["']([^"']*)["']`, "i"),
+    new RegExp(`<meta\\b[^>]*content=["']([^"']*)["'][^>]*(?:property|name)=["']${escaped}["']`, "i"),
+  ];
+  for (const pattern of patterns) {
+    const found = html.match(pattern)?.[1];
+    if (found) return decodeEntities(found).trim() || undefined;
+  }
+  return undefined;
+}
+
+/**
+ * Extraction without a DOM, for when the DOM implementation cannot be loaded: the paragraphs of the page's
+ * <article> (or <main>, or body). Cruder than Readability, but the summariser's junk filters do the rest.
+ */
+export function extractArticleLite(html: string, url: string): ExtractedArticle {
+  const clean = stripInert(html);
+  const images: ImageCandidate[] = [];
+  const og = absolute(metaContent(clean, "og:image") ?? metaContent(clean, "og:image:url"), url);
+  if (og) images.push({ url: og, alt: metaContent(clean, "og:image:alt"), source: "og" });
+  const twitter = absolute(metaContent(clean, "twitter:image") ?? metaContent(clean, "twitter:image:src"), url);
+  if (twitter) images.push({ url: twitter, source: "twitter" });
+
+  const scope =
+    clean.match(/<article\b[\s\S]*?<\/article>/i)?.[0] ?? clean.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? clean.match(/<body\b[\s\S]*<\/body>/i)?.[0] ?? clean;
+  const paragraphs = Array.from(scope.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi), (match) => collapseWhitespace(htmlToText(match[1]))).filter(
+    (paragraph) => countWords(paragraph) >= 8,
+  );
+  const title = metaContent(clean, "og:title") ?? (decodeEntities(clean.match(/<title[^>]*>([^<]*)</i)?.[1] ?? "").trim() || undefined);
+  return {
+    title,
+    siteName: metaContent(clean, "og:site_name"),
+    lang: clean.match(/<html\b[^>]*\slang=["']([^"']+)/i)?.[1],
+    publishedTime: metaContent(clean, "article:published_time"),
+    paragraphs,
+    images,
+    wordCount: paragraphs.reduce((sum, paragraph) => sum + countWords(paragraph), 0),
+  };
 }

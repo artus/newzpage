@@ -400,7 +400,7 @@ a:hover {
   column-count: 3;
 }
 
-.story--lead .story__body > p:first-child::first-letter {
+.story--lead .story__body > p:first-child:not(.story__missing)::first-letter {
   float: left;
   padding: 0.08em 0.08em 0 0;
   font-family: var(--font-headline), var(--serif-fallback);
@@ -447,6 +447,8 @@ a:hover {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--ink);
+  background: transparent;
+  transition: background-color 600ms ease;
 }
 
 /* The frame is at least 3:2 (16:9 for the lead) and can grow to take up slack. */
@@ -470,6 +472,7 @@ a:hover {
   object-fit: cover;
   filter: grayscale(1) contrast(1.12) brightness(1.04) sepia(0.22);
   mix-blend-mode: multiply;
+  transition: filter 600ms ease;
 }
 
 /* A fine dot screen, multiplied over the picture, mimics a halftone print. */
@@ -482,6 +485,32 @@ a:hover {
   background-size: 3px 3px;
   mix-blend-mode: multiply;
   opacity: 0.35;
+  transition: opacity 600ms ease;
+}
+
+/* Under the pointer the print slowly gives way to the photograph itself: the filter and the dot screen
+   fade, and a white backing replaces the paper so the multiply blend shows the original colours. */
+.photo:hover .photo__frame {
+  background: #fff;
+  transition-duration: 1200ms;
+}
+
+.photo:hover img {
+  filter: none;
+  transition-duration: 1200ms;
+}
+
+.photo:hover .photo__frame::after {
+  opacity: 0;
+  transition-duration: 1200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo__frame,
+  .photo img,
+  .photo__frame::after {
+    transition: none;
+  }
 }
 
 .photo figcaption {

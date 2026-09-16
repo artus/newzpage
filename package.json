@@ -14,7 +14,7 @@
     "directory": "node --import tsx --no-warnings=ExperimentalWarning scripts/build-directory.ts"
   },
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "dependencies": {
     "@mozilla/readability": "^0.6.0",

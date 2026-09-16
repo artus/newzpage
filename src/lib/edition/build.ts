@@ -1,4 +1,4 @@
-import { extractArticle } from "@/lib/articles/extract";
+import { extractArticle, extractArticleLite, type ExtractedArticle } from "@/lib/articles/extract";
 import { fetchPage } from "@/lib/articles/fetch-page";
 import { chooseImage, feedImageCandidates, type ImageCandidate } from "@/lib/articles/images";
 import { MemoryCache } from "@/lib/cache/memory";
@@ -121,7 +121,14 @@ export async function summarizeItem(item: FeedItem, url: string, feedLanguage?: 
   let error: string | undefined;
   try {
     const page = await limitPageFetches(() => fetchPage(url));
-    const extracted = await extractArticle(page.html, page.finalUrl);
+    let extracted: ExtractedArticle;
+    try {
+      extracted = await extractArticle(page.html, page.finalUrl);
+    } catch (domError) {
+      // Typically the DOM implementation failing to load on an old Node runtime; the page is still usable.
+      log.warn(`Readability unavailable for ${url}, using the lightweight extractor`, domError);
+      extracted = extractArticleLite(page.html, page.finalUrl);
+    }
     candidates.push(...extracted.images);
     if (extracted.paragraphs.length >= 2 && extracted.wordCount >= 60) {
       const analysis = analyze(extracted.paragraphs, { title: item.title, langHint: extracted.lang ?? feedLanguage });

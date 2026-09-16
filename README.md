@@ -135,16 +135,22 @@ Runtime is a few milliseconds per article; fetching and DOM parsing dominate.
 
 The app runs anywhere Next.js runs; it is deployed at [newz.page](https://newz.page) on Vercel. Two things matter:
 
-- **Node.js 24.** The project is developed and tested on Node 24, and `package.json` declares `engines.node >= 24`.
-  Older runtimes break jsdom: its dependencies include ES modules loaded with `require()`, which Node before
-  22.12 refuses (`ERR_REQUIRE_ESM`). On Vercel, set the project's Node.js version to 24.x (Settings → Build and
-  Deployment) if the project was created with an older default.
+- **Node.js 24.** The project is developed and tested on Node 24, and `package.json` declares
+  `"engines": { "node": "24.x" }`, the form Vercel reads. Older runtimes break jsdom: its dependencies include ES
+  modules loaded with `require()`, which Node before 22.12 refuses (`ERR_REQUIRE_ESM`). Check the project's
+  Node.js version in Vercel (Settings → General) says 24.x. Should Readability still be unavailable, articles
+  are extracted with a DOM-free fallback (the paragraphs of the page's `<article>`), so summaries degrade rather
+  than vanish; hovering a placeholder line shows the reason a story has no copy.
 - **Function duration.** Fetching and extracting an article can take longer than a serverless platform's default
   of ten seconds, so the API routes declare `maxDuration` (60 s for articles). On the Vercel Hobby plan that is the
   maximum; lower plans' limits apply otherwise.
 
 The server keeps only an in-memory cache, so on serverless platforms every cold start begins empty; readers' browsers
 hold the long-lived summary cache, which is what makes this cheap enough.
+
+Page views are counted with Vercel Web Analytics (`@vercel/analytics`, mounted in the root layout). It is cookieless
+and records no personal data; the colophon tells readers so and links to Vercel's analytics privacy policy. Remove
+the `<Analytics />` element from `src/app/layout.tsx` when deploying elsewhere.
 
 ## Serving readers you do not know
 

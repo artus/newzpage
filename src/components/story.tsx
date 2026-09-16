@@ -74,7 +74,9 @@ export default function Story({ story, kind, photo, textColumns, maxWords, ancho
         {summary.paragraphs.length > 0 ? (
           summary.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
         ) : (
-          <p className="story__missing">{missingCopy(host)}</p>
+          <p className="story__missing" title={story.error ? `Reason: ${story.error}` : undefined}>
+            {missingCopy(host)}
+          </p>
         )}
       </div>
       {story.link && summary.paragraphs.length > 0 && kind !== "brief" ? (

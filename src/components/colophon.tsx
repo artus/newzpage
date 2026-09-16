@@ -5,7 +5,14 @@ import { clock } from "@/lib/util/time";
 export default function Colophon({ printedAt }: { printedAt?: Date }) {
   return (
     <footer className="colophon">
-      <span>Summaries are extracted by TextRank and kept in this browser; no article is sent to a third party.</span>
+      <span>
+        Summaries are extracted by TextRank and kept in this browser; no article is sent to a third party. Circulation is counted
+        without cookies by{" "}
+        <a href="https://vercel.com/docs/analytics/privacy-policy" rel="noopener noreferrer">
+          Vercel Analytics
+        </a>
+        .
+      </span>
       <span>
         Set in Libre Caslon and Playfair Display · Printed at {printedAt ? clock(printedAt) : "—"} ·{" "}
         <Link href="/settings" className="colophon__settings">
