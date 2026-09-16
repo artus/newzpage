@@ -7,6 +7,7 @@ describe("searchDirectory", () => {
   it("finds feeds by topic, language and site", () => {
     assert.ok(searchDirectory("dutch news").some((entry) => entry.name === "NOS Nieuws"));
     assert.ok(searchDirectory("python").some((entry) => entry.name === "Python Insider"));
+    assert.ok(searchDirectory("prompt engineering").some((entry) => entry.site === "blog.prompty.tools"));
     assert.ok(searchDirectory("bbc").every((entry) => entry.site.includes("bbc")));
     assert.equal(searchDirectory("climate")[0].category, "environment");
   });

@@ -88,6 +88,7 @@ Python Insider|https://blog.python.org/feeds/posts/default|programming|en|python
 Node.js Blog|https://nodejs.org/en/feed/blog.xml|programming|en|javascript node
 Julia Evans|https://jvns.ca/atom.xml|programming|en|blog linux
 Simon Willison|https://simonwillison.net/atom/everything/|programming|en|blog ai python
+Prompty Blog|https://blog.prompty.tools/rss.xml|programming|en|blog ai prompts prompt engineering llm
 Dan Luu|https://danluu.com/atom.xml|programming|en|blog engineering
 Joel on Software|https://www.joelonsoftware.com/feed/|programming|en|blog
 Coding Horror|https://blog.codinghorror.com/rss/|programming|en|blog

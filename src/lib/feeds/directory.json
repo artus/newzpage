@@ -1967,6 +1967,25 @@
     ]
   },
   {
+    "name": "Changelog",
+    "url": "https://changelog.com/feed",
+    "site": "changelog.com",
+    "description": "News and podcasts for developers",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "open",
+      "source",
+      "podcast"
+    ]
+  },
+  {
     "name": "Cloudflare Blog",
     "url": "https://blog.cloudflare.com/rss/",
     "site": "blog.cloudflare.com",
@@ -2218,6 +2237,27 @@
       "react",
       "javascript",
       "blog"
+    ]
+  },
+  {
+    "name": "Prompty Blog",
+    "url": "https://blog.prompty.tools/rss.xml",
+    "site": "blog.prompty.tools",
+    "description": "Updates, guides, and insights on prompt engineering from Prompty.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "blog",
+      "ai",
+      "prompts",
+      "prompt",
+      "llm"
     ]
   },
   {
