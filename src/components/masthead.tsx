@@ -33,7 +33,7 @@ export default function Masthead({ title, tagline, date, feedCount, reader }: Ma
   const volume = reader && date ? volumeOf(reader, date) : undefined;
   const explanation =
     reader && date
-      ? `Your ${ordinal(reader.editions)} edition in this browser. The number goes up only when the wires bring new stories; it has counted since ${longDate(new Date(reader.since))}. The volume counts the years since then.`
+      ? `Your ${ordinal(reader.editions)} edition in this browser. The number goes up only when the wires bring new stories; it has counted since ${longDate(new Date(reader.since))}. The volume counts the months since then.`
       : undefined;
 
   return (

@@ -79,7 +79,12 @@ The page is a static shell; the browser composes the edition:
    (`fitBudgets`): anchors are never cut, other slots gain or lose whole sentences, and residual slack is taken
    up by stretching photographs and spacing stacked items. Photographs are rationed to about one story in three,
    with wide blocks using 16:9 crops. Narrow blocks are set ragged-right; wide ones run two or three text columns.
-6. **Print**: photographs are turned into halftones with CSS filters, multiplied over the paper texture, with a
+6. **Older**: a button under each section asks the feed for a larger slice (the wire's own story
+   count more each time, up to fifty items) and typesets the items that follow the last one already on the
+   page, further down the wire, as more bands below the existing ones, which stay put. Items that arrived since
+   the edition was printed are left for the next edition. The button always stays; when the wire has nothing
+   older it says so. Loading more does not count as a new edition.
+7. **Print**: photographs are turned into halftones with CSS filters, multiplied over the paper texture, with a
    dot screen overlaid. Images that fail to load remove themselves.
 
 ## Storage
@@ -91,7 +96,7 @@ Everything a reader configures or that is computed for them is stored in their b
 | `newzpage.config.v1` | title, tagline, feeds in order with their story counts |
 | `newzpage.articles.index.v1` | index of cached analyses: size, last use, expiry |
 | `newzpage.article.v1.<hash>` | one cached analysis per article |
-| `newzpage.reader.v1` | when this browser first printed an edition, and how many it has printed (the masthead's volume and number) |
+| `newzpage.reader.v1` | when this browser first printed an edition, how many it has printed, and the last edition's fingerprint (the masthead's volume counts the months since the first edition; the number counts editions with new stories) |
 
 The summary cache is **rolling**: at most 400 entries and about 3 MB (`SummaryCache` in
 `src/lib/client/summary-cache.ts`). When either limit is passed, or when the browser reports its quota is full,
@@ -123,6 +128,21 @@ No external service is involved. `src/lib/summarize` implements extractive summa
   word budget of the block is spent, and prints the picks in reading order, grouped into short paragraphs.
 
 Runtime is a few milliseconds per article; fetching and DOM parsing dominate.
+
+## Deploying
+
+The app runs anywhere Next.js runs; it is deployed at [newz.page](https://newz.page) on Vercel. Two things matter:
+
+- **Node.js 24.** The project is developed and tested on Node 24, and `package.json` declares `engines.node >= 24`.
+  Older runtimes break jsdom: its dependencies include ES modules loaded with `require()`, which Node before
+  22.12 refuses (`ERR_REQUIRE_ESM`). On Vercel, set the project's Node.js version to 24.x (Settings → Build and
+  Deployment) if the project was created with an older default.
+- **Function duration.** Fetching and extracting an article can take longer than a serverless platform's default
+  of ten seconds, so the API routes declare `maxDuration` (60 s for articles). On the Vercel Hobby plan that is the
+  maximum; lower plans' limits apply otherwise.
+
+The server keeps only an in-memory cache, so on serverless platforms every cold start begins empty; readers' browsers
+hold the long-lived summary cache, which is what makes this cheap enough.
 
 ## Serving readers you do not know
 

@@ -4,6 +4,8 @@ import { loadFeed, summarizeFeedItems } from "@/lib/edition/build";
 import type { FeedResponse } from "@/lib/edition/types";
 
 export const dynamic = "force-dynamic";
+/** Serverless platforms cut functions off after a default of ten seconds; pages can take longer to fetch. */
+export const maxDuration = 30;
 
 /** GET /api/feed?url=…&limit=… — a parsed feed, trimmed to what the page needs. */
 export async function GET(request: NextRequest) {

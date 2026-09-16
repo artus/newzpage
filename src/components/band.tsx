@@ -26,11 +26,14 @@ export default function Band({ band, columns, now, fit }: BandProps) {
   const [fitted, setFitted] = useState(!fit);
   const passes = useRef(0);
   const lastMeasurement = useRef("");
-  const repeats = useRef(0);
+  const lastBudgets = useRef<Record<string, number> | null>(null);
   const root = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (fitted) return;
+    // Development strict mode replays the effect for the same render; the budgets object tells the two apart.
+    if (lastBudgets.current === budgets) return;
+    lastBudgets.current = budgets;
     const element = root.current;
     if (!element) return;
     const measured: MeasuredSlot[] = Array.from(element.querySelectorAll<HTMLElement>(":scope > .slot")).map((slot) => ({
@@ -47,15 +50,13 @@ export default function Band({ band, columns, now, fit }: BandProps) {
     }));
     const result = fitBudgets(measured);
     const measurement = JSON.stringify(measured);
-    // Development strict mode runs this twice on the same render: the first repeat of a measurement is not a
-    // new pass. A second repeat means a request changed nothing, so the fitting is as good as it gets.
-    repeats.current = measurement === lastMeasurement.current ? repeats.current + 1 : 0;
+    // A request that changed nothing on the page means the fitting is as good as it gets.
+    const stalled = measurement === lastMeasurement.current;
     lastMeasurement.current = measurement;
-    if (repeats.current === 1 && result.changed) return;
     passes.current += 1;
     const trace = (window as Window & { __newzpageFits?: unknown[] }).__newzpageFits;
     if (trace) trace.push({ pass: passes.current, measured, result });
-    const next = result.changed && repeats.current < 2 && passes.current < MAX_PASSES ? result.budgets : null;
+    const next = result.changed && !stalled && passes.current < MAX_PASSES ? result.budgets : null;
     // Measuring rendered copy and correcting it before paint is what a layout effect is for.
     if (next) setBudgets((current) => ({ ...current, ...next }));
     else setFitted(true);

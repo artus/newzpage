@@ -23,11 +23,12 @@ describe("reader stats", () => {
     assert.equal(recordEdition("abc", storage).editions, 1);
   });
 
-  it("counts volumes in years since the first edition", () => {
+  it("counts volumes in months since the first edition", () => {
     const stats = { since: "2026-09-16T10:00:00.000Z", editions: 40 };
-    assert.equal(volumeOf(stats, new Date("2026-12-01T00:00:00Z")), 1);
-    assert.equal(volumeOf(stats, new Date("2027-09-15T00:00:00Z")), 1);
-    assert.equal(volumeOf(stats, new Date("2027-09-16T00:00:00Z")), 2);
-    assert.equal(volumeOf(stats, new Date("2031-01-01T00:00:00Z")), 5);
+    assert.equal(volumeOf(stats, new Date("2026-09-20T00:00:00Z")), 1);
+    assert.equal(volumeOf(stats, new Date("2026-10-15T00:00:00Z")), 1);
+    assert.equal(volumeOf(stats, new Date("2026-10-16T00:00:00Z")), 2);
+    assert.equal(volumeOf(stats, new Date("2026-12-01T00:00:00Z")), 3);
+    assert.equal(volumeOf(stats, new Date("2027-09-16T00:00:00Z")), 13);
   });
 });

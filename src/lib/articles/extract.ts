@@ -1,5 +1,3 @@
-import { Readability } from "@mozilla/readability";
-import { JSDOM, VirtualConsole } from "jsdom";
 import { collapseWhitespace, countWords } from "@/lib/util/text";
 import type { ImageCandidate } from "./images";
 
@@ -76,8 +74,12 @@ function stripInert(html: string): string {
     .replace(/<link\b[^>]*rel=["']?stylesheet["']?[^>]*>/gi, "");
 }
 
-/** Runs Readability over a page and returns clean paragraphs plus image candidates. */
-export function extractArticle(html: string, url: string): ExtractedArticle {
+/**
+ * Runs Readability over a page and returns clean paragraphs plus image candidates. The DOM implementation
+ * is loaded on demand: it is heavy, and only the article route needs it.
+ */
+export async function extractArticle(html: string, url: string): Promise<ExtractedArticle> {
+  const [{ JSDOM, VirtualConsole }, { Readability }] = await Promise.all([import("jsdom"), import("@mozilla/readability")]);
   const dom = new JSDOM(stripInert(html), { url, virtualConsole: new VirtualConsole() });
   try {
     const document = dom.window.document;

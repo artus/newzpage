@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { columnsFor, planPage } from "@/lib/edition/pagemaker";
-import type { Section } from "@/lib/edition/types";
+import { columnsFor, planMore, planPage } from "@/lib/edition/pagemaker";
+import type { Section, Story } from "@/lib/edition/types";
 import { fnv1a, hashId } from "@/lib/util/hash";
 import { displayHost } from "@/lib/util/text";
 import { clock } from "@/lib/util/time";
@@ -10,11 +10,17 @@ import Band from "./band";
 
 interface FeedSectionProps {
   section: Section;
+  /** The stories in the order they were loaded; the first batch is planned with a lead, later ones as more bands. */
+  batches: Story[][];
   /** The edition's print time, so every dateline is relative to the same moment. */
   now: number;
+  loadingMore: boolean;
+  /** Shown beside the button after a request that brought nothing new. */
+  moreNote?: string;
+  onLoadMore: () => void;
 }
 
-export default function FeedSection({ section, now }: FeedSectionProps) {
+export default function FeedSection({ section, batches, now, loadingMore, moreNote, onLoadMore }: FeedSectionProps) {
   const page = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>();
   const [fontsReady, setFontsReady] = useState(false);
@@ -43,9 +49,15 @@ export default function FeedSection({ section, now }: FeedSectionProps) {
   }, []);
 
   const columns = width ? columnsFor(width) : 0;
-  const plan = useMemo(
-    () => (width ? planPage(section.stories, { width, columns, seed: fnv1a(section.url + section.stories.map((story) => story.id).join("|")) }) : undefined),
-    [section, width, columns],
+  const plans = useMemo(
+    () =>
+      width
+        ? batches.map((stories, batch) => {
+            const options = { width, columns, seed: fnv1a(`${section.url}#${batch}|${stories.map((story) => story.id).join("|")}`) };
+            return batch === 0 ? planPage(stories, options) : planMore(stories, options);
+          })
+        : [],
+    [batches, section.url, width, columns],
   );
   const headingId = `section-${hashId(section.url)}`;
   const count = section.stories.length;
@@ -68,10 +80,25 @@ export default function FeedSection({ section, now }: FeedSectionProps) {
       ) : null}
 
       <div ref={page} className="page">
-        {plan?.bands.map((band, index) => (
-          <Band key={`${columns}:${width}:${fontsReady ? "f" : "s"}:${index}`} band={band} columns={columns} now={now} fit={columns > 1} />
-        ))}
+        {plans.flatMap((plan, batch) =>
+          plan.bands.map((band, index) => (
+            <Band key={`${columns}:${width}:${fontsReady ? "f" : "s"}:${batch}:${index}`} band={band} columns={columns} now={now} fit={columns > 1} />
+          )),
+        )}
       </div>
+
+      {!section.error ? (
+        <p className="section__more">
+          <button type="button" className="button" onClick={onLoadMore} disabled={loadingMore} aria-label={`Older stories from ${section.name}`}>
+            {loadingMore ? "Setting type…" : "Older"}
+          </button>
+          {moreNote ? (
+            <span className="section__more-note" role="status">
+              {moreNote}
+            </span>
+          ) : null}
+        </p>
+      ) : null}
     </section>
   );
 }

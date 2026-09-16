@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { columnsFor, fitBudgets, planPage } from "./pagemaker";
+import { columnsFor, fitBudgets, planMore, planPage } from "./pagemaker";
 import type { Story } from "./types";
 
 const story = (n: number, options: { image?: boolean; sentences?: number } = {}): Story => {
@@ -77,6 +77,18 @@ describe("planPage", () => {
     assert.equal(single.bands.length, stories.length);
     assert.ok(single.bands.every((band) => band.slots.length === 1 && band.slots[0].span === 1));
     assert.deepEqual(planPage([], { width: 1360, columns: 6 }).bands, []);
+  });
+});
+
+describe("planMore", () => {
+  it("plans later batches as full-width bands without a lead", () => {
+    const more = planMore(stories.slice(0, 7), { width: 1360, columns: 6 });
+    const placed = more.bands.flatMap((band) => band.slots.flatMap((slot) => slot.stories));
+    assert.equal(placed.length, 7);
+    assert.ok(placed.every((p) => p.kind !== "lead"));
+    for (const band of more.bands) assert.equal(band.slots.reduce((sum, slot) => sum + slot.span, 0), 6);
+    assert.deepEqual(planMore([], { width: 1360, columns: 6 }).bands, []);
+    assert.equal(planMore(stories.slice(0, 3), { width: 380, columns: 1 }).bands.length, 3);
   });
 });
 

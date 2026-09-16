@@ -3,6 +3,8 @@ import { isHttpUrl } from "@/lib/config-schema";
 import { getArticle } from "@/lib/edition/build";
 
 export const dynamic = "force-dynamic";
+/** Serverless platforms cut functions off after a default of ten seconds; pages can take longer to fetch. */
+export const maxDuration = 60;
 
 /** GET /api/article?url=…&feed=…&title=… — the ranked analysis of an article, ready to be cached by the browser. */
 export async function GET(request: NextRequest) {

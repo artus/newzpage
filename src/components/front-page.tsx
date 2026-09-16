@@ -12,7 +12,7 @@ import SectionSkeleton from "./section-skeleton";
 /** The whole edition is composed in the browser from this browser's configuration and summary cache. */
 export default function FrontPage() {
   const { config, ready, error } = useConfig();
-  const { sections, printedAt, reader } = useEdition(config);
+  const { sections, printedAt, reader, loadMore } = useEdition(config);
 
   useEffect(() => {
     if (config?.title) document.title = config.title;
@@ -30,9 +30,17 @@ export default function FrontPage() {
           </p>
         </section>
       ) : null}
-      {sections.map((state) =>
+      {sections.map((state, index) =>
         state.status === "done" && state.section ? (
-          <FeedSection key={state.feed.url} section={state.section} now={printedAt?.getTime() ?? 0} />
+          <FeedSection
+            key={state.feed.url}
+            section={state.section}
+            batches={state.batches}
+            now={printedAt?.getTime() ?? 0}
+            loadingMore={state.loadingMore}
+            moreNote={state.moreNote}
+            onLoadMore={() => loadMore(index)}
+          />
         ) : (
           <SectionSkeleton key={state.feed.url} name={state.name} done={state.done} total={state.total} />
         ),

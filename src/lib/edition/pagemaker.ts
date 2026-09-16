@@ -300,7 +300,14 @@ export function planPage(stories: Story[], options: PageOptions): PagePlan {
     }
   }
   bands.push(compact(first, columns));
+  bands.push(...planBands(queue, g, random, claimPhoto, previous));
+  return { columns, bands };
+}
 
+/** Bands without a lead: the richest story of each band anchors its widest slot, the rest stack around it. */
+function planBands(queue: Story[], g: Geometry, random: () => number, claimPhoto: PhotoBudget, previous?: number[]): Band[] {
+  const { columns } = g;
+  const bands: Band[] = [];
   while (queue.length > 0) {
     const pattern = choosePattern(columns, random, queue.length, previous);
     previous = pattern;
@@ -329,7 +336,32 @@ export function planPage(stories: Story[], options: PageOptions): PagePlan {
     });
     bands.push(compact(band, columns));
   }
-  return { columns, bands };
+  return bands;
+}
+
+/** Plans stories loaded later ("more from this wire") as further bands, leaving the bands above untouched. */
+export function planMore(stories: Story[], options: PageOptions): PagePlan {
+  const columns = Math.max(1, Math.floor(options.columns));
+  const g: Geometry = { width: Math.max(280, options.width), columns, gutter: options.gutter ?? 24 };
+  if (stories.length === 0) return { columns, bands: [] };
+  const random = seededRandom(options.seed ?? fnv1a(stories.map((story) => story.id).join("|")));
+  let photos = Math.max(1, Math.ceil(stories.length / 3));
+  const claimPhoto: PhotoBudget = (story, wanted) => {
+    if (!wanted || !hasPhoto(story) || photos <= 0) return false;
+    photos--;
+    return true;
+  };
+  if (columns === 1) {
+    return {
+      columns,
+      bands: stories.map((story, index) => {
+        const kind: StoryKind = sentenceCount(story) >= 3 ? "standard" : "brief";
+        const budget = Math.max(MIN_WORDS, Math.min(kind === "brief" ? 40 : 70, availableWords(story) || MIN_WORDS));
+        return { target: 0, slots: [{ span: 1, stories: [{ story, kind, photo: claimPhoto(story, index % 4 === 1), budget, textColumns: 1 }] }] };
+      }),
+    };
+  }
+  return { columns, bands: planBands([...stories], g, random, claimPhoto) };
 }
 
 export interface MeasuredStory {

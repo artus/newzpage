@@ -311,6 +311,27 @@ a:hover {
   flex: 1 1 auto;
 }
 
+.section__more {
+  display: flex;
+  justify-content: center;
+  margin: 1.25rem 0 0;
+}
+
+.section__more {
+  align-items: center;
+  gap: 1rem;
+}
+
+.section__more .button {
+  padding: 0.5rem 1.25rem;
+}
+
+.section__more-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
 /* Stories -------------------------------------------------------------- */
 
 .story {

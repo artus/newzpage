@@ -19,7 +19,8 @@ export interface NewzpageConfig {
 export const CONFIG_DEFAULTS = {
   title: "Newzpage",
   tagline: "All the feeds that are fit to print",
-  itemsPerFeed: 10,
+  /** Two bands per wire on a desktop page: the lead package and one more. */
+  itemsPerFeed: 7,
 } as const;
 
 export function isHttpUrl(value: unknown): value is string {

@@ -41,9 +41,10 @@ export function recordEdition(fingerprint: string, storage: StorageLike | undefi
   return next;
 }
 
-/** Volumes are counted in years since the first edition, the way a newspaper counts them. */
+/** Volumes are counted in months since the first edition: a new volume opens on that day of each month. */
 export function volumeOf(stats: ReaderStats, now = new Date()): number {
   const since = new Date(stats.since);
-  const years = now.getUTCFullYear() - since.getUTCFullYear() - (now.getTime() < Date.UTC(now.getUTCFullYear(), since.getUTCMonth(), since.getUTCDate()) ? 1 : 0);
-  return Math.max(1, years + 1);
+  let months = (now.getUTCFullYear() - since.getUTCFullYear()) * 12 + (now.getUTCMonth() - since.getUTCMonth());
+  if (now.getUTCDate() < since.getUTCDate()) months -= 1;
+  return Math.max(1, months + 1);
 }

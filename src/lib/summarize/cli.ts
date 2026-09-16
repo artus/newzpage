@@ -20,7 +20,7 @@ async function main() {
   const started = performance.now();
   const page = await fetchPage(url);
   const fetched = performance.now();
-  const extracted = extractArticle(page.html, page.finalUrl);
+  const extracted = await extractArticle(page.html, page.finalUrl);
   const extractedAt = performance.now();
   const analysis = analyze(extracted.paragraphs, { title: extracted.title, langHint: extracted.lang });
   const analysed = performance.now();

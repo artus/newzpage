@@ -36,7 +36,7 @@ describe("normalizeConfig", () => {
   it("fills defaults and validates feeds", () => {
     const config = normalizeConfig({ title: " The Daily ", feeds: ["https://x.example/rss", { url: "https://y.example/rss", name: "Y", limit: 99 }] });
     assert.equal(config.title, "The Daily");
-    assert.equal(config.itemsPerFeed, 10);
+    assert.equal(config.itemsPerFeed, 7);
     assert.deepEqual(config.feeds, [{ url: "https://x.example/rss" }, { url: "https://y.example/rss", name: "Y", limit: 50 }]);
     assert.deepEqual(normalizeConfig(null).feeds, []);
     assert.throws(() => normalizeConfig({ feeds: ["ftp://nope"] }), /feeds\[0\] needs an http\(s\) "url"/);

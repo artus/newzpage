@@ -1,6 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
-import type { FeedConfig, NewzpageConfig } from "@/lib/config-schema";
-import { storyFrom, type Section } from "@/lib/edition/types";
+import { CONFIG_DEFAULTS, type FeedConfig, type NewzpageConfig } from "@/lib/config-schema";
+import { storyFrom, type Section, type Story } from "@/lib/edition/types";
 import { fnv1a } from "@/lib/util/hash";
 import { createLimiter } from "@/lib/util/limit";
 import { displayHost } from "@/lib/util/text";
@@ -17,6 +17,13 @@ export interface SectionState {
   /** Stories summarised so far, for the skeleton's progress line. */
   done: number;
   total: number;
+  /** The stories in the order they were loaded: the first batch is the edition, later ones came on request. */
+  batches: Story[][];
+  /** Items requested from the feed so far. */
+  requested: number;
+  loadingMore: boolean;
+  /** What the last "more" request came back with, when it brought nothing new. */
+  moreNote?: string;
 }
 
 export interface EditionState {
@@ -38,6 +45,7 @@ export class EditionRunner {
   private readonly listeners = new Set<() => void>();
   private controller?: AbortController;
   private cache?: SummaryCache;
+  private limit = createLimiter(6);
 
   readonly subscribe = (listener: () => void) => {
     this.listeners.add(listener);
@@ -61,10 +69,82 @@ export class EditionRunner {
   /** An edition is new when the wires brought other stories than last time; a plain reload is not. */
   private recordEdition() {
     const sections = this.state.sections;
-    const stories = sections.flatMap((state) => state.section?.stories ?? []);
-    if (stories.length === 0) return;
-    const fingerprint = fnv1a(sections.map((state) => `${state.feed.url}:${(state.section?.stories ?? []).map((story) => story.id).join(",")}`).join("|")).toString(36);
+    if (sections.every((state) => (state.batches[0]?.length ?? 0) === 0)) return;
+    const fingerprint = fnv1a(sections.map((state) => `${state.feed.url}:${(state.batches[0] ?? []).map((story) => story.id).join(",")}`).join("|")).toString(36);
     this.set({ reader: recordEdition(fingerprint) });
+  }
+
+  /**
+   * Fetches the feed's items and the analyses of the wanted ones, through the browser cache. With a list of
+   * known ids only the items that follow the last known one are taken: further down the wire, never newer.
+   */
+  private async loadStories(
+    feed: FeedConfig,
+    requested: number,
+    known: Set<string> | undefined,
+    onProgress: (done: number, total: number, title: string) => void,
+    signal: AbortSignal,
+  ) {
+    const response = await api.feed(feed.url, requested, signal);
+    let items = response.items;
+    if (known) {
+      let last = -1;
+      response.items.forEach((item, index) => {
+        if (known.has(item.id)) last = index;
+      });
+      items = last < 0 ? [] : response.items.slice(last + 1).filter((item) => !known.has(item.id));
+    }
+    let done = 0;
+    onProgress(0, items.length, response.title);
+    const stories = await Promise.all(
+      items.map((item) =>
+        this.limit(async () => {
+          let article = item.link ? this.cache?.get(item.link) : undefined;
+          if (!article && item.link) {
+            try {
+              article = await api.article(item.link, feed.url, item.title, signal);
+              this.cache?.set(article);
+            } catch {
+              // the story is printed with a placeholder line
+            }
+          }
+          if (!signal.aborted) onProgress(++done, items.length, response.title);
+          return storyFrom(item, article);
+        }),
+      ),
+    );
+    this.cache?.flush();
+    return { response, stories };
+  }
+
+  /**
+   * "More from this wire": asks the feed for a larger slice and typesets the items that come after the last
+   * one already on the page, further down the wire. Items that arrived since the edition was printed are left
+   * for the next edition. The button stays; when the wire has nothing older it says so.
+   */
+  async loadMore(index: number) {
+    const state = this.state.sections[index];
+    const controller = this.controller;
+    if (!state || !controller || state.status !== "done" || state.loadingMore) return;
+    const step = state.feed.limit ?? CONFIG_DEFAULTS.itemsPerFeed;
+    const requested = Math.min(50, state.requested + step);
+    this.updateSection(index, { loadingMore: true, moreNote: undefined });
+    try {
+      const known = new Set(state.batches.flat().map((story) => story.id));
+      const { stories } = await this.loadStories(state.feed, requested, known, () => undefined, controller.signal);
+      if (controller.signal.aborted) return;
+      const current = this.state.sections[index];
+      const batches = stories.length > 0 ? [...current.batches, stories] : current.batches;
+      this.updateSection(index, {
+        loadingMore: false,
+        requested,
+        batches,
+        moreNote: stories.length === 0 ? "Nothing older on this wire." : undefined,
+        section: current.section ? { ...current.section, stories: batches.flat() } : current.section,
+      });
+    } catch (error) {
+      if (!controller.signal.aborted) this.updateSection(index, { loadingMore: false, moreNote: `The wire did not answer: ${(error as Error).message}` });
+    }
   }
 
   stop() {
@@ -78,46 +158,43 @@ export class EditionRunner {
     this.controller = controller;
     const signal = controller.signal;
     this.cache ??= new SummaryCache(browserStorage() ?? new MemoryStorage());
-    const store = this.cache;
-    const limit = createLimiter(6);
+    this.limit = createLimiter(6);
 
     this.set({
       printedAt: new Date(),
       reader: readReaderStats(),
-      sections: config.feeds.map((feed) => ({ feed, name: feed.name ?? displayHost(feed.url) ?? feed.url, status: "loading", done: 0, total: 0 })),
+      sections: config.feeds.map((feed) => ({
+        feed,
+        name: feed.name ?? displayHost(feed.url) ?? feed.url,
+        status: "loading",
+        done: 0,
+        total: 0,
+        batches: [],
+        requested: 0,
+        loadingMore: false,
+      })),
     });
 
     config.feeds.forEach(async (feed, index) => {
       const fallbackName = feed.name ?? displayHost(feed.url) ?? feed.url;
+      const requested = feed.limit ?? config.itemsPerFeed;
       try {
-        const response = await api.feed(feed.url, feed.limit ?? config.itemsPerFeed, signal);
-        if (signal.aborted) return;
-        const name = feed.name ?? response.title;
-        this.updateSection(index, { name, total: response.items.length });
-        let done = 0;
-        const stories = await Promise.all(
-          response.items.map((item) =>
-            limit(async () => {
-              let article = item.link ? store.get(item.link) : undefined;
-              if (!article && item.link) {
-                try {
-                  article = await api.article(item.link, feed.url, item.title, signal);
-                  store.set(article);
-                } catch {
-                  // the story is printed with a placeholder line
-                }
-              }
-              if (signal.aborted) return storyFrom(item, article);
-              done++;
-              this.updateSection(index, { done });
-              return storyFrom(item, article);
-            }),
-          ),
+        const { response, stories } = await this.loadStories(
+          feed,
+          requested,
+          undefined,
+          (done, total, title) => {
+            if (!signal.aborted) this.updateSection(index, { done, total, name: feed.name ?? title });
+          },
+          signal,
         );
         if (signal.aborted) return;
-        store.flush();
+        const name = feed.name ?? response.title;
         this.updateSection(index, {
           status: "done",
+          name,
+          requested,
+          batches: [stories],
           section: { name, url: feed.url, link: response.link, fetchedAt: response.fetchedAt, stale: response.stale, stories },
         });
       } catch (error) {
@@ -133,7 +210,7 @@ export class EditionRunner {
 
 const serverSnapshot = () => EMPTY;
 
-export function useEdition(config: NewzpageConfig | undefined): EditionState {
+export function useEdition(config: NewzpageConfig | undefined): EditionState & { loadMore: (index: number) => void } {
   const [runner] = useState(() => new EditionRunner());
   const state = useSyncExternalStore(runner.subscribe, runner.getSnapshot, serverSnapshot);
 
@@ -143,5 +220,5 @@ export function useEdition(config: NewzpageConfig | undefined): EditionState {
     return () => runner.stop();
   }, [config, runner]);
 
-  return state;
+  return { ...state, loadMore: (index) => void runner.loadMore(index) };
 }

@@ -1,31 +1,12 @@
 {
   "title": "Newzpage",
   "tagline": "All the feeds that are fit to print",
-  "itemsPerFeed": 10,
+  "itemsPerFeed": 7,
   "feeds": [
-    {
-      "name": "Tweakers",
-      "url": "https://feeds.feedburner.com/tweakers/mixed"
-    },
-    {
-      "name": "Ars Technica",
-      "url": "https://feeds.arstechnica.com/arstechnica/index",
-      "limit": 9
-    },
-    {
-      "name": "The Verge",
-      "url": "https://www.theverge.com/rss/index.xml",
-      "limit": 9
-    },
-    {
-      "name": "Hacker News",
-      "url": "https://news.ycombinator.com/rss",
-      "limit": 12
-    },
-    {
-      "name": "BBC News",
-      "url": "https://feeds.bbci.co.uk/news/rss.xml",
-      "limit": 11
-    }
+    { "name": "Hacker News", "url": "https://news.ycombinator.com/rss", "limit": 7 },
+    { "name": "BBC News", "url": "https://feeds.bbci.co.uk/news/rss.xml", "limit": 7 },
+    { "name": "Hackaday", "url": "https://hackaday.com/blog/feed/", "limit": 7 },
+    { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "limit": 7 },
+    { "name": "The Verge", "url": "https://www.theverge.com/rss/index.xml", "limit": 7 }
   ]
 }

@@ -121,7 +121,7 @@ export async function summarizeItem(item: FeedItem, url: string, feedLanguage?: 
   let error: string | undefined;
   try {
     const page = await limitPageFetches(() => fetchPage(url));
-    const extracted = extractArticle(page.html, page.finalUrl);
+    const extracted = await extractArticle(page.html, page.finalUrl);
     candidates.push(...extracted.images);
     if (extracted.paragraphs.length >= 2 && extracted.wordCount >= 60) {
       const analysis = analyze(extracted.paragraphs, { title: item.title, langHint: extracted.lang ?? feedLanguage });
