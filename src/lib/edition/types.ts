@@ -23,6 +23,11 @@ export interface ArticleRecord {
   expiresAt?: number;
 }
 
+/** A record is worth keeping only when it can print copy; a placeholder must be retried, never remembered. */
+export function hasCopy(record: Pick<ArticleRecord, "analysis">): boolean {
+  return !!record.analysis && record.analysis.sentences.length > 0;
+}
+
 /** A feed item as the API hands it to the browser: no HTML content, just what the page needs. */
 export interface FeedItemSummary {
   id: string;

@@ -59,6 +59,14 @@ describe("SummaryCache", () => {
     assert.equal(Object.keys(index).length, cache.stats().entries, "index matches what is stored");
   });
 
+  it("never stores a record without copy, so failures are retried", () => {
+    const cache = new SummaryCache(new MemoryStorage());
+    assert.equal(cache.set(record(1, { source: "none", analysis: null, error: "HTTP 403" }), 10), false);
+    assert.equal(cache.set(record(2, { analysis: { version: SUMMARIZER_VERSION, lang: "en", sentences: [], pick: [], totalWords: 0, totalSentences: 0 } }), 10), false);
+    assert.equal(cache.stats().entries, 0);
+    assert.equal(cache.get("https://example.org/article-1", 20), undefined);
+  });
+
   it("survives a corrupt index and clears completely", () => {
     const storage = new MemoryStorage();
     storage.setItem(SUMMARY_INDEX_KEY, "{not json");

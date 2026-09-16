@@ -1,4 +1,4 @@
-import type { ArticleRecord } from "@/lib/edition/types";
+import { hasCopy, type ArticleRecord } from "@/lib/edition/types";
 import { SUMMARIZER_VERSION } from "@/lib/summarize/types";
 import { hashId } from "@/lib/util/hash";
 import { readJson, type StorageLike } from "./storage";
@@ -67,8 +67,12 @@ export class SummaryCache {
     return record;
   }
 
-  /** Stores a record, making room first; returns false when the browser would not keep it. */
+  /**
+   * Stores a record, making room first; returns false when the browser would not keep it. Records without
+   * copy (a failed fetch, an unreadable page) are never stored, so the story is tried again next time.
+   */
   set(record: ArticleRecord, now = Date.now()): boolean {
+    if (!hasCopy(record)) return false;
     const index = this.load();
     const json = JSON.stringify(record);
     const size = (json.length + ENTRY_PREFIX.length + 12) * 2;

@@ -101,7 +101,9 @@ Everything a reader configures or that is computed for them is stored in their b
 The summary cache is **rolling**: at most 400 entries and about 3 MB (`SummaryCache` in
 `src/lib/client/summary-cache.ts`). When either limit is passed, or when the browser reports its quota is full,
 the least recently used entries are dropped until the new one fits. Entries expire after 30 days when they came
-from real text and after 6–12 hours when only a fallback was available, so failures are retried. Each entry
+from real text and after 12 hours when only the feed's description was available. A story that produced no copy
+at all (an unreachable page, a page without readable text) is never stored, in the browser or on the server, so
+it is tried again on the next load. Each entry
 carries the summariser version; bumping `SUMMARIZER_VERSION` in `src/lib/summarize/types.ts` invalidates them.
 
 The server keeps only a bounded in-memory cache of feeds and analyses (so many readers do not fetch the same
