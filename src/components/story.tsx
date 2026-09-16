@@ -37,6 +37,7 @@ export default function Story({ story, kind, photo, textColumns, maxWords, ancho
   const when = relativeTime(story.published, now || undefined);
   const dateline = [story.author ? `By ${story.author}` : undefined, host, when].filter(Boolean);
   const showPhoto = photo && !!story.image;
+  const letters = story.commentsLink && story.commentsLink !== story.link ? story.commentsLink : undefined;
   const classes = ["story", `story--${kind}`, `story--text-${textColumns}`, showPhoto ? "story--photo" : undefined].filter(Boolean).join(" ");
 
   return (
@@ -79,20 +80,28 @@ export default function Story({ story, kind, photo, textColumns, maxWords, ancho
           </p>
         )}
       </div>
-      {story.link && summary.paragraphs.length > 0 && kind !== "brief" ? (
+      {story.link && kind !== "brief" ? (
         <p className="story__continued">
           <a href={story.link} target="_blank" rel="noopener noreferrer">
-            Continued at {host ?? "the source"}
+            {summary.paragraphs.length > 0 ? "Continued at" : "Read at"} {host ?? "the source"}
           </a>
-          {story.commentsLink && story.commentsLink !== story.link ? (
+          {letters ? (
             <>
               {" · "}
-              <a href={story.commentsLink} target="_blank" rel="noopener noreferrer">
+              <a href={letters} target="_blank" rel="noopener noreferrer">
                 Letters
               </a>
             </>
           ) : null}
         </p>
+      ) : null}
+      {kind === "brief" && letters ? (
+        <>
+          {" "}
+          <a className="story__letters" href={letters} target="_blank" rel="noopener noreferrer">
+            Letters
+          </a>
+        </>
       ) : null}
     </article>
   );

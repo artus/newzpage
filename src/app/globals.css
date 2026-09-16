@@ -436,6 +436,12 @@ a:hover {
   color: var(--ink-soft);
 }
 
+.story__letters {
+  font-size: 0.8em;
+  font-style: italic;
+  white-space: nowrap;
+}
+
 /* Photographs ----------------------------------------------------------- */
 
 .photo {
