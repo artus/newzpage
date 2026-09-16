@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { columnsFor, planMore, planPage } from "@/lib/edition/pagemaker";
 import type { Section, Story } from "@/lib/edition/types";
 import { fnv1a, hashId } from "@/lib/util/hash";
-import { displayHost } from "@/lib/util/text";
+import { displayHost, truncateWords } from "@/lib/util/text";
 import { clock } from "@/lib/util/time";
 import Band from "./band";
 
@@ -61,11 +61,32 @@ export default function FeedSection({ section, batches, now, loadingMore, moreNo
   );
   const headingId = `section-${hashId(section.url)}`;
   const count = section.stories.length;
+  // The feed's own account of itself, as a tooltip on its title; left out when it merely repeats the name.
+  const about =
+    section.description && section.description.trim().toLowerCase() !== section.name.trim().toLowerCase()
+      ? truncateWords(section.description, 60)
+      : undefined;
+  const aboutId = about ? `${headingId}-about` : undefined;
 
   return (
     <section className="section" aria-labelledby={headingId}>
       <header className="section__head">
-        <h2 id={headingId}>{section.link ? <a href={section.link} target="_blank" rel="noopener noreferrer">{section.name}</a> : section.name}</h2>
+        <h2 id={headingId}>
+          {section.link ? (
+            <a href={section.link} target="_blank" rel="noopener noreferrer" className={about ? "tip" : undefined} data-tip={about} aria-describedby={aboutId}>
+              {section.name}
+            </a>
+          ) : (
+            <span className={about ? "tip" : undefined} data-tip={about} aria-describedby={aboutId} tabIndex={about ? 0 : undefined}>
+              {section.name}
+            </span>
+          )}
+        </h2>
+        {about ? (
+          <span id={aboutId} hidden>
+            {about}
+          </span>
+        ) : null}
         <p className="section__meta">
           {section.error
             ? "Wire down"

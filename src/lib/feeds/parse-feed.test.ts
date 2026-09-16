@@ -10,6 +10,7 @@ describe("parseFeed", () => {
     const feed = parseFeed(fixture("hackernews-rss2.xml"));
     assert.equal(feed.title, "Hacker News");
     assert.equal(feed.link, "https://news.ycombinator.com/");
+    assert.equal(feed.description, "Links for the intellectually curious, ranked by readers.");
     assert.equal(feed.items.length, 30);
     const [first] = feed.items;
     assert.equal(first.title, "Introducing System One Models and Jev");
@@ -23,6 +24,7 @@ describe("parseFeed", () => {
   it("parses RSS 2.0 with media thumbnails and CDATA (BBC)", () => {
     const feed = parseFeed(fixture("bbc-rss2-media.xml"));
     assert.equal(feed.title, "BBC News");
+    assert.equal(feed.description, "BBC News - News Front Page");
     assert.equal(feed.language, "en-gb");
     assert.equal(feed.ttlMinutes, 15);
     assert.equal(feed.items.length, 37);
@@ -47,6 +49,7 @@ describe("parseFeed", () => {
 
   it("parses Atom with HTML content and inline images (The Verge)", () => {
     const feed = parseFeed(fixture("verge-atom.xml"));
+    assert.match(feed.description ?? "", /^The Verge is about technology/);
     assert.equal(feed.title, "The Verge");
     assert.equal(feed.link, "https://www.theverge.com");
     assert.equal(feed.language, "en-US");

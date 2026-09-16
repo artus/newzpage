@@ -77,7 +77,6 @@ a:hover {
 
 /* The volume and number carry an explanation on hover or focus. */
 .ear {
-  position: relative;
   cursor: help;
   border-bottom: 1px dotted var(--ink-faint);
 }
@@ -87,7 +86,12 @@ a:hover {
   outline-offset: 2px;
 }
 
-.ear::after {
+/* A tooltip drawn from the data-tip attribute: the masthead's ear and every wire's title carry one. */
+.tip {
+  position: relative;
+}
+
+.tip::after {
   content: attr(data-tip);
   position: absolute;
   top: calc(100% + 0.6rem);
@@ -99,8 +103,10 @@ a:hover {
   border: 1px solid var(--ink);
   background: var(--paper);
   color: var(--ink);
+  font-family: var(--font-body), var(--serif-fallback);
   font-size: 0.8rem;
   font-style: italic;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 1.4;
   text-align: left;
@@ -113,20 +119,27 @@ a:hover {
   pointer-events: none;
 }
 
-.ear:hover::after,
-.ear:focus-visible::after {
+.tip:hover::after,
+.tip:focus-visible::after {
   opacity: 1;
   visibility: visible;
 }
 
-.cog {
+.cog,
+.dice {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
 }
 
 /* The way to the composing room: set like a small control so it reads as one. */
-.masthead__settings {
+.masthead__actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+.masthead__button {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
@@ -140,8 +153,8 @@ a:hover {
   text-decoration: none;
 }
 
-.masthead__settings:hover,
-.masthead__settings:focus-visible {
+.masthead__button:hover,
+.masthead__button:focus-visible {
   background: var(--ink);
   color: var(--paper);
   text-decoration: none;
@@ -186,6 +199,16 @@ a:hover {
   text-align: right;
 }
 
+.kicker {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--ink-soft);
+}
+.kicker + .section {
+  margin-top: 1.25rem;
+}
 .masthead__date {
   font-style: normal;
   font-weight: 700;
@@ -1042,6 +1065,10 @@ a:hover {
 
   .masthead__rule > * {
     text-align: center !important;
+  }
+
+  .masthead__actions {
+    justify-content: center;
   }
 
   .skeleton__block--wide {

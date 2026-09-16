@@ -42,6 +42,8 @@ export interface FeedResponse {
   url: string;
   title: string;
   link?: string;
+  /** The feed's own account of itself: an RSS channel description or an Atom subtitle. */
+  description?: string;
   language?: string;
   fetchedAt: number;
   /** True when the feed could not be refreshed and an older snapshot is served. */
@@ -69,6 +71,8 @@ export interface Section {
   name: string;
   url: string;
   link?: string;
+  /** Shown as a tooltip on the wire's title. */
+  description?: string;
   fetchedAt: number;
   stale: boolean;
   error?: string;

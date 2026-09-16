@@ -3,6 +3,7 @@ import type { ReaderStats } from "@/lib/client/reader-stats";
 import { volumeOf } from "@/lib/client/reader-stats";
 import { longDate, roman } from "@/lib/util/time";
 import CogIcon from "./cog-icon";
+import DiceIcon from "./dice-icon";
 
 interface MastheadProps {
   title: string;
@@ -41,7 +42,7 @@ export default function Masthead({ title, tagline, date, feedCount, reader }: Ma
       <div className="masthead__ears">
         <p>
           {reader && volume ? (
-            <span className="ear" tabIndex={0} role="note" aria-label={explanation} data-tip={explanation}>
+            <span className="ear tip" tabIndex={0} role="note" aria-label={explanation} data-tip={explanation}>
               Vol. {roman(volume)} · No. {reader.editions.toLocaleString("en-GB")}
             </span>
           ) : (
@@ -57,9 +58,14 @@ export default function Masthead({ title, tagline, date, feedCount, reader }: Ma
       </h1>
       <div className="masthead__rule">
         <span>{tagline}</span>
-        <span className="masthead__date">{date ? longDate(date) : "\u00a0"}</span>
-        <span>
-          <Link href="/settings" className="masthead__settings" title="Choose and order your feeds">
+        <span className="masthead__date">{date ? longDate(date) : " "}</span>
+        <span className="masthead__actions">
+          {/* A plain anchor: /random answers with a redirect, and a client-side transition would prefetch and keep one draw. */}
+          <a href="/random" className="masthead__button" title="Read a wire drawn at random from the directory">
+            <DiceIcon />
+            Random wire
+          </a>
+          <Link href="/settings" className="masthead__button" title="Choose and order your feeds">
             <CogIcon />
             Composing room
           </Link>

@@ -35,6 +35,11 @@ export interface EditionState {
 
 const EMPTY: EditionState = { sections: [] };
 
+export interface EditionOptions {
+  /** Count the composed edition in the reader's record: the front page does, a single wire read on the side does not. */
+  record?: boolean;
+}
+
 /**
  * Composes the edition in the browser: feeds come from the server, analyses from this browser's cache when
  * it has them and from the server otherwise, and everything is planned and typeset client-side. A store
@@ -46,6 +51,8 @@ export class EditionRunner {
   private controller?: AbortController;
   private cache?: SummaryCache;
   private limit = createLimiter(6);
+
+  constructor(private readonly options: EditionOptions = {}) {}
 
   readonly subscribe = (listener: () => void) => {
     this.listeners.add(listener);
@@ -63,7 +70,7 @@ export class EditionRunner {
 
   private updateSection(index: number, patch: Partial<SectionState>) {
     this.set({ sections: this.state.sections.map((state, i) => (i === index ? { ...state, ...patch } : state)) });
-    if (this.state.sections.every((state) => state.status === "done")) this.recordEdition();
+    if (this.options.record !== false && this.state.sections.every((state) => state.status === "done")) this.recordEdition();
   }
 
   /** An edition is new when the wires brought other stories than last time; a plain reload is not. */
@@ -195,7 +202,7 @@ export class EditionRunner {
           name,
           requested,
           batches: [stories],
-          section: { name, url: feed.url, link: response.link, fetchedAt: response.fetchedAt, stale: response.stale, stories },
+          section: { name, url: feed.url, link: response.link, description: response.description, fetchedAt: response.fetchedAt, stale: response.stale, stories },
         });
       } catch (error) {
         if (signal.aborted) return;
@@ -210,8 +217,8 @@ export class EditionRunner {
 
 const serverSnapshot = () => EMPTY;
 
-export function useEdition(config: NewzpageConfig | undefined): EditionState & { loadMore: (index: number) => void } {
-  const [runner] = useState(() => new EditionRunner());
+export function useEdition(config: NewzpageConfig | undefined, options?: EditionOptions): EditionState & { loadMore: (index: number) => void } {
+  const [runner] = useState(() => new EditionRunner(options));
   const state = useSyncExternalStore(runner.subscribe, runner.getSnapshot, serverSnapshot);
 
   useEffect(() => {

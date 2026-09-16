@@ -65,3 +65,9 @@ export function searchDirectory(query: string, limit = 12): DirectoryEntry[] {
     .slice(0, limit)
     .map((item) => item.entry);
 }
+
+/** One entry of the directory, drawn at random; the generator can be replaced for tests. */
+export function randomEntry(random: () => number = Math.random): DirectoryEntry {
+  const index = Math.min(DIRECTORY.length - 1, Math.max(0, Math.floor(random() * DIRECTORY.length)));
+  return DIRECTORY[index];
+}

@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
       url,
       title: loaded.feed.title,
       link: loaded.feed.link,
+      description: loaded.feed.description,
       language: loaded.feed.language,
       fetchedAt: loaded.fetchedAt,
       stale: loaded.stale,

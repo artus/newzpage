@@ -53,6 +53,14 @@ The search proposes feeds from three places: a site's own feeds when the terms a
 (200 well-known feeds), and feedly.com's public feed search for everything else. Set
 `NEWZPAGE_FEED_SEARCH=directory` on the server to keep searches entirely in-house.
 
+## A random wire
+
+The masthead's *Random wire* button goes to `/random`, which draws one feed from the bundled directory and
+redirects to `/wire?feed=…&name=…`: a page printing that single wire, ten stories deep, under the reader's own
+masthead, with the usual "Older" button. Any feed address works there. The page is composed exactly like the
+front page (same cache, same layout), but it is not counted as an edition and it changes nothing in the
+reader's configuration; a wire worth keeping is added in the composing room.
+
 ## How an edition is composed
 
 The page is a static shell; the browser composes the edition:
@@ -60,7 +68,8 @@ The page is a static shell; the browser composes the edition:
 1. **Configuration** is read from `localStorage` (a first visit fetches `/api/defaults` once and keeps it).
 2. **Feeds** are requested from `/api/feed?url=…&limit=…`. The server fetches each feed with a conditional
    request (ETag / Last-Modified), parses RSS 2.0, Atom 1.0 and RSS 1.0 into one shape, and returns the items
-   without their HTML. It keeps parsed feeds in process memory for the feed's own `ttl` (5 minutes – 6 hours;
+   without their HTML. The feed's own description (an RSS channel description or an Atom subtitle) travels
+   along and is shown as a tooltip on the wire's title. It keeps parsed feeds in process memory for the feed's own `ttl` (5 minutes – 6 hours;
    15 minutes when unspecified) and serves the last snapshot, marked stale, when a refresh fails.
 3. **Summaries** come from this browser's cache when it has them, otherwise from `/api/article?url=…&feed=…`.
    The server uses the feed's full text when the feed carries it, and fetches the page otherwise (browser-like
@@ -183,6 +192,7 @@ feeds.json                    house defaults for first-time readers
 src/app                       Next.js entry: layout (fonts), static page shell, styles
 src/app/api                   feed, article, search and defaults endpoints (the only server work)
 src/app/settings              the composing room (client-side, localStorage)
+src/app/random, src/app/wire  a feed drawn from the directory, redirected to a page printing that one wire
 src/components                masthead, feed section, story block, photo, skeleton, colophon, front page
 src/lib/client                localStorage config store, rolling summary cache, API client, hooks
 src/lib/config-schema.ts      configuration shape shared by server defaults and browser copies
