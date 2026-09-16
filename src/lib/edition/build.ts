@@ -8,7 +8,7 @@ import { analyze, SUMMARIZER_VERSION } from "@/lib/summarize";
 import { createLimiter } from "@/lib/util/limit";
 import { log } from "@/lib/util/log";
 import { collapseWhitespace, countWords, htmlToParagraphs } from "@/lib/util/text";
-import type { ArticleRecord, ArticleSource, FeedItemSummary } from "./types";
+import { hasCopy, type ArticleRecord, type ArticleSource, type FeedItemSummary } from "./types";
 
 const MINUTE = 60_000;
 const HOUR = 60 * MINUTE;
@@ -20,12 +20,12 @@ function feedTtl(feed: ParsedFeed): number {
   return Math.min(Math.max(requested, 5 * MINUTE), 6 * HOUR);
 }
 
-/** How long a reader's browser should keep an analysis before asking again. */
+/** How long an analysis is kept: real articles a month, a feed-description fallback an hour, failures not at all. */
 export const ARTICLE_TTL: Record<ArticleSource, number> = {
   page: 30 * DAY,
   content: 30 * DAY,
-  description: 12 * HOUR,
-  none: 6 * HOUR,
+  description: HOUR,
+  none: 0,
 };
 
 /** Feed text has to be this long before we trust it instead of fetching the page. */
@@ -189,7 +189,8 @@ export async function getArticle(url: string, feedUrl?: string, title?: string):
         }
       }
       const article = await summarizeItem(item ?? { id: url, title: title ?? url, link: url, images: [], categories: [] }, url, language);
-      articles.set(url, article, Math.min(ARTICLE_TTL[article.source], 6 * HOUR));
+      // A placeholder is not remembered anywhere: the next request tries the page again.
+      if (hasCopy(article)) articles.set(url, article, Math.min(ARTICLE_TTL[article.source], 6 * HOUR));
       log.info(`Summarised ${url} from ${article.source} in ${Date.now() - started}ms${article.error ? ` (${article.error})` : ""}`);
       return article;
     })().finally(() => inflightArticles.delete(url));

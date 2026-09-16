@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { api } from "@/lib/client/api";
+import { browserStorage } from "@/lib/client/storage";
+import { SummaryCache } from "@/lib/client/summary-cache";
 import { useConfig } from "@/lib/client/use-config";
 import { isHttpUrl, moveFeed, normalizeConfig, removeFeed, reorderFeeds, upsertFeed, type FeedConfig } from "@/lib/config-schema";
 import type { FeedProposal } from "@/lib/feeds/search";
@@ -158,6 +160,15 @@ export default function ComposingRoom() {
     }
   };
 
+  const onForgetSummaries = () => {
+    const storage = browserStorage();
+    if (!storage) return complain("This browser keeps no summaries to forget.");
+    const cache = new SummaryCache(storage);
+    const { entries } = cache.stats();
+    cache.clear();
+    say(entries === 0 ? "There were no cached summaries." : `${entries} cached ${entries === 1 ? "summary was" : "summaries were"} forgotten; the next edition is summarised afresh.`);
+  };
+
   const onReset = async () => {
     const wires = config.feeds.length;
     const question =
@@ -242,6 +253,9 @@ export default function ComposingRoom() {
           />
           <button type="button" className="button" onClick={onReset} disabled={busy}>
             Back to the house defaults
+          </button>
+          <button type="button" className="button" onClick={onForgetSummaries} title="Drop every cached summary so the next edition summarises everything again">
+            Forget cached summaries
           </button>
         </div>
 
