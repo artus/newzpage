@@ -1,60 +1,28 @@
-import { getSummarizedFeed, saveSummarizedFeed } from "@/lib/db/summarized-feed-repository";
-import { CustomResponse } from "@/lib/domain/response";
-import { Logger } from "@/lib/helpers/logger";
-import { parse } from "@/lib/service/rss-service";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { isHttpUrl } from "@/lib/config-schema";
+import { loadFeed, summarizeFeedItems } from "@/lib/edition/build";
+import type { FeedResponse } from "@/lib/edition/types";
 
-export const POST = async (req: NextRequest) => {
+export const dynamic = "force-dynamic";
+
+/** GET /api/feed?url=…&limit=… — a parsed feed, trimmed to what the page needs. */
+export async function GET(request: NextRequest) {
+  const url = request.nextUrl.searchParams.get("url");
+  const limit = Math.min(50, Math.max(1, Number(request.nextUrl.searchParams.get("limit")) || 10));
+  if (!isHttpUrl(url)) return NextResponse.json({ error: "url must be an http(s) address" }, { status: 400 });
   try {
-    const feeds = await req.json();
-
-    if (!feeds) {
-      return CustomResponse.badRequest({ error: "feed list is required" });
-    }
-
-    if (!Array.isArray(feeds)) {
-      return CustomResponse.badRequest({ error: "feed list must be an array" });
-    }
-
-    const feedUrls = (feeds as string[]).map(feed => new URL(feed));
-
-    const parsedFeedsPromises = feedUrls.map(parse);
-
-    const parsedFeeds = await Promise.all(parsedFeedsPromises.map(tryFeed => tryFeed.get()));
-
-    const feedsWithSummarizedItems = await Promise.all(parsedFeeds.map(feed => feed.toSummarizedFeed(50)));
-
-    return NextResponse.json(feedsWithSummarizedItems);
+    const loaded = await loadFeed(url);
+    const body: FeedResponse = {
+      url,
+      title: loaded.feed.title,
+      link: loaded.feed.link,
+      language: loaded.feed.language,
+      fetchedAt: loaded.fetchedAt,
+      stale: loaded.stale,
+      items: summarizeFeedItems(loaded.feed, limit),
+    };
+    return NextResponse.json(body, { headers: { "Cache-Control": "private, max-age=60" } });
   } catch (error) {
-    Logger.error(`Error in POST /api/feed: ${(error as Error).message}`, error as Error);
-    return CustomResponse.internalServerError({ error: (error as Error).message });
-  }
-}
-
-export const GET = async (req: NextRequest) => {
-  try {
-    Logger.debug(`GET /api/feed called with query: ${JSON.stringify(req.nextUrl.searchParams.toString())}`);
-    const url = req.nextUrl.searchParams.get("url");
-
-    if (!url) {
-      return CustomResponse.badRequest({ error: "url query parameter is required" });
-    }
-
-    const link = new URL(url);
-
-    const cachedFeed = await getSummarizedFeed(link).get();
-    if (cachedFeed.isPresent()) {
-      Logger.info(`Returning cached feed for ${url}`);
-      return NextResponse.json(cachedFeed.get());
-    } else {
-      Logger.info(`Feed for ${url} not found in cache, fetching.`);
-      const parsedFeed = await parse(new URL(url)).get();
-      const feedWithSummarizedItems = await parsedFeed.toSummarizedFeed(50);
-      const savedFeed = await saveSummarizedFeed(link, feedWithSummarizedItems);
-      return NextResponse.json(savedFeed);
-    }
-  } catch (error) {
-    Logger.error(`Error occurred while getting feed: ${(error as Error).message}`, error as Error);
-    return CustomResponse.internalServerError({ error: (error as Error).message });
+    return NextResponse.json({ error: (error as Error).message }, { status: 502 });
   }
 }

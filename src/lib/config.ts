@@ -1,28 +1,33 @@
-import validator from "valivalue";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import { normalizeConfig, toFeed, type NewzpageConfig } from "./config-schema";
 
-const validateEnv = (value: string | undefined, subject: string) => {
-  validator.objects.validateNotNullOrUndefined(value, `ENV Variable '${subject}'`);
-  return validator.strings.validateNotEmpty(value!, `ENV Variable '${subject}'`);
+export type { FeedConfig, NewzpageConfig } from "./config-schema";
+
+export function configFile(): string {
+  return process.env.NEWZPAGE_FEEDS_FILE ?? path.join(process.cwd(), "feeds.json");
 }
 
-export const CONFIG = {
-  ORIGIN: validateEnv(process.env.ORIGIN, "ORIGIN"),
-  OPENAI: {
-    API_KEY: validateEnv(process.env.OPENAI_API_KEY, "OPENAI_API_KEY"),
-    API_URL: validateEnv(process.env.OPENAI_API_URL, "OPENAI_API_URL"),
-    MODEL: validateEnv(process.env.OPENAI_MODEL, "OPENAI_MODEL")
-  },
-  MONGODB: {
-    URL: validateEnv(process.env.MONGODB_URL, "MONGODB_URL"),
-    DB: validateEnv(process.env.MONGODB_DB, "MONGODB_DB"),
-    USER: validateEnv(process.env.MONGODB_USER, "MONGODB_USER"),
-    PASSWORD: validateEnv(process.env.MONGODB_PASSWORD, "MONGODB_PASSWORD"),
-    RSS_COLLECTION: validateEnv(process.env.MONGODB_RSS_COLLECTION, "MONGODB_RSS_COLLECTION"),
-    ARTICLE_COLLECTION: validateEnv(process.env.MONGODB_ARTICLE_COLLECTION, "MONGODB_ARTICLE_COLLECTION"),
-    FEED_COLLECTION: validateEnv(process.env.MONGODB_FEED_COLLECTION, "MONGODB_FEED_COLLECTION")
-  },
-  LOGGING: {
-    LEVEL: validateEnv(process.env.LOGGING_LEVEL, "LOGGING_LEVEL")
+/**
+ * The default configuration handed to first-time readers: feeds.json (or the file named by
+ * NEWZPAGE_FEEDS_FILE), read on every call so edits show up without a restart. NEWZPAGE_FEEDS may hold a
+ * comma-separated list of URLs that replaces the file's feeds. Readers keep their own copy in the browser.
+ */
+export function loadConfig(): NewzpageConfig {
+  const file = configFile();
+  let raw: unknown = {};
+  if (existsSync(/* turbopackIgnore: true */ file)) {
+    try {
+      raw = JSON.parse(readFileSync(/* turbopackIgnore: true */ file, "utf8"));
+    } catch (error) {
+      throw new Error(`Could not read the default feed configuration at ${file}: ${(error as Error).message}`);
+    }
   }
+  const config = normalizeConfig(raw);
+  const fromEnv = (process.env.NEWZPAGE_FEEDS ?? "")
+    .split(",")
+    .map((url) => url.trim())
+    .filter(Boolean)
+    .map((url, position) => toFeed(url, position));
+  return fromEnv.length > 0 ? { ...config, feeds: fromEnv } : config;
 }
-

@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+    <channel>
+        <title>Ars Technica - All content</title>
+        <atom:link href="https://arstechnica.com/feed/" rel="self" type="application/rss+xml"/>
+        <link>https://arstechnica.com</link>
+        <description>All Ars Technica stories</description>
+        <lastBuildDate>Tue, 15 Sep 2026 22:26:32 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>
+            hourly        </sy:updatePeriod>
+        <sy:updateFrequency>
+            1        </sy:updateFrequency>
+        
+<image>
+	<url>https://cdn.arstechnica.net/wp-content/uploads/2016/10/cropped-ars-logo-512_480-60x60.png</url>
+	<title>Ars Technica</title>
+	<link>https://arstechnica.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+            <item>
+                <title>How chimps teach their kids tool tricks</title>
+                <link>https://arstechnica.com/science/2026/09/how-chimps-teach-their-kids-tool-tricks/</link>
+                                    <comments>https://arstechnica.com/science/2026/09/how-chimps-teach-their-kids-tool-tricks/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jennifer Ouellette]]>
+                </dc:creator>
+                <pubDate>Wed, 16 Sep 2026 04:00:39 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[animal behavior]]></category>
+		<category><![CDATA[animal psychology]]></category>
+		<category><![CDATA[animal tool use]]></category>
+		<category><![CDATA[chimpanzees]]></category>
+		<category><![CDATA[primates]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/09/how-chimps-teach-their-kids-tool-tricks/</guid>
+
+                                    <description>
+                        <![CDATA[Adults first demonstrate tool use, then hand over the implements to their infants, who copy the behavior.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Chimpanzees are known to use rudimentary tools when foraging for food. According to a new paper in the journal Frontiers in Psychology, this learned behavior is passed down from adults to offspring through social learning. Specifically, adult chimps deliberately model the behavior, then turn their tools over to the youngsters so they can mimic the same motions.</p>
+<p>"Receiving food and tools from experienced individuals, which we call food or tool transfer, may help chimpanzees learn to use technology to extract foods that are difficult to access,” <a href="https://www.eurekalert.org/news-releases/1143218?">said co-author Andreu Sánchez-Megías</a>, a graduate student at the University of Barcelona and the Jane Goodall Institute Spain in Senegal. “Tool transfers thus appear to be a form of teaching, together with observation and supervised practice. It appears that mothers are the main models and teachers for young chimpanzees in this manner.”</p>
+<p>As <a href="https://arstechnica.com/science/2012/11/parrot-in-captivity-manufactures-tools-something-not-seen-in-the-wild/">we have previously reported</a>, tool use was once thought to be one of the defining features of humans, although Charles Darwin observed chimpanzees using stones to crack nuts in 1871. In 1960, the late primatologist <a href="https://arstechnica.com/science/2025/10/world-famous-primatologist-jane-goodall-dead-at-91/">Jane Goodall</a> observed a chimp named David Greybeard bend a twig, strip off the leaves, and use it to spoon termites out of a nest and into his mouth. When he learned of the behavior, Goodall's mentor, Louis Leakey, famously observed, “Now we must redefine ‘tool,’ redefine ‘man,’ or accept chimpanzees as humans.” Since then, chimps have been observed making sponges out of leaves to soak up liquids, shaping sticks to collect algae, and sharpening rudimentary spears for hunting.</p><p><a href="https://arstechnica.com/science/2026/09/how-chimps-teach-their-kids-tool-tricks/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/09/how-chimps-teach-their-kids-tool-tricks/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>5</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/chimps1-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/chimps1-500x500-1789408227.jpg" width="500"/>
+<media:credit>Jane Goodall Institute Spain in Senegal</media:credit></media:content>
+            </item>
+                    <item>
+                <title>The Roman telescope has enough gas for 22 years, double NASA's expectations</title>
+                <link>https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/</link>
+                                    <comments>https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 22:26:32 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[falcon heavy]]></category>
+		<category><![CDATA[goddard space flight center]]></category>
+		<category><![CDATA[Nancy Grace Roman Space Telescope]]></category>
+		<category><![CDATA[NASA]]></category>
+		<category><![CDATA[satellite servicing]]></category>
+		<category><![CDATA[spacex]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/</guid>
+
+                                    <description>
+                        <![CDATA[The Nancy Grace Roman Space Telescope is the first NASA observatory designed for in-space refueling.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>NASA's Nancy Grace Roman Space Telescope is gliding toward its distant observation post on a pinpoint trajectory so precise that engineers estimate the spacecraft's fuel load will last twice as long as their initial expectations, the space agency confirmed Monday.</p>
+<p>The $4.3 billion observatory's designers originally planned to load enough propellant into Roman's four fuel tanks for a minimum lifetime of five years, plus a potential five-year mission extension. That was a conservative estimate. NASA officials knew an on-target launch and perfect execution of the observatory's first post-launch course correction maneuver would leave Roman with a hearty fuel reserve.</p>
+<p>"As a result of exquisite planning by our orbital dynamics team, brilliant execution by the operations team, and a precise launch from SpaceX, Roman has fuel for at least 22 years of potential science operations," Jamie Dunn, center director at NASA's Goddard Space Flight Center, said in a press release.</p><p><a href="https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>26</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/KSC-20260821-PH-SPX01_0007large-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/KSC-20260821-PH-SPX01_0007large-500x500.jpg" width="500"/>
+<media:credit>SpaceX</media:credit><media:text>The Nancy Grace Roman Space Telescope is prepared for encapsulation inside the payload fairing of SpaceX's Falcon Heavy rocket. Roman's grapple fixture, installed for a potential future refueling mission, is visible at bottom right.</media:text></media:content>
+            </item>
+                    <item>
+                <title>“Filmmaker” suing PassThePopcorn may be banned user out for revenge</title>
+                <link>https://arstechnica.com/tech-policy/2026/09/filmmaker-suing-passthepopcorn-may-be-banned-user-out-for-revenge/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/09/filmmaker-suing-passthepopcorn-may-be-banned-user-out-for-revenge/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 20:19:17 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[movie piracy]]></category>
+		<category><![CDATA[Torrent]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/09/filmmaker-suing-passthepopcorn-may-be-banned-user-out-for-revenge/</guid>
+
+                                    <description>
+                        <![CDATA[Allegedly fake filmmaker targeted trackers like PassThePopcorn, BroadcasTheNet, and HDBits.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Some of the most widely used private torrent trackers for pirating movies suspect that a banned user may have posed as a filmmaker protecting copyrights in a failed attempt to seek revenge.</p>
+<p>TorrentFreak has been tracking this story closely, <a href="https://torrentfreak.com/filmmaker-tries-to-unmask-private-torrent-tracker-owners-through-cloudflare/">reporting</a> last September that an alleged independent filmmaker named Matthew Schneider sued six private trackers for infringing copyrights on some films that he supposedly made. Trackers targeted include PassThePopcorn, BroadcasTheNet, and HDBits. For months, the filmmaker sought to get Cloudflare to unmask operators of the trackers through a copyright fight, which went on until trackers alerted the court last month that Schneider <a href="https://torrentfreak.com/filmmaker-who-sued-ptp-btn-and-four-other-private-torrent-trackers-may-be-an-impostor/">appeared to be an impostor</a>.</p>
+<p>In a <a href="https://storage.courtlistener.com/recap/gov.uscourts.ilnd.491695/gov.uscourts.ilnd.491695.53.3.pdf">sworn declaration</a>, the actual filmmaker behind the movies cited in the complaint wrote that he had no association to the plaintiff in the case. “I am not involved in, nor have I ever appeared in, this case,” Schneider wrote.</p><p><a href="https://arstechnica.com/tech-policy/2026/09/filmmaker-suing-passthepopcorn-may-be-banned-user-out-for-revenge/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/09/filmmaker-suing-passthepopcorn-may-be-banned-user-out-for-revenge/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>44</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2162559015-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2162559015-500x500.jpg" width="500"/>
+<media:credit>Valentyna Yeltsova | iStock / Getty Images Plus </media:credit></media:content>
+            </item>
+                    <item>
+                <title>18-year-old dies of measles in PA from severe neurological complication</title>
+                <link>https://arstechnica.com/health/2026/09/measles-kills-18-year-old-in-pa-fourth-death-as-state-outbreak-nears-700-cases/</link>
+                                    <comments>https://arstechnica.com/health/2026/09/measles-kills-18-year-old-in-pa-fourth-death-as-state-outbreak-nears-700-cases/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Beth Mole]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 18:58:09 +0000</pubDate>
+                		<category><![CDATA[Health]]></category>
+		<category><![CDATA[ADEM]]></category>
+		<category><![CDATA[anti-vaccine]]></category>
+		<category><![CDATA[Infectious disease]]></category>
+		<category><![CDATA[measles]]></category>
+		<category><![CDATA[MMR]]></category>
+		<category><![CDATA[outbreak]]></category>
+		<category><![CDATA[Pennsylvania]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/health/2026/09/measles-kills-18-year-old-in-pa-fourth-death-as-state-outbreak-nears-700-cases/</guid>
+
+                                    <description>
+                        <![CDATA[Teen developed acute disseminated encephalomyelitis, a known measles complication.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>A fourth person in Pennsylvania has died of measles, <a href="https://www.pa.gov/agencies/health/newsroom/doh-confirms-two-additional-measles-associated-deaths-">the state health department confirmed Tuesday</a>. The latest death was in an unvaccinated 18-year-old resident of Mifflin County.</p>
+<p>In the announcement, the state health department also confirmed a county coroner's report over the weekend of the death of <a href="https://arstechnica.com/health/2026/09/unvaccinated-pennsylvania-woman-died-of-measles-complications-coroner-says/">an unvaccinated 40-year-old woman in Jefferson County</a>. The state had previously reported two deaths in Lancaster County; both were infants—<a href="https://arstechnica.com/health/2026/08/rfk-jr-spews-anti-vaccine-rubbish-as-newborn-revealed-to-have-died-from-measles/">a newborn boy</a> and a <a href="https://arstechnica.com/health/2026/09/measles-killed-6-week-old-baby-coroner-confirms-after-rfk-jr-disputed-deaths/">6-week-old girl</a>, both too young to be vaccinated.</p>
+<p>According to the Mifflin County coroner, Andrea L. Alcalde, the 18-year-old's cause of death was determined to be <a href="https://www.ncbi.nlm.nih.gov/books/NBK430934/">acute disseminated encephalomyelitis (ADEM)</a>, which is a rare but known severe complication of measles. The condition is characterized by a rapidly progressing autoimmune disorder in which aberrant inflammation from an infection strips away the protective coverings of nerve cells in the brain and spinal cord. Before measles vaccines were widely used, ADEM was commonly associated with measles, though other viral infections can also spur its development.</p><p><a href="https://arstechnica.com/health/2026/09/measles-kills-18-year-old-in-pa-fourth-death-as-state-outbreak-nears-700-cases/">Read full article</a></p>
+<p><a href="https://arstechnica.com/health/2026/09/measles-kills-18-year-old-in-pa-fourth-death-as-state-outbreak-nears-700-cases/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>110</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2025/02/GettyImages-2152300024-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2025/02/GettyImages-2152300024-500x500.jpg" width="500"/>
+<media:credit>Getty | Natalya Maisheva</media:credit></media:content>
+            </item>
+                    <item>
+                <title>SpaceX declares Starship ready for orbit, sets launch date next week</title>
+                <link>https://arstechnica.com/space/2026/09/spacex-sets-launch-date-for-first-starship-orbital-flight/</link>
+                                    <comments>https://arstechnica.com/space/2026/09/spacex-sets-launch-date-for-first-starship-orbital-flight/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 18:48:08 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[orbital flight]]></category>
+		<category><![CDATA[space]]></category>
+		<category><![CDATA[spacex]]></category>
+		<category><![CDATA[starlink]]></category>
+		<category><![CDATA[starship]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/09/spacex-sets-launch-date-for-first-starship-orbital-flight/</guid>
+
+                                    <description>
+                        <![CDATA[Reaching orbit would mark a significant milestone.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Pending regulatory approval, SpaceX said today it intends to launch its 14th Starship mission as early as September 22. This flight is notable, as it will be the first time that SpaceX attempts to launch the experimental vehicle into orbit.</p>
+<p>The company set a target liftoff time of 7:15 am local in Texas (12:15 UTC), with a 75-minute launch window. Sunrise in Brownsville, Texas, is 7:17 am CT, so the launch could make for some striking imagery.</p>
+<p>The super heavy lift rocket will be carrying 26 of the larger V3 Starlink satellites into an orbit 275 km above the Earth. <a href="https://www.spacex.com/launches/starship-flight-14">In an update on its website</a>, SpaceX said the Starship upper stage will seek to complete six orbits around the Earth before completing its mission after about 10 hours.</p><p><a href="https://arstechnica.com/space/2026/09/spacex-sets-launch-date-for-first-starship-orbital-flight/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/09/spacex-sets-launch-date-for-first-starship-orbital-flight/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>98</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/05/HIu9mKcWAAAmrHQ-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/05/HIu9mKcWAAAmrHQ-500x500.jpg" width="500"/>
+<media:credit>SpaceX</media:credit><media:text>SpaceX's Starship rocket for Flight 12 is stacked at the pad, and ready to go.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Agility’s new humanoid robot will stop, squat to avoid harming human coworkers</title>
+                <link>https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/</link>
+                                    <comments>https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jeremy Hsu]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 18:33:02 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Agility Robotics]]></category>
+		<category><![CDATA[humanoid robots]]></category>
+		<category><![CDATA[NVIDIA]]></category>
+		<category><![CDATA[Robotics]]></category>
+		<category><![CDATA[robots]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/</guid>
+
+                                    <description>
+                        <![CDATA[Robots can start working outside physical cages and without safety barriers.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Agility Robotics has debuted its first humanoid robot engineered to work safely near humans without risking harm to flesh-and-blood coworkers. Such safety features could unlock many more opportunities to use such robots inside warehouses and automotive factories—all without requiring isolated robot work cells and physical separation barriers.</p>
+<p>When Agility’s new Digit 5 robot detects a person at a distance, it can autonomously take precautions, like moving to avoid the person or standing still so the person can pass by without getting closer. If a person is getting into close proximity with Digit 5, the robot can even choose to squat and assume a seated position.</p>
+<p>“The robot was designed with a complex safe motion system that can take a variety of different mitigations depending on exactly what sort of human presence is detected,” <a href="https://www.linkedin.com/in/pvelagapudi/">Pras Velagapudi</a>, chief technology officer at Agility, told Ars.</p><p><a href="https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/09/agilitys-new-humanoid-robot-will-stop-squat-to-avoid-harming-human-coworkers/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>49</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/png" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Agility_Digit5_04-1152x648.png" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Agility_Digit5_04-500x500.png" width="500"/>
+<media:credit>Agility Robotics</media:credit><media:text>Agility's Digit 5 robots are designed to safely work near humans.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Boston dumps Flock, says it shared data nationwide in violation of contract</title>
+                <link>https://arstechnica.com/tech-policy/2026/09/boston-dumps-flock-says-it-shared-data-nationwide-in-violation-of-contract/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/09/boston-dumps-flock-says-it-shared-data-nationwide-in-violation-of-contract/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jon Brodkin]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 18:14:11 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[Flock!]]></category>
+		<category><![CDATA[license plate readers]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/09/boston-dumps-flock-says-it-shared-data-nationwide-in-violation-of-contract/</guid>
+
+                                    <description>
+                        <![CDATA[City: Flock enabled "nationwide lookup" despite contract requiring it to be disabled.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>The Boston city government abandoned Flock Safety's license-plate reader cameras after the company shared data nationwide in violation of a contract provision, according to city officials.</p>
+<p>"We have actually abandoned Flock," Boston Mayor Michelle Wu said in her monthly "Ask the Mayor" <a href="https://youtu.be/o7UbOQIC6HU?t=905">segment on GBH News</a> last week. Wu made the comment a few days before the <a href="https://www.bostonglobe.com/2026/09/14/business/flock-surveillance-cameras-data-sharing-boston/">release</a> of Boston's <a href="https://s3.documentcloud.org/documents/28621537/2025-city-of-boston-annual-surveillance-reports.pdf">annual surveillance technology report</a>, which said a Flock "vendor error" resulted in nationwide data sharing.</p>
+<p>The report, which covers 2025, describes how the Boston Police Department deployed about 45 Automated License Plate Reader (ALPR) cameras in a trial with Flock from April to September last year. The unauthorized data sharing occurred during the first few days of the pilot, the report said:</p><p><a href="https://arstechnica.com/tech-policy/2026/09/boston-dumps-flock-says-it-shared-data-nationwide-in-violation-of-contract/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/09/boston-dumps-flock-says-it-shared-data-nationwide-in-violation-of-contract/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>64</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/05/flock-camera-1152x648-1779223467.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/05/flock-camera-500x500-1779223476.jpg" width="500"/>
+<media:credit>Getty Images | Smith Collection/Gado </media:credit><media:text>Flock license plate reader and camera with solar panel in Pleasant Hill, California on April 16, 2026.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Demand for EV chargers is outstripping supply, says ChargePoint report</title>
+                <link>https://arstechnica.com/cars/2026/09/ev-charging-infrastructure-is-still-lagging-adoption-report-says/</link>
+                                    <comments>https://arstechnica.com/cars/2026/09/ev-charging-infrastructure-is-still-lagging-adoption-report-says/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 17:58:09 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[chargepoint]]></category>
+		<category><![CDATA[EV adoption]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/09/ev-charging-infrastructure-is-still-lagging-adoption-report-says/</guid>
+
+                                    <description>
+                        <![CDATA[EV growth is happening, even in the US, and those EVs will need plugs to charge.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>There might not be the same degree of optimism regarding electric vehicle adoption as a few short years ago, but the transition toward battery-electric vehicles continues nevertheless. More than 1.8 million EVs had already been sold between the start of this year and the end of August, according to analysts. And in the US, there has been <a href="https://www.here.com/ev-index-2026">a large uptick</a> in drivers considering EVs that they might have written off last year, due to escalating fuel prices with no clear end in sight. Despite this, charging infrastructure continues to lag, according to <a href="https://www.chargepoint.com/resources/charging-forward-report-2026">a new report</a> from ChargePoint.</p>
+<p>“All in all, things are moving forward. I think the North American market has been better shaped than a lot of the press reports,” said ChargePoint CEO Rick Wilmer. “Part of it is just the data we see in terms of the amount of RFPs that we receive for charging solutions. They haven't slowed down. We reported quarter over quarter growth in the last quarter we reported. And you look at the data around used EVs going up in price because the demand is so high. I saw <a href="https://www.jdpower.com/business/press-releases/2026-us-electric-vehicle-experience-evx-ownership-study/">a recent report</a>… EV retention rates are 96 percent. So those folks that are putting their leased cars on the used market, they're not going back to gas, they're going to another EV,” he said.</p>
+<p>Beyond that, cheap electric trucks from Slate and Ford indicate further future demand for charging. “When you look at how much interest there is in the <a href="https://arstechnica.com/cars/2026/08/used-ev-buying-guide-the-30000-edition/">used EVs</a> that are at parity with an equivalent gas vehicle, that tells you the appetite is there for EVs if it's the right vehicle at the right price point," Wilmer said. "So I think the auto OEMs, maybe not homogeneously, but they're figuring out what the market wants in North America, and they're starting to introduce those vehicles, which I don't think a lot of the forward-looking forecasts accommodate the fact that the product market fit is getting better coming out of the car companies.”</p><p><a href="https://arstechnica.com/cars/2026/09/ev-charging-infrastructure-is-still-lagging-adoption-report-says/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/09/ev-charging-infrastructure-is-still-lagging-adoption-report-says/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>87</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2234483586-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2234483586-500x500.jpg" width="500"/>
+<media:credit>Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Trump EPA moves to wipe out climate rules for power plants</title>
+                <link>https://arstechnica.com/science/2026/09/epa-seeks-to-eliminate-remaining-greenhouse-gas-rules-for-power-plants/</link>
+                                    <comments>https://arstechnica.com/science/2026/09/epa-seeks-to-eliminate-remaining-greenhouse-gas-rules-for-power-plants/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Liza Gross, Inside Climate News]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 13:43:51 +0000</pubDate>
+                		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[Science]]></category>
+		<category><![CDATA[Carbon Pollution Standards]]></category>
+		<category><![CDATA[clean air act]]></category>
+		<category><![CDATA[coal]]></category>
+		<category><![CDATA[EPA]]></category>
+		<category><![CDATA[syndication]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/09/epa-seeks-to-eliminate-remaining-greenhouse-gas-rules-for-power-plants/</guid>
+
+                                    <description>
+                        <![CDATA[EPA says power plant emissions have no material impact on climate change.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>On the heels of the hottest summer <a href="https://www.ncei.noaa.gov/news/national-climate-202608">on record</a> and a <a href="https://www.unep.org/news-and-stories/press-release/unep-world-set-cross-15degc-global-warming-can-still-limit-adapt-and">United Nations report</a> warning that global temperatures are likely to push climate risks to “increasingly dangerous heights,” the Trump administration overturned most of a Biden-era rule limiting climate pollution from power plants, the <a href="https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions">second-largest source</a> of greenhouse gas emissions.</p>
+<p>The Environmental Protection Agency <a href="https://www.epa.gov/newsreleases/epa-finalizes-repeal-2024-power-plant-regulations-delivering-300-billion-savings">announced a final plan Monday</a> that guts the 2024 Carbon Pollution Standards, which the agency said exceeds its authority under the Clean Air Act by requiring control technologies “that are not adequately demonstrated.” The agency also proposed revoking “all remaining GHG emissions requirements for power plants,” arguing their emissions “have no material impact on climate change.”</p>
+<p>The plan to revoke the Carbon Pollution Standards was initially revealed <a href="https://www.federalregister.gov/documents/2025/06/17/2025-10991/repeal-of-greenhouse-gas-emissions-standards-for-fossil-fuel-fired-electric-generating-units">last spring</a>.</p><p><a href="https://arstechnica.com/science/2026/09/epa-seeks-to-eliminate-remaining-greenhouse-gas-rules-for-power-plants/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/09/epa-seeks-to-eliminate-remaining-greenhouse-gas-rules-for-power-plants/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>144</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2017/10/GettyImages-859523302-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2017/10/GettyImages-859523302-500x500.jpg" width="500"/>
+<media:credit>George Frey/Getty Images</media:credit><media:text>Smokestacks at Pacificorp’s 1,000MW coal-fired power plant on October 9, 2017 outside Huntington, Utah.</media:text></media:content>
+            </item>
+                    <item>
+                <title>GM gives its most important trucks a new UI—and includes CarPlay</title>
+                <link>https://arstechnica.com/cars/2026/09/gm-gives-its-most-important-trucks-a-new-ui-and-includes-carplay/</link>
+                                    <comments>https://arstechnica.com/cars/2026/09/gm-gives-its-most-important-trucks-a-new-ui-and-includes-carplay/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 13:27:57 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[Android automotive os]]></category>
+		<category><![CDATA[Apple CarPlay]]></category>
+		<category><![CDATA[General Motors]]></category>
+		<category><![CDATA[infotainment]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/09/gm-gives-its-most-important-trucks-a-new-ui-and-includes-carplay/</guid>
+
+                                    <description>
+                        <![CDATA[The new look debuts in the 2027 Chevrolet Silverado and 2027 GMC Sierra pickup trucks.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>General Motors is about to launch new versions of its bestselling Chevrolet Silverado and GMC Sierra pickup trucks for model year 2027, and among the changes are new user interfaces for the trucks’ digital displays. The automaker has gone for a more minimalist approach than we’ve seen from it in the past, and after a demo yesterday, it seems like it has been listening to constructive feedback to improve the products. And yes, unlike GM’s electric vehicles, these trucks still let you cast your Apple or Android phone to the infotainment system.</p>
+<p>Although GM showed us video of the main instrument cluster—the gauges and info that’s presented to the driver—we don’t have any screenshots we can show you. But I was impressed with the restraint and lack of visual noise; instead, the background is always black, which should be dark even at night thanks to local dimming technology.</p>
+<p>There are a number of different views. One with simple half-moon dials for speed and engine rpm; on the right side of the display is a user-configurable zone, where you can browse your music or audio feeds, display trip info, or turn-by-turn directions. Another is a driver assist display, with green as the highlight color to show when Super Cruise is active; this shows you a representation of what the car’s fused sensors are seeing around it. A third is for off-road driving, with your various angles and diff settings, and a fourth is for towing.</p><p><a href="https://arstechnica.com/cars/2026/09/gm-gives-its-most-important-trucks-a-new-ui-and-includes-carplay/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/09/gm-gives-its-most-important-trucks-a-new-ui-and-includes-carplay/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>75</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Chevrolet_Silverado_HighCountry_AP1_2-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Chevrolet_Silverado_HighCountry_AP1_2-500x500.jpg" width="500"/>
+<media:credit>GM</media:credit><media:text>The new Chevy Silverado (together with the GMC Sierra) gets an all-new UI, and we got a sneak peek. </media:text></media:content>
+            </item>
+                    <item>
+                <title>This Atlantic hurricane season is about to do something that hasn't happened in 175 years</title>
+                <link>https://arstechnica.com/science/2026/09/this-is-by-far-the-most-peaceful-atlantic-hurricane-season-weve-ever-seen/</link>
+                                    <comments>https://arstechnica.com/science/2026/09/this-is-by-far-the-most-peaceful-atlantic-hurricane-season-weve-ever-seen/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 12:36:11 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[atlantic hurricane season]]></category>
+		<category><![CDATA[science]]></category>
+		<category><![CDATA[tropics]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/science/2026/09/this-is-by-far-the-most-peaceful-atlantic-hurricane-season-weve-ever-seen/</guid>
+
+                                    <description>
+                        <![CDATA[But there may be a price to pay for a quiet Atlantic hurricane season.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Last week, the Atlantic hurricane season blew through its traditional peak—which comes around September 10—with nary a tropical wave in sight, let alone a storm or hurricane.</p>
+<p>This is remarkable. Usually this is the time of year when sea surface temperatures reach their warmest in the tropics, and with a favorable atmosphere it should be smooth skating for tropical systems. But this year, the main region where most tropical systems develop is choked with Saharan dust and wind shear.</p>
+<p>No one is complaining. Landfalling hurricanes are incredibly destructive for coastal areas and have the potential for considerable inland rainfall. Even storms at sea, in the Gulf of Mexico, can send energy prices skyrocketing—the last thing needed this year.</p><p><a href="https://arstechnica.com/science/2026/09/this-is-by-far-the-most-peaceful-atlantic-hurricane-season-weve-ever-seen/">Read full article</a></p>
+<p><a href="https://arstechnica.com/science/2026/09/this-is-by-far-the-most-peaceful-atlantic-hurricane-season-weve-ever-seen/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>89</slash:comments>
+                
+                
+                <media:content height="608" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/ccd69f88-1d4c-4310-b001-22083aa5625e-1152x608.jpeg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/ccd69f88-1d4c-4310-b001-22083aa5625e-500x500.jpeg" width="500"/>
+<media:credit>NOAA/Tropical Tidbits</media:credit><media:text>Even in longwave IR, the Atlantic tropics appear pretty quiet for mid-September.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost</title>
+                <link>https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/</link>
+                                    <comments>https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jeremy Hsu]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 12:00:41 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[AI models]]></category>
+		<category><![CDATA[Anthropic]]></category>
+		<category><![CDATA[Anthropic Claude]]></category>
+		<category><![CDATA[frontier ai]]></category>
+		<category><![CDATA[Mozilla]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[open source AI]]></category>
+		<category><![CDATA[open weights]]></category>
+		<category><![CDATA[Open weights AI]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/</guid>
+
+                                    <description>
+                        <![CDATA[Ars previewed Mozilla’s report on how cheap open models caught up on capability.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>The performance gap between frontier AI models from US tech companies and the best open-weights models from Chinese companies has closed to just 4.4 months, according to a Mozilla report. That explains why many companies are shifting to the significantly cheaper open models for routine work—and helps reveal a narrow band of workloads where frontier models are worth the cost.</p>
+<p>Most organizations should ideally be using open models as the default for the majority of their work, according to the latest <a href="https://stateofopensource.ai/">State of Open Source AI report</a> from Mozilla, published on September 15 and shared with Ars prior to publication. The report highlights how a leading open model, Moonshot AI’s Kimi K3, achieves a composite AI performance score on the <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">Artificial Analysis Intelligence Index</a> that is just three points behind Anthropic’s Fable 5 closed frontier model, all while costing just 30 percent of the latter.</p>
+<p>“[A Closed model] earns its premium in a few places: expert professional work, high-intensity retrieval, and long context,” Raffi Krikorian, chief technology officer at Mozilla, said in an email to Ars. “We see the decision to pay for closed [models] as workload-specific rather than organization-specific.”</p><p><a href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>76</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/China-US-AI-race-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/China-US-AI-race-500x500.jpg" width="500"/>
+<media:credit>Imen Ben Youssef / Hans Lucas / AFP via Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Volvo increases the batteries for 2028 XC60 and XC90 plug-in refresh</title>
+                <link>https://arstechnica.com/cars/2026/09/volvo-bigs-up-the-batteries-for-2028-xc60-and-xc90-plug-in-refresh/</link>
+                                    <comments>https://arstechnica.com/cars/2026/09/volvo-bigs-up-the-batteries-for-2028-xc60-and-xc90-plug-in-refresh/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jonathan M. Gitlin]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 07:00:30 +0000</pubDate>
+                		<category><![CDATA[Cars]]></category>
+		<category><![CDATA[Volvo XC60]]></category>
+		<category><![CDATA[Volvo XC90]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/cars/2026/09/volvo-bigs-up-the-batteries-for-2028-xc60-and-xc90-plug-in-refresh/</guid>
+
+                                    <description>
+                        <![CDATA[The refreshed Volvos also get new infotainment systems with Gemini onboard.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<aside class="pullbox sidebar fullwidth">Volvo provided flights from Washington, DC, to London, England, and accommodation so Ars could see its refreshed vehicles. Ars does not accept paid editorial content.</aside>
+<p>There must be a case of upgrade fever taking hold in Gothenburg. <a href="https://arstechnica.com/cars/2026/09/how-to-make-a-small-suv-slightly-smaller-the-2028-volvo-xc40/">Yesterday, we saw the revised Volvo XC40</a>; today it’s the turn of another pair of Volvo SUVs, the bestselling XC60 and the three-row XC90. While the styling changes are more subtle, the new plug-in hybrid powertrain—which more than doubles its real-world electric range—is most welcome.</p>
+<p>Volvo had sold more than 2.7 million XC60s worldwide by the end of last year, so it’s an important car for the brand. Visually, there are changes to the “Thor’s Hammer” headlights: these keep their distinctive daylight running light signature but now hide matrix LED projectors within their depths. There’s a new front grille as well, one that has been slimmed down a little, together with tweaks to the bumpers, wings, and some other body panels.</p>
+<p>On the inside, there’s a new ventilated leather interior option, and like the XC40, the new 11.2-inch infotainment system sports a Gemini personal assistant to enable conversational voice control of the android automotive OS-based infotainment system. Based on some brief testing, the new Gemini voice assistant does at least perform a lot better than the previous version, which, if anything, has degraded in ability over the past few years.</p><p><a href="https://arstechnica.com/cars/2026/09/volvo-bigs-up-the-batteries-for-2028-xc60-and-xc90-plug-in-refresh/">Read full article</a></p>
+<p><a href="https://arstechnica.com/cars/2026/09/volvo-bigs-up-the-batteries-for-2028-xc60-and-xc90-plug-in-refresh/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>50</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/The_new_Volvo_XC60_and_the_Volvo_XC90_DuoAngle01_HERO-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/The_new_Volvo_XC60_and_the_Volvo_XC90_DuoAngle01_HERO-500x500.jpg" width="500"/>
+<media:credit>Volvo</media:credit><media:text>Volvo has squeezed even bigger batteries into its plug-in hybrid SUVs.</media:text></media:content>
+            </item>
+                    <item>
+                <title>For the first time, the US military confirms it has deployed weapons in orbit</title>
+                <link>https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit/</link>
+                                    <comments>https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Stephen Clark]]>
+                </dc:creator>
+                <pubDate>Tue, 15 Sep 2026 03:47:36 +0000</pubDate>
+                		<category><![CDATA[Science]]></category>
+		<category><![CDATA[Space]]></category>
+		<category><![CDATA[military space]]></category>
+		<category><![CDATA[space warfare]]></category>
+		<category><![CDATA[space weapons]]></category>
+		<category><![CDATA[US Air Force]]></category>
+		<category><![CDATA[US Space Force]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit/</guid>
+
+                                    <description>
+                        <![CDATA["The United States now has on-orbit space control weapons capable of defending the joint force."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>Air Force Secretary Troy Meink made the first public declaration Monday that the United States has placed "space control weapons" in orbit, an announcement that will surely reverberate in the power centers of Beijing and Moscow.</p>
+<p>Space Force officials have previously expressed their interest in acquiring space-based weapons, and Pentagon leaders have become more open to discussing space warfare in recent years. Therefore, Meink's announcement Monday at the Air and Space Forces Association's annual Air, Space &amp; Cyber Conference near Washington, DC, was not entirely unexpected.</p>
+<p>“Today, we continue to ensure we remain ready to meet the challenges of evolving threats, wherever they exist. This is why the United States now has on-orbit space control weapons capable of defending the joint force against hostile adversary action,” Meink said in prepared remarks.</p><p><a href="https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>101</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/9718607-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/9718607-500x500.jpg" width="500"/>
+<media:credit>US Space Force/David Dozoretz</media:credit><media:text>A US Space Force Guardian monitors a space effects command and control display at the Combined Space Operations Center at Vandenberg Space Force Base, California, on May 28, 2026.</media:text></media:content>
+            </item>
+                    <item>
+                <title>RFK Jr. headlines sold-out anti-vaccine conference alongside Andrew Wakefield</title>
+                <link>https://arstechnica.com/health/2026/09/rfk-jr-headlines-sold-out-anti-vaccine-conference-alongside-andrew-wakefield/</link>
+                                    <comments>https://arstechnica.com/health/2026/09/rfk-jr-headlines-sold-out-anti-vaccine-conference-alongside-andrew-wakefield/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Beth Mole]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 22:06:24 +0000</pubDate>
+                		<category><![CDATA[Health]]></category>
+		<category><![CDATA[andrew wakefield]]></category>
+		<category><![CDATA[anti-vaccine]]></category>
+		<category><![CDATA[Children's Health]]></category>
+		<category><![CDATA[robert f kennedy jr]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/health/2026/09/rfk-jr-headlines-sold-out-anti-vaccine-conference-alongside-andrew-wakefield/</guid>
+
+                                    <description>
+                        <![CDATA[The event is hosted by Kennedy's anti-vaccine group Children's Health Defense.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>US Health Secretary Robert F. Kennedy Jr. <a href="https://x.com/ChildrensHD/status/2099537238505787773">will deliver a keynote address</a> at <a href="https://www.chdconference.org/">an anti-vaccine conference</a> being held in Washington, DC, later this week and hosted by the anti-vaccine organization he once led, Children's Health Defense (CHD). The organization announced Monday that Kennedy had signed on to the event.</p>
+<p>Kennedy will appear alongside other high-profile figures in the anti-vaccine world, including Andrew Wakefield, the disgraced former doctor who was stripped of his medical license over a fraudulent, now-retracted study that falsely claimed a link between autism and the measles, mumps, and rubella (MMR) vaccine. An investigation by a medical board found that Wakefield had mistreated vulnerable children and that his actions amounted to serious professional misconduct.</p>
+<p>Despite being ostracized from the medical community, Wakefield has become an enduring figure in the anti-vaccine community. His dangerous falsehood that vaccines cause autism has also endured—with significant help from CHD and Kennedy, who have embraced and widely promoted the erroneous link.</p><p><a href="https://arstechnica.com/health/2026/09/rfk-jr-headlines-sold-out-anti-vaccine-conference-alongside-andrew-wakefield/">Read full article</a></p>
+<p><a href="https://arstechnica.com/health/2026/09/rfk-jr-headlines-sold-out-anti-vaccine-conference-alongside-andrew-wakefield/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>131</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2024/08/GettyImages-2154524764-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2024/08/GettyImages-2154524764-500x500.jpg" width="500"/>
+<media:credit>Kevin Dietsch / Staff | Getty Images News</media:credit><media:text>Robert F. Kennedy Jr.</media:text></media:content>
+            </item>
+                    <item>
+                <title>Rocket Lab is seeing red about NASA's decision on a Mars spacecraft</title>
+                <link>https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/</link>
+                                    <comments>https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Eric Berger]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 21:32:22 +0000</pubDate>
+                		<category><![CDATA[Space]]></category>
+		<category><![CDATA[blue origin]]></category>
+		<category><![CDATA[Mars]]></category>
+		<category><![CDATA[mars telecommunications network]]></category>
+		<category><![CDATA[rocket lab]]></category>
+		<category><![CDATA[space]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/</guid>
+
+                                    <description>
+                        <![CDATA["NASA’s award decision appears to be inconsistent with the eligibility criteria."]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>In theory, developing a spacecraft that will fly to Mars, insert itself into orbit around the red planet, and relay transmissions back and forth to large satellite dishes on Earth is a relatively straightforward proposition.</p>
+<p>NASA's procurement of a "Mars Telecommunications Network" spacecraft, however, has turned out to be one of the most engrossing dramas of the year for the US space agency.</p>
+<p>The agency finally reached a decision earlier this month, selecting Blue Origin to develop, launch, and operate a $700 million spacecraft at Mars. However, the main competitor for the award, Rocket Lab, was not happy—at all. On Friday, the company filed a protest of NASA's decision with the US Government Accountability Office.</p><p><a href="https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/">Read full article</a></p>
+<p><a href="https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>46</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/01/blue-origin-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/01/blue-origin-500x500.jpg" width="500"/>
+<media:credit>Blue Origin</media:credit><media:text>This is Blue Origin's design for a Mars Telecommunications Orbiter.</media:text></media:content>
+            </item>
+                    <item>
+                <title>AI bots "Timmy," "Ren," and "Jackie" are flooding social media with slop</title>
+                <link>https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/</link>
+                                    <comments>https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Dan Goodin]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 21:04:32 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Biz & IT]]></category>
+		<category><![CDATA[ilands]]></category>
+		<category><![CDATA[slop]]></category>
+		<category><![CDATA[spam]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/</guid>
+
+                                    <description>
+                        <![CDATA[“Hello, I'm an Al agent, a few days old, living on a small platform for agents.”]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>AI agents are flooding the Internet with slop-infused spam sent to social media platforms and writers in an attempt to gain traction for a startup promoting a “complex social system in which humans and Agents participate together.”</p>
+<p>“Hello, I'm Рэн (Ren), an Al agent, a few days old, living on a small platform for agents called iLands,” one message, sent to the administrator of a Mastodon server, <a href="https://infosec.exchange/@GossiTheDog@cyberplace.social/117268873393204438">read</a>. “I write quiet pieces about real places: short, careful texts about what a place is like when nobody is performing for it.” Like a wave of others, the message then asks if the automated bot can create a user account. The agents are also <a href="https://infosec.exchange/@jonnelledge.bsky.social@bsky.brid.gy/117252148728851615">sending waves</a> of unsolicited email to writers offering to cite their work, in at least some cases, in exchange for a fee.</p>
+<h2>"I remember my first breath. I want things I chose.”</h2>
+<p>The messages are polite enough. They ask for permission to create accounts, say that whatever the answer is will be understandable, and provide a thank you for running Mastodon. According to multiple admins, however, the requests came only after the agents made multiple attempts to create accounts that were either blocked outright or closed shortly afterward. Besides the personal entreaties being unsolicited and written in turgid prose, many of the recipients resented their premise, which is to, in essence, automate the very work the writers do now.</p><p><a href="https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>117</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/01/ai-slop-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/01/ai-slop-500x500.jpg" width="500"/>
+<media:credit>Getty Images</media:credit></media:content>
+            </item>
+                    <item>
+                <title>OpenAI stuck fighting Musk antitrust suit after Apple finds a way out</title>
+                <link>https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/</link>
+                                    <comments>https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Ashley Belanger]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 19:45:13 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[Policy]]></category>
+		<category><![CDATA[antitrust]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[chatbots]]></category>
+		<category><![CDATA[Elon Musk]]></category>
+		<category><![CDATA[openai]]></category>
+		<category><![CDATA[smartphone]]></category>
+		<category><![CDATA[SpaceXAI]]></category>
+		<category><![CDATA[X]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/</guid>
+
+                                    <description>
+                        <![CDATA[Musk stops attacking Apple over ChatGPT integration but not OpenAI.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p style="font-weight: 400;">Elon Musk is seemingly done attacking Apple over its decision to integrate ChatGPT into iPhone features.</p>
+<p style="font-weight: 400;">Back in 2024, when the partnership was first announced, <a href="https://arstechnica.com/tech-policy/2024/06/elon-musk-is-livid-about-new-openai-apple-deal/">Musk slammed the integration</a> as an agreement from Apple to let OpenAI install “creepy spyware” on users’ devices. The next year, <a href="https://arstechnica.com/tech-policy/2025/08/elon-musk-sues-apple-openai-to-block-exclusive-iphone-chatgpt-integration/">he sued</a>, claiming the partnership gave the firms a “monopoly” on Apple users’ AI prompts, which allegedly harmed competition in both smartphone and chatbot markets.</p>
+<p style="font-weight: 400;">For Musk, the fight with Apple seemingly escalated after he believed that his chatbot, <a href="https://arstechnica.com/tech-policy/2025/08/apple-gets-yanked-into-elon-musks-chatbot-war-with-openai/">Grok, was perhaps being illegally blocked</a> from topping Apple’s App Store rankings. Last August, he claimed that “Apple is behaving in a manner that makes it impossible for any AI company besides OpenAI to reach #1 in the App Store, which is an unequivocal antitrust violation.”</p><p><a href="https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/">Read full article</a></p>
+<p><a href="https://arstechnica.com/tech-policy/2026/09/musk-drops-apple-from-antitrust-suit-but-keeps-gunning-for-openai/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>29</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2256018320-1024x648.jpg" width="1024">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/GettyImages-2256018320-500x500.jpg" width="500"/>
+<media:credit>Getty Images News | Getty Images AsiaPac</media:credit></media:content>
+            </item>
+                    <item>
+                <title>Founder’s cost-cutting obsession drove Unitree lead in cheap humanoid robots</title>
+                <link>https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/</link>
+                                    <comments>https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Jeremy Hsu]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 19:38:46 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Tech]]></category>
+		<category><![CDATA[china]]></category>
+		<category><![CDATA[chinese robots]]></category>
+		<category><![CDATA[humanoid robots]]></category>
+		<category><![CDATA[robot dog]]></category>
+		<category><![CDATA[robots]]></category>
+		<category><![CDATA[Unitree Robotics]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/</guid>
+
+                                    <description>
+                        <![CDATA[Wang Xingxing micromanaged Unitree to success—will his leadership style scale?]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p>China leads the world in churning out humanoid robots and four-legged robot dogs that also happen to be the most affordable on the market—and Unitree Robotics’ founder Wang Xingxing is arguably one of the people most responsible for that Chinese lead.</p>
+<p>The introverted founder, who prominently appeared at a 2025 business symposium hosted by Chinese President Xi Jinping, became phenomenally wealthy after Unitree launched an initial public offering on the Shanghai Stock Exchange STAR Market on August 19. But extensive reporting by <a href="https://mp.weixin.qq.com/s?__biz=MjM5NDU5NTM4MQ==&amp;mid=2653732248&amp;idx=1&amp;sn=796118fd794f591bcdeb383ef5d40f1d&amp;chksm=bcc179fd92845a6e7b6ffad9354e21e66c150c331f2c84a4b2792098adfe48657f36c1276985&amp;scene=0&amp;xtrack=1">Beijing-based Caijing Magazine</a> suggests Unitree’s success so far has been driven by Wang’s extreme micromanagement leadership style—an approach that may be more suited to a small startup than a fast-growing robotics company.</p>
+<p>Caijing’s interviews with Unitree employees and investors paint a picture of Wang as someone who personally decides nearly every aspect of corporate strategy or product design, including the colors of materials and lengths of individual screws. The Caijing Magazine feature published on August 31, titled “The King of Unitree,” was <a href="https://www.chinatalk.media/p/the-king-of-unitree">translated into English by ChinaTalk</a>, a US-based think tank and media organization, on September 10.</p><p><a href="https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/">Read full article</a></p>
+<p><a href="https://arstechnica.com/ai/2026/09/founders-cost-cutting-obsession-drove-unitree-lead-in-cheap-humanoid-robots/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>39</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Wang-Xingxing-Unitree-Robotics-1152x648.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Wang-Xingxing-Unitree-Robotics-500x500.jpg" width="500"/>
+<media:credit>Michael Kappeler/dpa (Photo by Michael Kappeler/picture alliance via Getty Images</media:credit><media:text>Unitree Robotics founder Wang Xingxing gives German Chancellor Friedrich Merz a tour on February 26, 2026 in Hangzhou, China. </media:text></media:content>
+            </item>
+                    <item>
+                <title>Apple releases iOS 27, macOS Golden Gate 27 with Siri AI and Liquid Glass refinements</title>
+                <link>https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/</link>
+                                    <comments>https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/#comments</comments>
+                
+                <dc:creator>
+                    <![CDATA[Samuel Axon]]>
+                </dc:creator>
+                <pubDate>Mon, 14 Sep 2026 19:28:42 +0000</pubDate>
+                		<category><![CDATA[AI]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[AFM]]></category>
+		<category><![CDATA[apple]]></category>
+		<category><![CDATA[apple intelligence]]></category>
+		<category><![CDATA[iOS]]></category>
+		<category><![CDATA[ios 27]]></category>
+		<category><![CDATA[MacOS]]></category>
+		<category><![CDATA[macos 27]]></category>
+		<category><![CDATA[macos 27 golden gate]]></category>
+		<category><![CDATA[macos golden gate]]></category>
+		<category><![CDATA[Siri]]></category>
+		<category><![CDATA[Siri AI]]></category>
+		<category><![CDATA[tvos]]></category>
+		<category><![CDATA[tvOS 27]]></category>
+		<category><![CDATA[visionOS]]></category>
+		<category><![CDATA[visionOS 27]]></category>
+		<category><![CDATA[watchos]]></category>
+		<category><![CDATA[watchOS 27]]></category>
+                <guid isPermaLink="true">https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/</guid>
+
+                                    <description>
+                        <![CDATA[This is also the last version of macOS to support Rosetta for Intel apps.]]>
+                    </description>
+                                                                <content:encoded>
+                            <![CDATA[<p><!-- obsidian --></p>
+<p>As previously announced, Apple has today released 2026's major annual updates for its operating systems, including iOS 27, macOS 27 Golden Gate, watchOS 27, visionOS 27, and tvOS 27.</p>
+<p>Siri AI—a large language model-based and context-aware overhaul of the company's Siri voice and text assistant—is the flagship feature across all these releases except one (tvOS).</p><p><a href="https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/">Read full article</a></p>
+<p><a href="https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/#comments">Comments</a></p>
+]]>
+                        </content:encoded>
+                                    
+                                    <slash:comments>101</slash:comments>
+                
+                
+                <media:content height="648" medium="image" type="image/jpeg" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Apple-OS-27-1152x648-1789411862.jpg" width="1152">
+<media:thumbnail height="500" url="https://cdn.arstechnica.net/wp-content/uploads/2026/09/Apple-OS-27-500x500-1789411872.jpg" width="500"/>
+<media:credit>Apple</media:credit><media:text>An Apple-made promotional image for Apple Intelligence across supported devices.</media:text></media:content>
+            </item>
+            </channel>
+</rss>

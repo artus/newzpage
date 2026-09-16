@@ -1,0 +1,31 @@
+{
+  "title": "Newzpage",
+  "tagline": "All the feeds that are fit to print",
+  "itemsPerFeed": 10,
+  "feeds": [
+    {
+      "name": "Tweakers",
+      "url": "https://feeds.feedburner.com/tweakers/mixed"
+    },
+    {
+      "name": "Ars Technica",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "limit": 9
+    },
+    {
+      "name": "The Verge",
+      "url": "https://www.theverge.com/rss/index.xml",
+      "limit": 9
+    },
+    {
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com/rss",
+      "limit": 12
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml",
+      "limit": 11
+    }
+  ]
+}

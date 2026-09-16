@@ -1,0 +1,3466 @@
+[
+  {
+    "name": "BBC Business",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC News - Business",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "uk"
+    ]
+  },
+  {
+    "name": "Bits about Money",
+    "url": "https://www.bitsaboutmoney.com/archive/rss/",
+    "site": "bitsaboutmoney.com",
+    "description": "About the modern financial infrastructure that the world sits atop of.",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "payments"
+    ]
+  },
+  {
+    "name": "Calculated Risk",
+    "url": "https://www.calculatedriskblog.com/feeds/posts/default",
+    "site": "calculatedriskblog.com",
+    "description": "Finance and Economics",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "housing"
+    ]
+  },
+  {
+    "name": "CNBC",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "site": "cnbc.com",
+    "description": "CNBC is the world leader in business news and real-time financial market coverage. Find fast, actionable information.",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "usa"
+    ]
+  },
+  {
+    "name": "De Tijd",
+    "url": "https://www.tijd.be/rss/nieuws.xml",
+    "site": "tijd.be",
+    "description": "Nieuws",
+    "language": "nl",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "economie",
+      "beurs"
+    ]
+  },
+  {
+    "name": "Financial Times",
+    "url": "https://www.ft.com/rss/home",
+    "site": "ft.com",
+    "description": "International homepage",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "uk"
+    ]
+  },
+  {
+    "name": "Fortune",
+    "url": "https://fortune.com/feed/",
+    "site": "fortune.com",
+    "description": "Fortune 500 Daily & Breaking Business News",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "magazine"
+    ]
+  },
+  {
+    "name": "Marginal Revolution",
+    "url": "https://marginalrevolution.com/feed",
+    "site": "marginalrevolution.com",
+    "description": "Small Steps Toward A Much Better World",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "blog"
+    ]
+  },
+  {
+    "name": "MarketWatch",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "site": "marketwatch.com",
+    "description": "MarketWatch, a leading publisher of business and financial news, offers users up-to-the minute news, investment tools, and subscription products.",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "stocks"
+    ]
+  },
+  {
+    "name": "Paul Graham Essays",
+    "url": "http://www.aaronsw.com/2002/feeds/pgessays.rss",
+    "site": "paulgraham.com",
+    "description": "Scraped feed provided by aaronsw.com",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "startups",
+      "essays"
+    ]
+  },
+  {
+    "name": "Seth Godin",
+    "url": "https://seths.blog/feed/",
+    "site": "seths.blog",
+    "description": "Seth Godin's Blog on marketing, tribes and respect",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "marketing",
+      "blog"
+    ]
+  },
+  {
+    "name": "Stratechery",
+    "url": "https://stratechery.com/feed/",
+    "site": "stratechery.com",
+    "description": "On the business, strategy, and impact of technology.",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "tech",
+      "strategy"
+    ]
+  },
+  {
+    "name": "The Economist",
+    "url": "https://www.economist.com/latest/rss.xml",
+    "site": "economist.com",
+    "description": "The most recent blogs and online articles from The Economist",
+    "language": "en",
+    "category": "business",
+    "tags": [
+      "business",
+      "economics",
+      "finance",
+      "markets",
+      "money",
+      "english",
+      "politics"
+    ]
+  },
+  {
+    "name": "Saturday Morning Breakfast Cereal",
+    "url": "https://www.smbc-comics.com/comic/rss",
+    "site": "smbc-comics.com",
+    "description": "Latest Saturday Morning Breakfast Cereal comics and news",
+    "language": "en",
+    "category": "comics",
+    "tags": [
+      "comics",
+      "webcomic",
+      "humor",
+      "english",
+      "science"
+    ]
+  },
+  {
+    "name": "xkcd",
+    "url": "https://xkcd.com/atom.xml",
+    "site": "xkcd.com",
+    "description": "",
+    "language": "en",
+    "category": "comics",
+    "tags": [
+      "comics",
+      "webcomic",
+      "humor",
+      "english",
+      "science"
+    ]
+  },
+  {
+    "name": "3 Quarks Daily",
+    "url": "https://3quarksdaily.com/feed",
+    "site": "3quarksdaily.com",
+    "description": "Science Arts Philosophy Politics Literature",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "science"
+    ]
+  },
+  {
+    "name": "Aeon",
+    "url": "https://aeon.co/feed.rss",
+    "site": "aeon.co",
+    "description": "Aeon is a magazine of ideas and culture. We publish in-depth essays from the world’s most incisive and ambitious thinkers, and a mix of original and curated videos — free to all.",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "philosophy"
+    ]
+  },
+  {
+    "name": "Arts & Letters Daily",
+    "url": "https://www.aldaily.com/feed/",
+    "site": "aldaily.com",
+    "description": "ideas, criticism, debate",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "links"
+    ]
+  },
+  {
+    "name": "Astral Codex Ten",
+    "url": "https://www.astralcodexten.com/feed",
+    "site": "astralcodexten.com",
+    "description": "P(A|B) = [P(A)*P(B|A)]/P(B), all the rest is commentary.",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "rationality"
+    ]
+  },
+  {
+    "name": "Boing Boing",
+    "url": "https://boingboing.net/feed",
+    "site": "boingboing.net",
+    "description": "A directory of mostly wonderful things",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "weird",
+      "internet"
+    ]
+  },
+  {
+    "name": "Cal Newport",
+    "url": "https://calnewport.com/feed/",
+    "site": "calnewport.com",
+    "description": "Computer Scientist & Bestselling Author",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "productivity"
+    ]
+  },
+  {
+    "name": "Farnam Street",
+    "url": "https://fs.blog/feed/",
+    "site": "fs.blog",
+    "description": "Mastering the best of what other people have already figured out",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "thinking",
+      "mental",
+      "models"
+    ]
+  },
+  {
+    "name": "Hyperallergic",
+    "url": "https://hyperallergic.com/feed/",
+    "site": "hyperallergic.com",
+    "description": "Sensitive to art and its discontents",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "Kottke",
+    "url": "https://feeds.kottke.org/main",
+    "site": "kottke.org",
+    "description": "Jason Kottke's weblog, home of fine hypertext products since 1998",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "links",
+      "blog"
+    ]
+  },
+  {
+    "name": "Laughing Squid",
+    "url": "https://laughingsquid.com/feed/",
+    "site": "laughingsquid.com",
+    "description": "a daily dose of unique and curious things",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "internet"
+    ]
+  },
+  {
+    "name": "Literary Hub",
+    "url": "https://lithub.com/feed/",
+    "site": "lithub.com",
+    "description": "The best of the literary web",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "literature"
+    ]
+  },
+  {
+    "name": "London Review of Books",
+    "url": "https://www.lrb.co.uk/feeds/rss",
+    "site": "lrb.co.uk",
+    "description": "Literary review publishing essay-length book reviews and topical articles on politics, literature, history, philosophy, science and the arts by leading writers and thinkers",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "Longreads",
+    "url": "https://longreads.com/feed/",
+    "site": "longreads.com",
+    "description": "Longreads : The best longform stories on the web",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "journalism"
+    ]
+  },
+  {
+    "name": "Metafilter",
+    "url": "https://feeds.feedburner.com/Metafilter",
+    "site": "metafilter.com",
+    "description": "The past 24 hours of MetaFilter",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "links",
+      "community"
+    ]
+  },
+  {
+    "name": "Open Culture",
+    "url": "https://www.openculture.com/feed",
+    "site": "openculture.com",
+    "description": "The best free cultural & educational media on the web",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "education",
+      "film"
+    ]
+  },
+  {
+    "name": "PetaPixel",
+    "url": "https://petapixel.com/feed/",
+    "site": "petapixel.com",
+    "description": "Photography and Camera News, Reviews, and Inspiration",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "photography",
+      "cameras"
+    ]
+  },
+  {
+    "name": "Psyche",
+    "url": "https://psyche.co/feed",
+    "site": "psyche.co",
+    "description": "Psyche is a magazine to help you understand your self and live well. Discover articles and videos on emotions, mental health, spirituality, relationships and community.",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "psychology",
+      "philosophy"
+    ]
+  },
+  {
+    "name": "Smithsonian Magazine",
+    "url": "https://www.smithsonianmag.com/rss/latest_articles/",
+    "site": "smithsonianmag.com",
+    "description": "RSS feed for with the latest articles",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "history",
+      "science",
+      "museum"
+    ]
+  },
+  {
+    "name": "The Atlantic",
+    "url": "https://www.theatlantic.com/feed/all/",
+    "site": "theatlantic.com",
+    "description": "",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "magazine",
+      "politics"
+    ]
+  },
+  {
+    "name": "The Marginalian",
+    "url": "https://www.themarginalian.org/feed/",
+    "site": "themarginalian.org",
+    "description": "Marginalia on our search for meaning.",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "The New Yorker",
+    "url": "https://www.newyorker.com/feed/everything",
+    "site": "newyorker.com",
+    "description": "Channel Description",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "magazine",
+      "fiction"
+    ]
+  },
+  {
+    "name": "The Paris Review",
+    "url": "https://www.theparisreview.org/blog/feed/",
+    "site": "theparisreview.org",
+    "description": "The best prose, interviews, poetry, and art. Since 1953.",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "literature"
+    ]
+  },
+  {
+    "name": "Wait But Why",
+    "url": "https://waitbutwhy.com/feed",
+    "site": "waitbutwhy.com",
+    "description": "",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "Waxy",
+    "url": "https://waxy.org/feed/",
+    "site": "waxy.org",
+    "description": "Andy Baio lives here",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "internet",
+      "links"
+    ]
+  },
+  {
+    "name": "Wikipedia Current Events",
+    "url": "https://en.wikipedia.org/w/api.php?action=featuredfeed&feed=onthisday&feedformat=atom",
+    "site": "en.wikipedia.org",
+    "description": "Historical events on this day",
+    "language": "en",
+    "category": "culture",
+    "tags": [
+      "culture",
+      "ideas",
+      "essays",
+      "books",
+      "art",
+      "english",
+      "history"
+    ]
+  },
+  {
+    "name": "ArchDaily",
+    "url": "https://www.archdaily.com/rss/",
+    "site": "archdaily.com",
+    "description": "ArchDaily | Broadcasting Architecture Worldwide",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "Brand New",
+    "url": "https://www.underconsideration.com/brandnew/atom.xml",
+    "site": "underconsideration.com",
+    "description": "",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english",
+      "branding",
+      "logos"
+    ]
+  },
+  {
+    "name": "Colossal",
+    "url": "https://www.thisiscolossal.com/feed/",
+    "site": "thisiscolossal.com",
+    "description": "The best of art, craft, and visual culture since 2010.",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english",
+      "photography"
+    ]
+  },
+  {
+    "name": "Core77",
+    "url": "https://www.core77.com/feed",
+    "site": "core77.com",
+    "description": "Launched in 1995, Core77 serves a devoted global audience of design professionals, corporations, students, enthusiasts and fans.",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english",
+      "industrial"
+    ]
+  },
+  {
+    "name": "Designboom",
+    "url": "https://www.designboom.com/feed/",
+    "site": "designboom.com",
+    "description": "designboom magazine | your first source for architecture, design & art news",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english"
+    ]
+  },
+  {
+    "name": "Dezeen",
+    "url": "https://www.dezeen.com/feed/",
+    "site": "dezeen.com",
+    "description": "architecture and design magazine",
+    "language": "en",
+    "category": "design",
+    "tags": [
+      "design",
+      "architecture",
+      "art",
+      "english",
+      "interiors"
+    ]
+  },
+  {
+    "name": "/Film",
+    "url": "https://www.slashfilm.com/feed/",
+    "site": "slashfilm.com",
+    "description": "The latest movie and television news, reviews, film trailers, exclusive interviews, and opinions - since 2005.",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english"
+    ]
+  },
+  {
+    "name": "Deadline",
+    "url": "https://deadline.com/feed/",
+    "site": "deadline.com",
+    "description": "Hollywood Entertainment Breaking News",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english",
+      "hollywood"
+    ]
+  },
+  {
+    "name": "IndieWire",
+    "url": "https://www.indiewire.com/feed/",
+    "site": "indiewire.com",
+    "description": "The Voice of Creative Independence",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english"
+    ]
+  },
+  {
+    "name": "Pitchfork",
+    "url": "https://pitchfork.com/feed/feed-news/rss",
+    "site": "pitchfork.com",
+    "description": "News content RSS feed",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english"
+    ]
+  },
+  {
+    "name": "Stereogum",
+    "url": "https://www.stereogum.com/feed/",
+    "site": "stereogum.com",
+    "description": "The world's best music blog.",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english"
+    ]
+  },
+  {
+    "name": "Variety",
+    "url": "https://variety.com/feed/",
+    "site": "variety.com",
+    "description": "Entertainment news, film reviews, awards, film festivals, box office, entertainment industry conferences",
+    "language": "en",
+    "category": "entertainment",
+    "tags": [
+      "entertainment",
+      "film",
+      "movies",
+      "music",
+      "tv",
+      "english",
+      "hollywood"
+    ]
+  },
+  {
+    "name": "Carbon Brief",
+    "url": "https://www.carbonbrief.org/feed/",
+    "site": "carbonbrief.org",
+    "description": "",
+    "language": "en",
+    "category": "environment",
+    "tags": [
+      "environment",
+      "climate",
+      "energy",
+      "nature",
+      "english",
+      "policy"
+    ]
+  },
+  {
+    "name": "Grist",
+    "url": "https://grist.org/feed/",
+    "site": "grist.org",
+    "description": "25 Years on the Climate Beat",
+    "language": "en",
+    "category": "environment",
+    "tags": [
+      "environment",
+      "climate",
+      "energy",
+      "nature",
+      "english"
+    ]
+  },
+  {
+    "name": "Inside Climate News",
+    "url": "https://insideclimatenews.org/feed/",
+    "site": "insideclimatenews.org",
+    "description": "Pulitzer Prize-winning, nonpartisan reporting on the biggest crisis facing our planet.",
+    "language": "en",
+    "category": "environment",
+    "tags": [
+      "environment",
+      "climate",
+      "energy",
+      "nature",
+      "english"
+    ]
+  },
+  {
+    "name": "The Guardian Environment",
+    "url": "https://www.theguardian.com/environment/rss",
+    "site": "theguardian.com",
+    "description": "Latest Environment news, comment and analysis from the Guardian, the world's leading liberal voice",
+    "language": "en",
+    "category": "environment",
+    "tags": [
+      "environment",
+      "climate",
+      "energy",
+      "nature",
+      "english"
+    ]
+  },
+  {
+    "name": "Yale Environment 360",
+    "url": "https://e360.yale.edu/feed.xml",
+    "site": "e360.yale.edu",
+    "description": "Yale Environment 360 is an online magazine offering opinion, analysis, reporting, and debate on global environmental issues.",
+    "language": "en",
+    "category": "environment",
+    "tags": [
+      "environment",
+      "climate",
+      "energy",
+      "nature",
+      "english"
+    ]
+  },
+  {
+    "name": "Eurogamer",
+    "url": "https://www.eurogamer.net/feed",
+    "site": "eurogamer.net",
+    "description": "This is a feed of the latest articles from Eurogamer.net.",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english"
+    ]
+  },
+  {
+    "name": "Game Developer",
+    "url": "https://www.gamedeveloper.com/rss.xml",
+    "site": "gamedeveloper.com",
+    "description": "Public RSS feed",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english",
+      "programming",
+      "industry"
+    ]
+  },
+  {
+    "name": "IGN",
+    "url": "https://feeds.feedburner.com/ign/all",
+    "site": "ign.com",
+    "description": "The latest IGN news, reviews and videos about video games, movies, TV, tech and comics",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english",
+      "entertainment"
+    ]
+  },
+  {
+    "name": "Kotaku",
+    "url": "https://kotaku.com/rss",
+    "site": "kotaku.com",
+    "description": "Gaming Reviews, News, Tips and More.",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english"
+    ]
+  },
+  {
+    "name": "PC Gamer",
+    "url": "https://www.pcgamer.com/rss/",
+    "site": "pcgamer.com",
+    "description": "",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english",
+      "pc",
+      "hardware"
+    ]
+  },
+  {
+    "name": "Polygon",
+    "url": "https://www.polygon.com/rss/index.xml",
+    "site": "polygon.com",
+    "description": "Your source for the latest in video games, sci-fi, fantasy, tabletop games, anime, horror, books, and comics.",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english",
+      "entertainment"
+    ]
+  },
+  {
+    "name": "Rock Paper Shotgun",
+    "url": "https://www.rockpapershotgun.com/feed",
+    "site": "rockpapershotgun.com",
+    "description": "This is a feed of the latest articles from Rock Paper Shotgun.",
+    "language": "en",
+    "category": "gaming",
+    "tags": [
+      "gaming",
+      "games",
+      "video",
+      "english",
+      "pc"
+    ]
+  },
+  {
+    "name": "ABC News Australia",
+    "url": "https://www.abc.net.au/news/feed/2942460/rss.xml",
+    "site": "abc.net.au",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "australia"
+    ]
+  },
+  {
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "site": "aljazeera.com",
+    "description": "Breaking News, World News and Video from Al Jazeera",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "middle",
+      "east",
+      "international"
+    ]
+  },
+  {
+    "name": "Axios",
+    "url": "https://api.axios.com/feed/",
+    "site": "axios.com",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "politics",
+      "business",
+      "usa"
+    ]
+  },
+  {
+    "name": "BBC News",
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC News - News Front Page",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "uk",
+      "britain"
+    ]
+  },
+  {
+    "name": "BBC World",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC News - World",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "international"
+    ]
+  },
+  {
+    "name": "Bruzz",
+    "url": "https://www.bruzz.be/rss.xml",
+    "site": "bruzz.be",
+    "description": "Nieuws uit Brussel",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "brussel",
+      "brussels"
+    ]
+  },
+  {
+    "name": "Courrier international",
+    "url": "https://www.courrierinternational.com/feed/all/rss.xml",
+    "site": "courrierinternational.com",
+    "description": "Derniers articles parus sur Courrier international",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france",
+      "international"
+    ]
+  },
+  {
+    "name": "De Morgen",
+    "url": "https://www.demorgen.be/rss.xml",
+    "site": "demorgen.be",
+    "description": "Het laatste nieuws, liveblogs, duiding, analyse, prikkelende opinie en columns, cultuur en inspiratie, diepgravend onderzoek en puzzels van De Morgen.",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "De Standaard",
+    "url": "https://www.standaard.be/rss",
+    "site": "standaard.be",
+    "description": "",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "de Volkskrant",
+    "url": "https://www.volkskrant.nl/voorpagina/rss.xml",
+    "site": "volkskrant.nl",
+    "description": "Het laatste nieuws met duiding van redacteuren, achtergronden, columns, opinie, wetenschap, en recensies van kunst & cultuur door de Volkskrant.",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "Der Spiegel",
+    "url": "https://www.spiegel.de/schlagzeilen/index.rss",
+    "site": "spiegel.de",
+    "description": "Deutschlands führende Nachrichtenseite. Alles Wichtige aus Politik, Wirtschaft, Sport, Kultur, Wissenschaft, Technik und mehr.",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland",
+      "magazine"
+    ]
+  },
+  {
+    "name": "Deutsche Welle",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "site": "dw.com",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "germany",
+      "europe",
+      "international"
+    ]
+  },
+  {
+    "name": "Deutsche Welle (Deutsch)",
+    "url": "https://rss.dw.com/rdf/rss-de-all",
+    "site": "dw.com",
+    "description": "Deutsche Welle: DW.com Deutsch",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland"
+    ]
+  },
+  {
+    "name": "Die Zeit",
+    "url": "https://newsfeed.zeit.de/index",
+    "site": "zeit.de",
+    "description": "Aktuelle Nachrichten, Kommentare, Analysen und Hintergrundberichte aus Politik, Wirtschaft, Gesellschaft, Wissen, Feuilleton und Sport lesen Sie bei der ZEIT.",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland"
+    ]
+  },
+  {
+    "name": "FAZ",
+    "url": "https://www.faz.net/rss/aktuell/",
+    "site": "faz.net",
+    "description": "News, Nachrichten und aktuelle Meldungen aus allen Ressorts. Politik, Wirtschaft, Sport, Feuilleton und Finanzen im Überblick.",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland",
+      "frankfurt"
+    ]
+  },
+  {
+    "name": "France 24",
+    "url": "https://www.france24.com/en/rss",
+    "site": "france24.com",
+    "description": "Breaking news and world news from France 24 on Business, Sports, Culture. Video news. News from the US, Europe, Asia Pacific, Africa, Middle East, America",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "france",
+      "europe",
+      "international"
+    ]
+  },
+  {
+    "name": "France Info",
+    "url": "https://www.francetvinfo.fr/titres.rss",
+    "site": "franceinfo.fr",
+    "description": "franceinfo - Les Titres",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france"
+    ]
+  },
+  {
+    "name": "Het Laatste Nieuws",
+    "url": "https://www.hln.be/rss.xml",
+    "site": "hln.be",
+    "description": "hln.be biedt het laatste nieuws, opinie en achtergronden",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "Het Parool",
+    "url": "https://www.parool.nl/voorpagina/rss.xml",
+    "site": "parool.nl",
+    "description": "Het laatste nieuws vanuit Amsterdam en de beste tips voor eten & drinken en kunst & cultuur in de stad.",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "amsterdam"
+    ]
+  },
+  {
+    "name": "Le Figaro",
+    "url": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+    "site": "lefigaro.fr",
+    "description": "A la Une : Retrouvez toute l'actualité en France, à l'international, l'actualité économique et politique avec Le Figaro",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france"
+    ]
+  },
+  {
+    "name": "Le Monde",
+    "url": "https://www.lemonde.fr/rss/une.xml",
+    "site": "lemonde.fr",
+    "description": "Le Monde.fr - 1er site d’information. Les articles du journal et toute l’actualité en continu : International, France, Société, Economie, Culture, Environnement, Blogs ...",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france"
+    ]
+  },
+  {
+    "name": "Le Temps",
+    "url": "https://www.letemps.ch/articles.rss",
+    "site": "letemps.ch",
+    "description": "Retrouvez sur LeTemps.ch les informations en continu, enquêtes, analyses, dossiers spéciaux, opinions, graphiques, podcasts et vidéos.",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france",
+      "suisse"
+    ]
+  },
+  {
+    "name": "Libération",
+    "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/?outputType=xml",
+    "site": "liberation.fr",
+    "description": "Libération News Feed",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france"
+    ]
+  },
+  {
+    "name": "NOS Nieuws",
+    "url": "https://feeds.nos.nl/nosnieuwsalgemeen",
+    "site": "nos.nl",
+    "description": "",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "NPR News",
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "site": "npr.org",
+    "description": "NPR news, audio, and podcasts. Coverage of breaking stories, national and world news, politics, business, science, technology, and extended coverage of major national and world eve",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "usa",
+      "radio"
+    ]
+  },
+  {
+    "name": "NRC",
+    "url": "https://www.nrc.nl/rss/",
+    "site": "nrc.nl",
+    "description": "Nieuws, achtergronden en onderzoeksjournalistiek",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "NU.nl",
+    "url": "https://www.nu.nl/rss/Algemeen",
+    "site": "nu.nl",
+    "description": "Het laatste nieuws het eerst op NU.nl",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "NYT World",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "site": "nytimes.com",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "international"
+    ]
+  },
+  {
+    "name": "Politico Europe",
+    "url": "https://www.politico.eu/feed/",
+    "site": "politico.eu",
+    "description": "European Politics, Policy, Government News",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "politics",
+      "europe",
+      "brussels",
+      "eu"
+    ]
+  },
+  {
+    "name": "ProPublica",
+    "url": "https://www.propublica.org/feeds/propublica/main",
+    "site": "propublica.org",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "investigative",
+      "journalism",
+      "usa"
+    ]
+  },
+  {
+    "name": "Reuters via Google News",
+    "url": "https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en",
+    "site": "news.google.com",
+    "description": "Google News",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "international",
+      "wire"
+    ]
+  },
+  {
+    "name": "RFI",
+    "url": "https://www.rfi.fr/fr/rss",
+    "site": "rfi.fr",
+    "description": "Suivez toute l'information politique, culturelle, sportive en direct et en continu sur RFI. Les dernières informations, news et actualités en France et à l'international.",
+    "language": "fr",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "french",
+      "français",
+      "francais",
+      "france",
+      "radio",
+      "international"
+    ]
+  },
+  {
+    "name": "RTL Nieuws",
+    "url": "https://www.rtlnieuws.nl/rss.xml",
+    "site": "rtl.nl",
+    "description": "Het gesprek van de dag zit gewoon in je zak",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "Süddeutsche Zeitung",
+    "url": "https://rss.sueddeutsche.de/rss/Topthemen",
+    "site": "sueddeutsche.de",
+    "description": "sz.de",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland",
+      "münchen"
+    ]
+  },
+  {
+    "name": "Tagesschau",
+    "url": "https://www.tagesschau.de/index~rss2.xml",
+    "site": "tagesschau.de",
+    "description": "Die aktuellen Beiträge der Seite https://www.tagesschau.de/",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland"
+    ]
+  },
+  {
+    "name": "taz",
+    "url": "https://taz.de/!p4608;rss/",
+    "site": "taz.de",
+    "description": "Aktuelle Nachrichten - taz.de",
+    "language": "de",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland",
+      "berlin"
+    ]
+  },
+  {
+    "name": "The Guardian",
+    "url": "https://www.theguardian.com/international/rss",
+    "site": "theguardian.com",
+    "description": "Latest international news, sport and comment from the Guardian",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "uk",
+      "international"
+    ]
+  },
+  {
+    "name": "The Guardian UK",
+    "url": "https://www.theguardian.com/uk/rss",
+    "site": "theguardian.com",
+    "description": "Latest news, sport, business, comment, analysis and reviews from the Guardian, the world's leading liberal voice",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "uk",
+      "britain"
+    ]
+  },
+  {
+    "name": "The Intercept",
+    "url": "https://theintercept.com/feed/?rss",
+    "site": "theintercept.com",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "investigative",
+      "politics"
+    ]
+  },
+  {
+    "name": "The New York Times",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "site": "nytimes.com",
+    "description": "",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "usa",
+      "america"
+    ]
+  },
+  {
+    "name": "The Washington Post World",
+    "url": "https://feeds.washingtonpost.com/rss/world",
+    "site": "washingtonpost.com",
+    "description": "The Washington Post World section provides information and analysis of breaking world news stories. In addition to our world news and video, Post World News offers discussions and ",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "usa",
+      "international"
+    ]
+  },
+  {
+    "name": "Time",
+    "url": "https://time.com/feed/",
+    "site": "time.com",
+    "description": "Breaking news and analysis from TIME.com. Politics, world news, photos, video, tech reviews, health, science and entertainment news.",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "magazine",
+      "usa"
+    ]
+  },
+  {
+    "name": "Trouw",
+    "url": "https://www.trouw.nl/voorpagina/rss.xml",
+    "site": "trouw.nl",
+    "description": "Het laatste nieuws met duiding van redacteuren, achtergronden, columns, opinie, wetenschap, en recensies van kunst & cultuur door Trouw.",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "Vox",
+    "url": "https://www.vox.com/rss/index.xml",
+    "site": "vox.com",
+    "description": "Our world has too much noise and too little context. Vox helps you understand what matters.",
+    "language": "en",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "english",
+      "explainers",
+      "politics"
+    ]
+  },
+  {
+    "name": "VRT NWS",
+    "url": "https://www.vrt.be/vrtnws/nl.rss.articles.xml",
+    "site": "vrt.be",
+    "description": "",
+    "language": "nl",
+    "category": "news",
+    "tags": [
+      "news",
+      "world",
+      "headlines",
+      "newspaper",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "A List Apart",
+    "url": "https://alistapart.com/main/feed/",
+    "site": "alistapart.com",
+    "description": "Articles for people who make web sites.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "web",
+      "design"
+    ]
+  },
+  {
+    "name": "AWS News Blog",
+    "url": "https://aws.amazon.com/blogs/aws/feed/",
+    "site": "aws.amazon.com",
+    "description": "Announcements, Updates, and Launches",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "cloud",
+      "amazon"
+    ]
+  },
+  {
+    "name": "Cloudflare Blog",
+    "url": "https://blog.cloudflare.com/rss/",
+    "site": "blog.cloudflare.com",
+    "description": "Technical deep dives, product updates, and insights from the teams that are helping to build a better Internet.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "networking",
+      "internet",
+      "infrastructure"
+    ]
+  },
+  {
+    "name": "Coding Horror",
+    "url": "https://blog.codinghorror.com/rss/",
+    "site": "blog.codinghorror.com",
+    "description": "programming and human factors",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "blog"
+    ]
+  },
+  {
+    "name": "CSS-Tricks",
+    "url": "https://css-tricks.com/feed/",
+    "site": "css-tricks.com",
+    "description": "A learning community for front-end designers and developers",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "css",
+      "web",
+      "frontend"
+    ]
+  },
+  {
+    "name": "GitHub Blog",
+    "url": "https://github.blog/feed/",
+    "site": "github.blog",
+    "description": "Updates, ideas, and inspiration from GitHub to help developers build and design software.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "open",
+      "source",
+      "git"
+    ]
+  },
+  {
+    "name": "InfoQ",
+    "url": "https://feed.infoq.com/",
+    "site": "infoq.com",
+    "description": "InfoQ feed",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "architecture",
+      "enterprise"
+    ]
+  },
+  {
+    "name": "Joel on Software",
+    "url": "https://www.joelonsoftware.com/feed/",
+    "site": "joelonsoftware.com",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "blog"
+    ]
+  },
+  {
+    "name": "Julia Evans",
+    "url": "https://jvns.ca/atom.xml",
+    "site": "jvns.ca",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "blog",
+      "linux"
+    ]
+  },
+  {
+    "name": "Lobsters",
+    "url": "https://lobste.rs/rss",
+    "site": "lobste.rs",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "links"
+    ]
+  },
+  {
+    "name": "LWN",
+    "url": "https://lwn.net/headlines/rss",
+    "site": "lwn.net",
+    "description": "LWN.net is a comprehensive source of news and opinions from and about the Linux community. This is the main LWN.net feed, listing all articles which are posted to the site front pa",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "linux",
+      "kernel",
+      "open",
+      "source"
+    ]
+  },
+  {
+    "name": "Martin Fowler",
+    "url": "https://martinfowler.com/feed.atom",
+    "site": "martinfowler.com",
+    "description": "Master feed of news and updates from martinfowler.com",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "architecture",
+      "refactoring"
+    ]
+  },
+  {
+    "name": "Mozilla Hacks",
+    "url": "https://hacks.mozilla.org/feed/",
+    "site": "hacks.mozilla.org",
+    "description": "hacks.mozilla.org",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "web",
+      "browsers",
+      "firefox"
+    ]
+  },
+  {
+    "name": "Netflix Tech Blog",
+    "url": "https://netflixtechblog.com/feed",
+    "site": "netflixtechblog.com",
+    "description": "Learn about Netflix’s world class engineering efforts, company culture, product developments and more. - Medium",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english"
+    ]
+  },
+  {
+    "name": "Node.js Blog",
+    "url": "https://nodejs.org/en/feed/blog.xml",
+    "site": "nodejs.org",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "javascript",
+      "node"
+    ]
+  },
+  {
+    "name": "Overreacted",
+    "url": "https://overreacted.io/rss.xml",
+    "site": "overreacted.io",
+    "description": "A blog by Dan Abramov",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "react",
+      "javascript",
+      "blog"
+    ]
+  },
+  {
+    "name": "Python Insider",
+    "url": "https://blog.python.org/feeds/posts/default",
+    "site": "blog.python.org",
+    "description": "The official blog of the Python core development team.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "python"
+    ]
+  },
+  {
+    "name": "React Blog",
+    "url": "https://react.dev/rss.xml",
+    "site": "react.dev",
+    "description": "This blog is the official source for the updates from the React team. Anything important, including release notes or deprecation notices, will be posted here first.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "react",
+      "javascript"
+    ]
+  },
+  {
+    "name": "Rust Blog",
+    "url": "https://blog.rust-lang.org/feed.xml",
+    "site": "blog.rust-lang.org",
+    "description": "Empowering everyone to build reliable and efficient software.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "rust"
+    ]
+  },
+  {
+    "name": "Simon Willison",
+    "url": "https://simonwillison.net/atom/everything/",
+    "site": "simonwillison.net",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "blog",
+      "ai",
+      "python"
+    ]
+  },
+  {
+    "name": "Smashing Magazine",
+    "url": "https://www.smashingmagazine.com/feed/",
+    "site": "smashingmagazine.com",
+    "description": "Recent content in Articles on Smashing Magazine — For Web Designers And Developers",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "web",
+      "design",
+      "frontend"
+    ]
+  },
+  {
+    "name": "Stack Overflow Blog",
+    "url": "https://stackoverflow.blog/feed/",
+    "site": "stackoverflow.blog",
+    "description": "Essays, opinions, and advice on the act of computer programming from Stack Overflow.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english"
+    ]
+  },
+  {
+    "name": "The Go Blog",
+    "url": "https://go.dev/blog/feed.atom",
+    "site": "go.dev",
+    "description": "",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "golang"
+    ]
+  },
+  {
+    "name": "The Pragmatic Engineer",
+    "url": "https://newsletter.pragmaticengineer.com/feed",
+    "site": "newsletter.pragmaticengineer.com",
+    "description": "Big Tech and startups, from the inside. Highly relevant for software engineers, AI engineers and engineering leaders, useful for those working in tech.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "newsletter",
+      "management"
+    ]
+  },
+  {
+    "name": "Vercel Blog",
+    "url": "https://vercel.com/atom",
+    "site": "vercel.com",
+    "description": "Blog",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "nextjs",
+      "web"
+    ]
+  },
+  {
+    "name": "web.dev",
+    "url": "https://web.dev/feed.xml",
+    "site": "web.dev",
+    "description": "All of web.dev's blog posts.",
+    "language": "en",
+    "category": "programming",
+    "tags": [
+      "programming",
+      "software",
+      "developers",
+      "coding",
+      "engineering",
+      "english",
+      "web",
+      "browsers",
+      "chrome"
+    ]
+  },
+  {
+    "name": "BBC Science & Environment",
+    "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC News - Science & Environment",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "environment",
+      "climate"
+    ]
+  },
+  {
+    "name": "Eos",
+    "url": "https://eos.org/feed",
+    "site": "eos.org",
+    "description": "Science News by AGU",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "earth",
+      "geoscience"
+    ]
+  },
+  {
+    "name": "Live Science",
+    "url": "https://www.livescience.com/feeds/all",
+    "site": "livescience.com",
+    "description": "All the latest content from the Live Science team",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english"
+    ]
+  },
+  {
+    "name": "Nature",
+    "url": "https://www.nature.com/nature.rss",
+    "site": "feeds.nature.com",
+    "description": "Nature is the foremost international weekly scientific journal in the world and is the flagship journal for Nature Portfolio. It publishes the finest peer-reviewed research in all ",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "journal"
+    ]
+  },
+  {
+    "name": "Nautilus",
+    "url": "https://nautil.us/feed/",
+    "site": "nautil.us",
+    "description": "Science Connected",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "magazine",
+      "ideas"
+    ]
+  },
+  {
+    "name": "NPR Science",
+    "url": "https://feeds.npr.org/1007/rss.xml",
+    "site": "npr.org",
+    "description": "The latest health and science news. Updates on medicine, healthy living, nutrition, drugs, diet, and advances in science and technology. Subscribe to the Health & Science podcast.",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "radio"
+    ]
+  },
+  {
+    "name": "NYT Science",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+    "site": "nytimes.com",
+    "description": "",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english"
+    ]
+  },
+  {
+    "name": "Phys.org",
+    "url": "https://phys.org/rss-feed/",
+    "site": "phys.org",
+    "description": "Phys.org internet news portal provides the latest news on science including: Physics, Nanotechnology, Life Sciences, Space Science, Earth Science, Environment, Health and Medicine.",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "physics"
+    ]
+  },
+  {
+    "name": "Quanta Magazine",
+    "url": "https://www.quantamagazine.org/feed/",
+    "site": "quantamagazine.org",
+    "description": "Illuminating science",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "mathematics",
+      "physics",
+      "biology"
+    ]
+  },
+  {
+    "name": "Retraction Watch",
+    "url": "https://retractionwatch.com/feed/",
+    "site": "retractionwatch.com",
+    "description": "Tracking retractions as a window into the scientific process",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "academia"
+    ]
+  },
+  {
+    "name": "Science Daily",
+    "url": "https://www.sciencedaily.com/rss/all.xml",
+    "site": "sciencedaily.com",
+    "description": "",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english"
+    ]
+  },
+  {
+    "name": "Scientific American",
+    "url": "http://rss.sciam.com/ScientificAmerican-Global",
+    "site": "scientificamerican.com",
+    "description": "Scientific American is the essential guide to the most awe-inspiring advances in science and technology, explaining how they change our understanding of the world and shape our liv",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "magazine"
+    ]
+  },
+  {
+    "name": "STAT News",
+    "url": "https://www.statnews.com/feed/",
+    "site": "statnews.com",
+    "description": "Reporting from the frontiers of health and medicine",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "health",
+      "medicine",
+      "biotech"
+    ]
+  },
+  {
+    "name": "The Conversation",
+    "url": "https://theconversation.com/articles.atom",
+    "site": "theconversation.com",
+    "description": "",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "academic",
+      "analysis"
+    ]
+  },
+  {
+    "name": "The Guardian Science",
+    "url": "https://www.theguardian.com/science/rss",
+    "site": "theguardian.com",
+    "description": "Latest Science news, comment and analysis from the Guardian, the world's leading liberal voice",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english"
+    ]
+  },
+  {
+    "name": "Undark",
+    "url": "https://undark.org/feed/",
+    "site": "undark.org",
+    "description": "Truth, Beauty, Science.",
+    "language": "en",
+    "category": "science",
+    "tags": [
+      "science",
+      "research",
+      "english",
+      "society",
+      "magazine"
+    ]
+  },
+  {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/feed/",
+    "site": "bleepingcomputer.com",
+    "description": "BleepingComputer - All Stories",
+    "language": "en",
+    "category": "security",
+    "tags": [
+      "security",
+      "infosec",
+      "cybersecurity",
+      "privacy",
+      "hacking",
+      "english",
+      "malware"
+    ]
+  },
+  {
+    "name": "Krebs on Security",
+    "url": "https://krebsonsecurity.com/feed/",
+    "site": "krebsonsecurity.com",
+    "description": "In-depth security news and investigation",
+    "language": "en",
+    "category": "security",
+    "tags": [
+      "security",
+      "infosec",
+      "cybersecurity",
+      "privacy",
+      "hacking",
+      "english"
+    ]
+  },
+  {
+    "name": "Schneier on Security",
+    "url": "https://www.schneier.com/feed/atom/",
+    "site": "schneier.com",
+    "description": "",
+    "language": "en",
+    "category": "security",
+    "tags": [
+      "security",
+      "infosec",
+      "cybersecurity",
+      "privacy",
+      "hacking",
+      "english",
+      "cryptography"
+    ]
+  },
+  {
+    "name": "The Hacker News",
+    "url": "https://feeds.feedburner.com/TheHackersNews",
+    "site": "thehackernews.com",
+    "description": "Most trusted, widely-read independent cybersecurity news source for everyone; supported by hackers and IT professionals — Send TIPs to admin@thehackernews.com",
+    "language": "en",
+    "category": "security",
+    "tags": [
+      "security",
+      "infosec",
+      "cybersecurity",
+      "privacy",
+      "hacking",
+      "english"
+    ]
+  },
+  {
+    "name": "ESA Space News",
+    "url": "https://www.esa.int/rssfeed/Our_Activities/Space_News",
+    "site": "esa.int",
+    "description": "ESA Top News",
+    "language": "en",
+    "category": "space",
+    "tags": [
+      "space",
+      "astronomy",
+      "science",
+      "english",
+      "europe"
+    ]
+  },
+  {
+    "name": "NASA",
+    "url": "https://www.nasa.gov/feed/",
+    "site": "nasa.gov",
+    "description": "Official National Aeronautics and Space Administration Website",
+    "language": "en",
+    "category": "space",
+    "tags": [
+      "space",
+      "astronomy",
+      "science",
+      "english"
+    ]
+  },
+  {
+    "name": "Space.com",
+    "url": "https://www.space.com/feeds/all",
+    "site": "space.com",
+    "description": "All the latest content from the Space.com team",
+    "language": "en",
+    "category": "space",
+    "tags": [
+      "space",
+      "astronomy",
+      "science",
+      "english"
+    ]
+  },
+  {
+    "name": "Universe Today",
+    "url": "https://www.universetoday.com/feed/",
+    "site": "universetoday.com",
+    "description": "Space and Astronomy News from Universe Today",
+    "language": "en",
+    "category": "space",
+    "tags": [
+      "space",
+      "astronomy",
+      "science",
+      "english"
+    ]
+  },
+  {
+    "name": "BBC Sport",
+    "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC Sport - Sport Front Page",
+    "language": "en",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "english",
+      "uk"
+    ]
+  },
+  {
+    "name": "Cyclingnews",
+    "url": "https://www.cyclingnews.com/rss/",
+    "site": "cyclingnews.com",
+    "description": "All the latest content from the Cyclingnews team",
+    "language": "en",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "english",
+      "cycling",
+      "bikes"
+    ]
+  },
+  {
+    "name": "Formula 1",
+    "url": "https://www.formula1.com/en/latest/all.xml",
+    "site": "formula1.com",
+    "description": "Don't miss a Formula 1 moment – with the latest news, videos, standings and results. Go behind the scenes and get analysis straight from the paddock.",
+    "language": "en",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "english",
+      "f1",
+      "racing",
+      "motorsport"
+    ]
+  },
+  {
+    "name": "NOS Sport",
+    "url": "https://feeds.nos.nl/nossportalgemeen",
+    "site": "nos.nl",
+    "description": "",
+    "language": "nl",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "voetbal"
+    ]
+  },
+  {
+    "name": "Sky Sports",
+    "url": "https://www.skysports.com/rss/12040",
+    "site": "skysports.com",
+    "description": "Sports News",
+    "language": "en",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "english",
+      "uk",
+      "football"
+    ]
+  },
+  {
+    "name": "Sporza",
+    "url": "https://sporza.be/nl.rss.articles.xml",
+    "site": "sporza.be",
+    "description": "",
+    "language": "nl",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "voetbal",
+      "wielrennen"
+    ]
+  },
+  {
+    "name": "The Guardian Football",
+    "url": "https://www.theguardian.com/football/rss",
+    "site": "theguardian.com",
+    "description": "Latest Football news, comment and analysis from the Guardian, the world's leading liberal voice",
+    "language": "en",
+    "category": "sports",
+    "tags": [
+      "sports",
+      "sport",
+      "english",
+      "soccer",
+      "premier",
+      "league"
+    ]
+  },
+  {
+    "name": "404 Media",
+    "url": "https://www.404media.co/rss/",
+    "site": "404media.co",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "investigative",
+      "internet"
+    ]
+  },
+  {
+    "name": "9to5Mac",
+    "url": "https://9to5mac.com/feed/",
+    "site": "9to5mac.com",
+    "description": "Apple News & Mac Rumors Breaking All Day",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "apple",
+      "mac",
+      "iphone"
+    ]
+  },
+  {
+    "name": "Android Police",
+    "url": "https://www.androidpolice.com/feed/",
+    "site": "androidpolice.com",
+    "description": "All the latest mobile tech news, deals, reviews, guides, editorials, and more. Embracing the green bubble since 2009.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "android",
+      "google",
+      "phones"
+    ]
+  },
+  {
+    "name": "Ars Technica",
+    "url": "https://feeds.arstechnica.com/arstechnica/index",
+    "site": "arstechnica.com",
+    "description": "All Ars Technica stories",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "science",
+      "policy"
+    ]
+  },
+  {
+    "name": "BBC Technology",
+    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "site": "bbc.co.uk",
+    "description": "BBC News - Technology",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "uk"
+    ]
+  },
+  {
+    "name": "Daring Fireball",
+    "url": "https://daringfireball.net/feeds/main",
+    "site": "daringfireball.net",
+    "description": "By John Gruber",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "apple",
+      "blog"
+    ]
+  },
+  {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/rss.xml",
+    "site": "engadget.com",
+    "description": "Breaking news from the worlds of technology and entertainment, and expert reviews of the latest consumer tech products.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english"
+    ]
+  },
+  {
+    "name": "Golem",
+    "url": "https://rss.golem.de/rss.php?feed=RSS2.0",
+    "site": "golem.de",
+    "description": "IT-News fuer Profis",
+    "language": "de",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland"
+    ]
+  },
+  {
+    "name": "Hacker News",
+    "url": "https://news.ycombinator.com/rss",
+    "site": "news.ycombinator.com",
+    "description": "Links for the intellectually curious, ranked by readers.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "programming",
+      "startups"
+    ]
+  },
+  {
+    "name": "Hacker News Best",
+    "url": "https://hnrss.org/best",
+    "site": "news.ycombinator.com",
+    "description": "Hacker News RSS",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "programming",
+      "startups"
+    ]
+  },
+  {
+    "name": "heise online",
+    "url": "https://www.heise.de/rss/heise-atom.xml",
+    "site": "heise.de",
+    "description": "Nachrichten nicht nur aus der Welt der Computer",
+    "language": "de",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland"
+    ]
+  },
+  {
+    "name": "IEEE Spectrum",
+    "url": "https://spectrum.ieee.org/feeds/feed.rss",
+    "site": "spectrum.ieee.org",
+    "description": "",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "engineering"
+    ]
+  },
+  {
+    "name": "MacRumors",
+    "url": "https://feeds.macrumors.com/MacRumors-All",
+    "site": "macrumors.com",
+    "description": "Apple, iPhone, iPad, Mac News and Rumors",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "apple",
+      "mac",
+      "iphone"
+    ]
+  },
+  {
+    "name": "MIT Technology Review",
+    "url": "https://www.technologyreview.com/feed/",
+    "site": "technologyreview.com",
+    "description": "",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "science",
+      "ai",
+      "research"
+    ]
+  },
+  {
+    "name": "netzpolitik.org",
+    "url": "https://netzpolitik.org/feed/",
+    "site": "netzpolitik.org",
+    "description": "Wir thematisieren die wichtigen Fragestellungen rund um Internet, Gesellschaft und Politik und zeigen Wege auf, wie man sich auch selbst mit Hilfe des Netzes für digitale Freiheite",
+    "language": "de",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "german",
+      "deutsch",
+      "germany",
+      "deutschland",
+      "politik",
+      "digital",
+      "rights"
+    ]
+  },
+  {
+    "name": "NOS Tech",
+    "url": "https://feeds.nos.nl/nosnieuwstech",
+    "site": "nos.nl",
+    "description": "",
+    "language": "nl",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders"
+    ]
+  },
+  {
+    "name": "NPR Technology",
+    "url": "https://feeds.npr.org/1019/rss.xml",
+    "site": "npr.org",
+    "description": "Latest technology news and breakthroughs in technology, science, and industry. Download the NPR Technology podcast and Technology RSS feed.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "radio"
+    ]
+  },
+  {
+    "name": "Numerama",
+    "url": "https://www.numerama.com/feed/",
+    "site": "numerama.com",
+    "description": "",
+    "language": "fr",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "french",
+      "français",
+      "francais",
+      "france"
+    ]
+  },
+  {
+    "name": "NYT Technology",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "site": "nytimes.com",
+    "description": "",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english"
+    ]
+  },
+  {
+    "name": "OMG! Ubuntu",
+    "url": "https://www.omgubuntu.co.uk/feed",
+    "site": "omgubuntu.co.uk",
+    "description": "Ubuntu News, Apps, Tips & More",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "linux",
+      "ubuntu"
+    ]
+  },
+  {
+    "name": "Phoronix",
+    "url": "https://www.phoronix.com/rss.php",
+    "site": "phoronix.com",
+    "description": "Linux Hardware Reviews, Performance Benchmarks & Open-Source / Free Software News",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "linux",
+      "hardware",
+      "open",
+      "source"
+    ]
+  },
+  {
+    "name": "Pluralistic",
+    "url": "https://pluralistic.net/feed/",
+    "site": "pluralistic.net",
+    "description": "No trackers, no ads. Black type, white background. Privacy policy: we don't collect or retain any data at all ever period.",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "cory",
+      "doctorow",
+      "policy"
+    ]
+  },
+  {
+    "name": "Rest of World",
+    "url": "https://restofworld.org/feed/latest/",
+    "site": "restofworld.org",
+    "description": "Reporting Global Tech Stories",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "global",
+      "society"
+    ]
+  },
+  {
+    "name": "Six Colors",
+    "url": "https://sixcolors.com/feed/",
+    "site": "sixcolors.com",
+    "description": "Apple, technology, and other stuff",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "apple"
+    ]
+  },
+  {
+    "name": "Slashdot",
+    "url": "https://rss.slashdot.org/Slashdot/slashdotMain",
+    "site": "slashdot.org",
+    "description": "News for nerds, stuff that matters",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "nerds"
+    ]
+  },
+  {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "site": "techcrunch.com",
+    "description": "Startup and Technology News",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "startups",
+      "venture"
+    ]
+  },
+  {
+    "name": "Techmeme",
+    "url": "https://www.techmeme.com/feed.xml",
+    "site": "techmeme.com",
+    "description": "Top news and commentary for technology's leaders, from all around the web",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "headlines",
+      "aggregator"
+    ]
+  },
+  {
+    "name": "The Guardian Technology",
+    "url": "https://www.theguardian.com/uk/technology/rss",
+    "site": "theguardian.com",
+    "description": "Latest Technology news, comment and analysis from the Guardian, the world's leading liberal voice",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english"
+    ]
+  },
+  {
+    "name": "The Register",
+    "url": "https://www.theregister.com/headlines.atom",
+    "site": "theregister.com",
+    "description": "Articles from www.theregister.com",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "enterprise",
+      "it",
+      "uk"
+    ]
+  },
+  {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "site": "theverge.com",
+    "description": "The Verge is about technology and how it makes us feel. Founded in 2011, we offer our audience everything from breaking news to reviews to award-winning features and investigations",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english"
+    ]
+  },
+  {
+    "name": "Tom's Hardware",
+    "url": "https://www.tomshardware.com/feeds/all",
+    "site": "tomshardware.com",
+    "description": "All the latest content from the Tom's Hardware team",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "hardware",
+      "pc"
+    ]
+  },
+  {
+    "name": "Tweakers",
+    "url": "https://feeds.feedburner.com/tweakers/mixed",
+    "site": "tweakers.net",
+    "description": "Tweakers is de grootste hardwaresite en techcommunity van Nederland.",
+    "language": "nl",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "dutch",
+      "nederlands",
+      "netherlands",
+      "nederland",
+      "belgium",
+      "belgië",
+      "belgie",
+      "vlaanderen",
+      "flanders",
+      "hardware"
+    ]
+  },
+  {
+    "name": "Wired",
+    "url": "https://www.wired.com/feed/rss",
+    "site": "wired.com",
+    "description": "The latest from www.wired.com",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "culture",
+      "magazine"
+    ]
+  },
+  {
+    "name": "ZDNet",
+    "url": "https://www.zdnet.com/news/rss.xml",
+    "site": "zdnet.com",
+    "description": "News and Advice on the World's Latest Innovations",
+    "language": "en",
+    "category": "tech",
+    "tags": [
+      "technology",
+      "tech",
+      "gadgets",
+      "computers",
+      "english",
+      "enterprise"
+    ]
+  }
+]
