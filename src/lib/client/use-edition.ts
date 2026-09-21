@@ -116,7 +116,7 @@ export class EditionRunner {
             }
           }
           if (!signal.aborted) onProgress(++done, items.length, response.title);
-          return storyFrom(item, article);
+          return { ...storyFrom(item, article), feedUrl: feed.url };
         }),
       ),
     );

@@ -461,7 +461,8 @@ a:hover {
 }
 .story__continued svg,
 .story__glyph--brief svg,
-.story__clip--brief svg {
+.story__clip--brief svg,
+.story__share--brief svg {
   width: 1.3em;
   height: 1.3em;
   vertical-align: -0.3em;
@@ -481,8 +482,9 @@ a:hover {
 }
 
 
-/* The scissors: a bare glyph button, inverted once the story is clipped. */
-.story__clip {
+/* The scissors and the link: bare glyph buttons; the scissors invert once the story is clipped. */
+.story__clip,
+.story__share {
   display: inline-block;
   padding: 0.1em 0.15em;
   border: 0;
@@ -493,7 +495,8 @@ a:hover {
   line-height: 1;
   cursor: pointer;
 }
-.story__clip:focus-visible {
+.story__clip:focus-visible,
+.story__share:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
@@ -501,9 +504,96 @@ a:hover {
   background: var(--ink);
   color: var(--paper);
 }
-.story__clip--brief {
+.story__clip--brief,
+.story__share--brief {
   margin-left: 0.15em;
   vertical-align: -0.1em;
+}
+
+/* A cutting: one story on a page of its own, as a shared link opens it ------ */
+
+.paper.cutting {
+  max-width: 46rem;
+}
+.cutting__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding: 0.55rem 0 0.4rem;
+  border-top: 3px double var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.cutting__paper {
+  font-family: var(--font-masthead), "Old English Text MT", var(--serif-fallback);
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+.cutting__note {
+  font-size: 0.82rem;
+  font-style: italic;
+}
+.cutting__headline {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-headline), var(--serif-fallback);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+}
+.cutting__story .story__dateline {
+  margin-bottom: 0.9rem;
+}
+.cutting__body {
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+.cutting__body p {
+  margin: 0 0 0.7em;
+  text-align: justify;
+  hyphens: auto;
+}
+.cutting__body > p:first-child:not(.story__missing)::first-letter {
+  float: left;
+  padding: 0.08em 0.08em 0 0;
+  font-family: var(--font-headline), var(--serif-fallback);
+  font-weight: 700;
+  font-size: 3.6em;
+  line-height: 0.78;
+}
+.cutting__original {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.cutting__original a,
+.cutting__foot a {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-light);
+  text-underline-offset: 0.15em;
+}
+.cutting__clip {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin: 1.25rem 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.cutting__clip svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+.cutting__foot {
+  margin-top: 2.75rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--rule-light);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  text-align: center;
 }
 .story__trouble {
   font-style: italic;

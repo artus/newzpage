@@ -71,6 +71,16 @@ photograph, so it stays readable after the rolling cache has forgotten the artic
 lets a clipping go, after a confirmation, with an undo on the scrapbook page. Clippings can be exported as a file and pasted into
 another browser; the book holds 300 at most, and nothing in it is ever dropped without the reader asking.
 
+## Cuttings
+
+The link glyph at the foot of a story copies the address of its cutting (on a phone, the share sheet opens
+instead): `/story?url=…&feed=…&title=…`, a page that prints that one story on its own, in the paper's style,
+with a fuller summary than a column allows, and scissors to keep it in the scrapbook. The page is rendered on
+the server with Open Graph and Twitter card tags, and `/story/image` draws a 1200 by 630 preview of the
+cutting with Next's image renderer, so a link pasted into a chat unfurls as a newspaper cutting. Previews are
+cacheable for a day; cuttings ask search engines not to index them. The article is read and summarised by the
+same code as `/api/article`, behind the same address guard.
+
 ## How an edition is composed
 
 The page is a static shell; the browser composes the edition:
@@ -205,6 +215,7 @@ src/app/api                   feed, article, search and defaults endpoints (the 
 src/app/settings              the composing room (client-side, localStorage)
 src/app/random, src/app/wire  a feed drawn from the directory, redirected to a page printing that one wire
 src/app/clippings             the scrapbook: the reader's clippings, typeset like a wire
+src/app/story                 a cutting: one story on its own page, with a server-drawn preview image
 src/components                masthead, feed section, story block, photo, skeleton, colophon, front page
 src/lib/client                localStorage config store, rolling summary cache, API client, hooks
 src/lib/config-schema.ts      configuration shape shared by server defaults and browser copies
@@ -231,4 +242,6 @@ scripts/build-directory.ts    curated candidate list → validated directory.jso
 
 Masthead: Traditional Gothic (Dieter Steffmann). Headlines: Playfair Display (OFL). Body: Libre Caslon Text
 (OFL), chosen over Old Standard TT because its sturdier strokes stay readable on the paper texture. All are
-served from `src/fonts`; nothing is loaded from third parties at runtime.
+served from `src/fonts`; nothing is loaded from third parties at runtime. The same folder holds TrueType copies
+of Playfair Display Bold and Libre Caslon Text, which the cutting's preview image is drawn with: the image
+renderer reads neither WOFF2 nor system fonts.

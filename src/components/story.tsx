@@ -1,5 +1,6 @@
 import type { Wire } from "@/lib/client/scrapbook";
 import type { StoryKind, TextColumns } from "@/lib/edition/pagemaker";
+import { captionFor } from "@/lib/edition/caption";
 import { hasCopy, type Story as StoryData } from "@/lib/edition/types";
 import { compose } from "@/lib/summarize/compose";
 import { displayHost } from "@/lib/util/text";
@@ -7,6 +8,7 @@ import { relativeTime } from "@/lib/util/time";
 import ClipButton from "./clip-button";
 import EnvelopeIcon from "./envelope-icon";
 import Photo from "./photo";
+import ShareButton from "./share-button";
 
 const PARAGRAPHS: Record<StoryKind, number> = { lead: 4, feature: 3, standard: 2, brief: 1 };
 
@@ -21,14 +23,6 @@ interface StoryProps {
   now: number;
   /** The wire the story is printed under; recorded when it is clipped. */
   wire?: Wire;
-}
-
-/** Alt text is only a caption when it reads like one; "palma3_1" or "image" is not. */
-function captionFor(alt: string | undefined, host: string | undefined): string | undefined {
-  const words = alt ? alt.trim().split(/\s+/) : [];
-  const readable = words.length >= 3 && alt!.length <= 160 && !/[_\/]|\.(jpe?g|png|webp|gif)$/i.test(alt!);
-  if (readable) return alt!.trim();
-  return host ? `Photograph: ${host}` : undefined;
 }
 
 function missingCopy(host: string | undefined): string {
@@ -88,10 +82,11 @@ export default function Story({ story, kind, photo, textColumns, maxWords, ancho
           </p>
         )}
       </div>
-      {/* The headline already leads to the original; the foot carries only what it does not: the scissors and the letters. */}
-      {kind !== "brief" && (clippable || letters) ? (
+      {/* The headline already leads to the original; the foot carries what it does not: scissors, a link to the cutting, the letters. */}
+      {kind !== "brief" && (clippable || story.link || letters) ? (
         <p className="story__continued">
           {clippable ? <ClipButton story={story} wire={wire} /> : null}
+          {story.link ? <ShareButton story={story} wire={wire} /> : null}
           {letters ? (
             <a className="story__glyph tip" href={letters} target="_blank" rel="noopener noreferrer" aria-label={lettersLabel} data-tip={lettersLabel}>
               <EnvelopeIcon />
@@ -103,6 +98,12 @@ export default function Story({ story, kind, photo, textColumns, maxWords, ancho
         <>
           {" "}
           <ClipButton story={story} wire={wire} className="story__clip--brief" />
+        </>
+      ) : null}
+      {kind === "brief" && story.link ? (
+        <>
+          {" "}
+          <ShareButton story={story} wire={wire} className="story__share--brief" />
         </>
       ) : null}
       {kind === "brief" && letters ? (

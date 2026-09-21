@@ -67,6 +67,8 @@ export interface Story {
   error?: string;
   /** The wire a clipping was cut from, printed in the dateline in place of the host. */
   wire?: string;
+  /** The feed the story came from, so a cutting can be read from the same wire. */
+  feedUrl?: string;
 }
 
 export interface Section {
