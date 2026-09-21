@@ -126,7 +126,9 @@ a:hover {
 }
 
 .cog,
-.dice {
+.dice,
+.scissors,
+.glyph {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
@@ -447,11 +449,30 @@ a:hover {
   display: inline;
 }
 
+/* The foot of a story: the scissors and the letters, glyphs under the text that explain themselves on hover. */
 .story__continued {
-  margin: 0.35rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9em;
+  margin: 0.4rem 0 0;
   font-size: 0.74rem;
   font-style: italic;
-  text-align: right;
+}
+.story__continued svg,
+.story__glyph--brief svg,
+.story__clip--brief svg {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.3em;
+}
+.story__glyph {
+  display: inline-block;
+  line-height: 1;
+  color: var(--ink);
+}
+.story__glyph--brief {
+  margin-left: 0.15em;
 }
 
 .story__missing {
@@ -459,10 +480,46 @@ a:hover {
   color: var(--ink-soft);
 }
 
-.story__letters {
-  font-size: 0.8em;
+
+/* The scissors: a bare glyph button, inverted once the story is clipped. */
+.story__clip {
+  display: inline-block;
+  padding: 0.1em 0.15em;
+  border: 0;
+  border-radius: 2px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+.story__clip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.story__clip[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.story__clip--brief {
+  margin-left: 0.15em;
+  vertical-align: -0.1em;
+}
+.story__trouble {
   font-style: italic;
-  white-space: nowrap;
+  color: var(--ink-faint);
+}
+
+/* The scrapbook's controls sit centred under the masthead. */
+.scrapbook__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+}
+.scrapbook__toolbar + .settings__notice {
+  margin-top: 1rem;
 }
 
 /* Photographs ----------------------------------------------------------- */

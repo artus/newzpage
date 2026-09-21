@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import type { Wire } from "@/lib/client/scrapbook";
 import { fitBudgets, type Band as BandPlan, type MeasuredSlot } from "@/lib/edition/pagemaker";
 import Story from "./story";
 
@@ -10,6 +11,8 @@ interface BandProps {
   now: number;
   /** Measure and correct word budgets so every slot ends on the same line. */
   fit: boolean;
+  /** The wire the band belongs to; recorded with clippings. */
+  wire?: Wire;
 }
 
 const MAX_PASSES = 6;
@@ -19,7 +22,7 @@ const MAX_PASSES = 6;
  * corrected, before the browser paints; once the slots agree the band switches to "fitted" mode, where
  * residual slack is taken up by stretching photographs and spacing stacked stories.
  */
-export default function Band({ band, columns, now, fit }: BandProps) {
+export default function Band({ band, columns, now, fit, wire }: BandProps) {
   const [budgets, setBudgets] = useState<Record<string, number>>(() =>
     Object.fromEntries(band.slots.flatMap((slot) => slot.stories.map((placed) => [placed.story.id, placed.budget]))),
   );
@@ -81,6 +84,7 @@ export default function Band({ band, columns, now, fit }: BandProps) {
                 maxWords={budgets[placed.story.id] ?? placed.budget}
                 anchor={placed.anchor}
                 now={now}
+                wire={wire}
               />
             ))}
           </div>

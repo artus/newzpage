@@ -61,6 +61,15 @@ masthead, with the usual "Older" button. Any feed address works there. The page 
 front page (same cache, same layout), but it is not counted as an edition and it changes nothing in the
 reader's configuration; a wire worth keeping is added in the composing room.
 
+## Clippings
+
+The scissors at the foot of a story keep it in the reader's scrapbook: [`/clippings`](http://localhost:3000/clippings),
+reached from the masthead, which typesets every clipping like a wire of its own, newest first, with the wire it
+came from in the dateline. A clipping carries its own copy of the summary (trimmed to the 24 best sentences) and
+photograph, so it stays readable after the rolling cache has forgotten the article. Pressing the scissors again
+lets a clipping go, after a confirmation, with an undo on the scrapbook page. Clippings can be exported as a file and pasted into
+another browser; the book holds 300 at most, and nothing in it is ever dropped without the reader asking.
+
 ## How an edition is composed
 
 The page is a static shell; the browser composes the edition:
@@ -105,6 +114,7 @@ Everything a reader configures or that is computed for them is stored in their b
 | `newzpage.config.v1` | title, tagline, feeds in order with their story counts |
 | `newzpage.articles.index.v1` | index of cached analyses: size, last use, expiry |
 | `newzpage.article.v1.<hash>` | one cached analysis per article |
+| `newzpage.clippings.v1` | the reader's clippings: each story as printed, its wire, and when it was clipped |
 | `newzpage.reader.v1` | when this browser first printed an edition, how many it has printed, and the last edition's fingerprint (the masthead's volume counts the months since the first edition; the number counts editions with new stories) |
 
 The summary cache is **rolling**: at most 400 entries and about 3 MB (`SummaryCache` in
@@ -193,6 +203,7 @@ src/app                       Next.js entry: layout (fonts), static page shell, 
 src/app/api                   feed, article, search and defaults endpoints (the only server work)
 src/app/settings              the composing room (client-side, localStorage)
 src/app/random, src/app/wire  a feed drawn from the directory, redirected to a page printing that one wire
+src/app/clippings             the scrapbook: the reader's clippings, typeset like a wire
 src/components                masthead, feed section, story block, photo, skeleton, colophon, front page
 src/lib/client                localStorage config store, rolling summary cache, API client, hooks
 src/lib/config-schema.ts      configuration shape shared by server defaults and browser copies

@@ -65,6 +65,8 @@ export interface Story {
   image?: ChosenImage;
   wordCount: number;
   error?: string;
+  /** The wire a clipping was cut from, printed in the dateline in place of the host. */
+  wire?: string;
 }
 
 export interface Section {

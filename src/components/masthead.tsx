@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReaderStats } from "@/lib/client/reader-stats";
 import { volumeOf } from "@/lib/client/reader-stats";
 import { longDate, roman } from "@/lib/util/time";
+import ClippingsLink from "./clippings-link";
 import CogIcon from "./cog-icon";
 import DiceIcon from "./dice-icon";
 
@@ -60,6 +61,7 @@ export default function Masthead({ title, tagline, date, feedCount, reader }: Ma
         <span>{tagline}</span>
         <span className="masthead__date">{date ? longDate(date) : " "}</span>
         <span className="masthead__actions">
+          <ClippingsLink />
           {/* A plain anchor: /random answers with a redirect, and a client-side transition would prefetch and keep one draw. */}
           <a href="/random" className="masthead__button" title="Read a wire drawn at random from the directory">
             <DiceIcon />

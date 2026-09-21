@@ -17,10 +17,13 @@ interface FeedSectionProps {
   loadingMore: boolean;
   /** Shown beside the button after a request that brought nothing new. */
   moreNote?: string;
-  onLoadMore: () => void;
+  /** Without it there is no "Older" button: the section is not a wire that goes on. */
+  onLoadMore?: () => void;
+  /** Replaces the dispatch count and time under the title. */
+  meta?: string;
 }
 
-export default function FeedSection({ section, batches, now, loadingMore, moreNote, onLoadMore }: FeedSectionProps) {
+export default function FeedSection({ section, batches, now, loadingMore, moreNote, onLoadMore, meta }: FeedSectionProps) {
   const page = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>();
   const [fontsReady, setFontsReady] = useState(false);
@@ -61,6 +64,7 @@ export default function FeedSection({ section, batches, now, loadingMore, moreNo
   );
   const headingId = `section-${hashId(section.url)}`;
   const count = section.stories.length;
+  const wire = useMemo(() => ({ name: section.name, url: section.url }), [section.name, section.url]);
   // The feed's own account of itself, as a tooltip on its title; left out when it merely repeats the name.
   const about =
     section.description && section.description.trim().toLowerCase() !== section.name.trim().toLowerCase()
@@ -88,9 +92,10 @@ export default function FeedSection({ section, batches, now, loadingMore, moreNo
           </span>
         ) : null}
         <p className="section__meta">
-          {section.error
-            ? "Wire down"
-            : `${count} ${count === 1 ? "dispatch" : "dispatches"} · ${section.stale ? "from the archive of" : "received"} ${clock(new Date(section.fetchedAt))}`}
+          {meta ??
+            (section.error
+              ? "Wire down"
+              : `${count} ${count === 1 ? "dispatch" : "dispatches"} · ${section.stale ? "from the archive of" : "received"} ${clock(new Date(section.fetchedAt))}`)}
         </p>
       </header>
 
@@ -103,12 +108,12 @@ export default function FeedSection({ section, batches, now, loadingMore, moreNo
       <div ref={page} className="page">
         {plans.flatMap((plan, batch) =>
           plan.bands.map((band, index) => (
-            <Band key={`${columns}:${width}:${fontsReady ? "f" : "s"}:${batch}:${index}`} band={band} columns={columns} now={now} fit={columns > 1} />
+            <Band key={`${columns}:${width}:${fontsReady ? "f" : "s"}:${batch}:${index}`} band={band} columns={columns} now={now} fit={columns > 1} wire={wire} />
           )),
         )}
       </div>
 
-      {!section.error ? (
+      {onLoadMore && !section.error ? (
         <p className="section__more">
           <button type="button" className="button" onClick={onLoadMore} disabled={loadingMore} aria-label={`Older stories from ${section.name}`}>
             {loadingMore ? "Setting type…" : "Older"}
