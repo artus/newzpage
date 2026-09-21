@@ -44,8 +44,9 @@ Environment variables are documented in `.env.example`.
 [`/settings`](http://localhost:3000/settings) is where a reader edits their newspaper: search for feeds by topic,
 language or site and add them with one click, or add a feed by URL (its title is taken from the feed); rename
 feeds, give each its own story count, drag them into order (or use the arrow buttons), remove them with an undo;
-set the page title and tagline; export the configuration as a file and import it in another browser; or go back
-to the house defaults (after a confirmation). Every change is saved as it is made; text
+set the page title and tagline; export the configuration as a file and import it in another browser; export the
+wires as OPML for any other feed reader, or import an OPML file from one (its feeds join the page rather than
+replacing it, and the file's folders are flattened); or go back to the house defaults (after a confirmation). Every change is saved as it is made; text
 fields save half a second after the last keystroke and when they lose focus.
 
 The search proposes feeds from three places: a site's own feeds when the terms are a web address (announced
@@ -208,7 +209,7 @@ src/components                masthead, feed section, story block, photo, skelet
 src/lib/client                localStorage config store, rolling summary cache, API client, hooks
 src/lib/config-schema.ts      configuration shape shared by server defaults and browser copies
 src/lib/config.ts             feeds.json loader (server defaults)
-src/lib/feeds                 feed fetching and parsing, feed search: directory, site discovery, feedly
+src/lib/feeds                 feed fetching and parsing, feed search: directory, site discovery, feedly; OPML in and out
 src/lib/articles              page fetching, Readability extraction, image candidate selection
 src/lib/summarize             segmentation, stopwords/language detection, TextRank, analyze (server) / compose (anywhere)
 src/lib/cache                 in-memory TTL/LRU cache for the server

@@ -7,6 +7,7 @@ import { browserStorage } from "@/lib/client/storage";
 import { SummaryCache } from "@/lib/client/summary-cache";
 import { useConfig } from "@/lib/client/use-config";
 import { isHttpUrl, moveFeed, normalizeConfig, removeFeed, reorderFeeds, upsertFeed, type FeedConfig } from "@/lib/config-schema";
+import { looksLikeOpml, parseOpml, toOpml } from "@/lib/feeds/opml";
 import type { FeedProposal } from "@/lib/feeds/search";
 import FeedSearch from "./feed-search";
 import WireList from "./wire-list";
@@ -138,25 +139,45 @@ export default function ComposingRoom() {
     commitPage(event.currentTarget);
   };
 
-  const onExport = () => {
-    const blob = new Blob([`${JSON.stringify(config, null, 2)}\n`], { type: "application/json" });
-    const href = URL.createObjectURL(blob);
+  const download = (name: string, contents: string, type: string) => {
+    const href = URL.createObjectURL(new Blob([contents], { type }));
     const anchor = document.createElement("a");
     anchor.href = href;
-    anchor.download = "newzpage-wires.json";
+    anchor.download = name;
     anchor.click();
     URL.revokeObjectURL(href);
   };
+  const onExport = () => download("newzpage-wires.json", `${JSON.stringify(config, null, 2)}\n`, "application/json");
+  /** OPML is what every other reader speaks: the wires in order, without the page settings. */
+  const onExportOpml = () => download("newzpage-wires.opml", toOpml(config), "text/x-opml");
 
+  /** A Newzpage file replaces the page; an OPML file, being a subscription list, joins its wires to it. */
   const onImport = async (file: File | undefined) => {
     if (!file) return;
+    const contents = await file.text();
+    if (looksLikeOpml(contents)) {
+      try {
+        const { feeds } = parseOpml(contents);
+        const fresh = feeds.filter((feed) => !config.feeds.some((wire) => wire.url === feed.url));
+        if (feeds.length === 0) return complain(`No feeds were found in ${file.name}.`);
+        if (fresh.length > 0) setFeeds([...config.feeds, ...fresh]);
+        const known = feeds.length - fresh.length;
+        say(
+          `${fresh.length} ${fresh.length === 1 ? "wire was" : "wires were"} added from ${file.name}` +
+            (known > 0 ? `; ${known} ${known === 1 ? "was" : "were"} already on the page.` : "."),
+        );
+      } catch (caught) {
+        complain(`${file.name} could not be read: ${(caught as Error).message}.`);
+      }
+      return;
+    }
     try {
-      const imported = normalizeConfig(JSON.parse(await file.text()));
+      const imported = normalizeConfig(JSON.parse(contents));
       save(imported);
       setGeneration((n) => n + 1);
       say(`${imported.feeds.length} wires were imported from ${file.name}.`);
     } catch (caught) {
-      complain(`${file.name} is not a Newzpage configuration: ${(caught as Error).message}`);
+      complain(`${file.name} is neither a Newzpage configuration nor an OPML file: ${(caught as Error).message}`);
     }
   };
 
@@ -235,16 +256,19 @@ export default function ComposingRoom() {
           onRemove={onRemove}
         />
         <div className="settings__toolbar">
-          <button type="button" className="button" onClick={onExport}>
+          <button type="button" className="button" onClick={onExport} title="The whole page as a Newzpage file: wires, story counts, title and tagline">
             Export wires
           </button>
-          <button type="button" className="button" onClick={() => fileInput.current?.click()}>
+          <button type="button" className="button" onClick={onExportOpml} title="The wires as OPML, for any other feed reader">
+            Export OPML
+          </button>
+          <button type="button" className="button" onClick={() => fileInput.current?.click()} title="A Newzpage file replaces the page; an OPML file from another reader adds its feeds to it">
             Import wires
           </button>
           <input
             ref={fileInput}
             type="file"
-            accept="application/json,.json"
+            accept="application/json,.json,.opml,.xml,text/xml,application/xml,text/x-opml"
             hidden
             onChange={(event) => {
               void onImport(event.target.files?.[0]);
