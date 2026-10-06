@@ -9,6 +9,7 @@ import { useConfig } from "@/lib/client/use-config";
 import { isHttpUrl, moveFeed, normalizeConfig, removeFeed, reorderFeeds, upsertFeed, type FeedConfig } from "@/lib/config-schema";
 import { looksLikeOpml, parseOpml, toOpml } from "@/lib/feeds/opml";
 import type { FeedProposal } from "@/lib/feeds/search";
+import AlmanacSettings from "./almanac-settings";
 import FeedSearch from "./feed-search";
 import WireList from "./wire-list";
 
@@ -326,6 +327,15 @@ export default function ComposingRoom() {
             <input name="tagline" defaultValue={config.tagline} onChange={(event) => schedulePage(event.currentTarget.form!)} onBlur={(event) => commitPage(event.currentTarget.form!)} />
           </label>
         </form>
+      </section>
+
+      <section className="settings__section" aria-labelledby="almanac-heading" id="almanac">
+        <h2 id="almanac-heading">Almanac</h2>
+        <p className="settings__lede">
+          Sunrise, sunset and the moon in the masthead’s ear, worked out for a place of your choosing. The place is kept in this browser and
+          sent nowhere.
+        </p>
+        <AlmanacSettings />
       </section>
     </main>
   );

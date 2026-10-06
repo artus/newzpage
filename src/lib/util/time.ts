@@ -16,8 +16,13 @@ export function relativeTime(iso: string | undefined, now = Date.now()): string 
   return dayMonth.format(new Date(time));
 }
 
-export function clock(date: Date): string {
-  return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit" }).format(date);
+/** "07:14", in the browser's zone or a named one. A zone the browser does not know falls back to its own. */
+export function clock(date: Date, timeZone?: string): string {
+  try {
+    return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone }).format(date);
+  } catch {
+    return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit" }).format(date);
+  }
 }
 
 export function longDate(date: Date): string {

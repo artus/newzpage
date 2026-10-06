@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReaderStats } from "@/lib/client/reader-stats";
 import { volumeOf } from "@/lib/client/reader-stats";
 import { longDate, roman } from "@/lib/util/time";
+import AlmanacEar from "./almanac-ear";
 import ClippingsLink from "./clippings-link";
 import CogIcon from "./cog-icon";
 import DiceIcon from "./dice-icon";
@@ -49,6 +50,7 @@ export default function Masthead({ title, tagline, date, feedCount, reader }: Ma
           ) : (
             "Vol. — · No. —"
           )}
+          <AlmanacEar date={date} />
         </p>
         <p>
           {feedCount} {feedCount === 1 ? "wire" : "wires"} · Price: gratis

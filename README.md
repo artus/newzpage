@@ -81,6 +81,17 @@ cutting with Next's image renderer, so a link pasted into a chat unfurls as a ne
 cacheable for a day; cuttings ask search engines not to index them. The article is read and summarised by the
 same code as `/api/article`, behind the same address guard.
 
+## The almanac
+
+Traditional mastheads carried the weather in one ear. Newzpage carries sunrise, sunset and the moon's phase,
+worked out in the browser from a place the reader chooses: the ear offers "use my location" (browsers only share
+it over https), or a city can be picked in the composing room from a bundled list of about 190. Nothing is sent
+anywhere; the place is kept in `localStorage` to a hundredth of a degree and named after the nearest listed
+city. The sun follows the NOAA calculator's method (`src/lib/almanac/sun.ts`, within a minute or two, with
+the midnight sun and polar night recognised), the moon the Astronomical Almanac's low-precision series
+(`src/lib/almanac/moon.ts`), and the ear's tooltip spells the day out: hours of daylight, the moon's phase and
+how much of it is lit.
+
 ## How an edition is composed
 
 The page is a static shell; the browser composes the edition:
@@ -126,6 +137,7 @@ Everything a reader configures or that is computed for them is stored in their b
 | `newzpage.articles.index.v1` | index of cached analyses: size, last use, expiry |
 | `newzpage.article.v1.<hash>` | one cached analysis per article |
 | `newzpage.clippings.v1` | the reader's clippings: each story as printed, its wire, and when it was clipped |
+| `newzpage.almanac.v1` | the place the almanac is worked out for: latitude and longitude to a hundredth of a degree, a name, a time zone for a chosen city, and whether the browser or the reader gave it |
 | `newzpage.reader.v1` | when this browser first printed an edition, how many it has printed, and the last edition's fingerprint (the masthead's volume counts the months since the first edition; the number counts editions with new stories) |
 
 The summary cache is **rolling**: at most 400 entries and about 3 MB (`SummaryCache` in
@@ -223,6 +235,7 @@ src/lib/config.ts             feeds.json loader (server defaults)
 src/lib/feeds                 feed fetching and parsing, feed search: directory, site discovery, feedly; OPML in and out
 src/lib/articles              page fetching, Readability extraction, image candidate selection
 src/lib/summarize             segmentation, stopwords/language detection, TextRank, analyze (server) / compose (anywhere)
+src/lib/almanac               sunrise and sunset, the moon's phase, and the bundled list of cities
 src/lib/cache                 in-memory TTL/LRU cache for the server
 src/lib/edition               server builder (feed → items, item → analysis) and layout planner (stories → blocks)
 src/lib/util                  text, hashing, concurrency limiter, HTTP helpers with address guard, time formatting

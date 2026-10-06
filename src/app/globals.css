@@ -75,6 +75,48 @@ a:hover {
   margin: 0;
 }
 
+.masthead__ears p:first-child {
+  text-align: left;
+}
+
+.masthead__ears p:last-child {
+  text-align: right;
+}
+
+/* The almanac: sunrise, sunset and the moon, or the offer to find out where the reader is. */
+.almanac svg {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.22em;
+}
+
+.almanac__ask {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px dotted var(--ink-faint);
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.almanac__ask:hover,
+.almanac__ask:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.almanac__ask:disabled {
+  cursor: wait;
+}
+
+.almanac__trouble {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
 /* The volume and number carry an explanation on hover or focus. */
 .ear {
   cursor: help;
@@ -135,6 +177,37 @@ a:hover {
 }
 
 /* The way to the composing room: set like a small control so it reads as one. */
+.almanac-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 40rem;
+}
+
+.almanac-form__status {
+  margin: 0;
+  font-style: italic;
+}
+
+.almanac-form .settings__toolbar {
+  margin: 0;
+}
+
+/* The fields' flex basis is meant for the row layout of the other forms; here the form runs down the page. */
+.almanac-form .field {
+  flex: 0 0 auto;
+  max-width: 24rem;
+}
+
+.almanac-form__matches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .masthead__actions {
   display: inline-flex;
   flex-wrap: wrap;
