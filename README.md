@@ -1,19 +1,83 @@
 # Newzpage
 
-An RSS reader that typesets your feeds as the front page of an old newspaper. Article titles become headlines,
-a locally computed extractive summary becomes the body copy, and the story's photograph is printed as a halftone.
+**Your RSS feeds, printed as the front page of an old newspaper.**
 
-Every reader keeps their own newspaper in their own browser: the feeds, their order, the page title and the
-summaries all live in `localStorage`. The server holds no reader data; it only does what a browser cannot do
-itself (fetch feeds and pages, extract and rank text). Live at [newz.page](https://newz.page).
+Headlines in heavy serif type, a lead story with a halftone photograph, short items stacked in narrow columns, and
+a masthead with the date, the edition number and the phase of the moon. Every story gets a few paragraphs of real
+body copy, summarised from the article itself, so you can read the morning's news the way you would skim a paper
+over coffee, then follow the stories worth more of your time.
+
+Read it at **[newz.page](https://newz.page)**. There is nothing to sign up for.
+
+![Newzpage composing a front page from Hacker News, BBC News and other feeds, scrolling through it, then printing a random wire](docs/newzpage.webp)
+
+## Why a newspaper?
+
+Feed readers tend to look like email: a list of titles, unread counts, a pane to read in. That works for keeping up,
+but it never felt like *reading the news*. A newspaper front page does something a list cannot. The layout tells you
+what matters, you take in a dozen stories at a glance, and the summaries let you decide what deserves your attention
+without opening a single tab.
+
+I have wanted that reader for years, and this is my fourth attempt at building it. The earlier ones stumbled on the
+same two problems:
+
+- **The summaries.** Good summaries meant paying an external service (SMMRY, later OpenAI) for every article, with
+  keys to manage and seconds of waiting per story. My own summariser worked, but not well enough.
+- **The layout.** Every version ended up as a grid pretending to be a newspaper: the same box repeated down the page.
+
+This version, built with the help of [Claude Code](https://claude.com/claude-code), finally solves both. The
+summariser runs locally, costs nothing, and gets it right most of the time. The layout composes each section like a
+compositor would: wide and narrow columns, stories stacked where they are short, photographs where they earn their
+place, and every column filled to the same depth, so no two sections look alike.
+
+## Your newspaper stays in your browser
+
+There are no accounts. Everything about *your* paper lives in your own browser (in `localStorage`): which feeds you
+read and in what order, the paper's title, your clippings, your almanac's place and the summaries already worked out.
+Take it to another browser by exporting it as a file.
+
+The server only does what a browser cannot do on its own: fetch feeds and articles from other sites, extract the text
+and rank the sentences. It keeps a short-lived, in-memory cache of that public content so that many readers don't fetch
+the same site over and over, and that cache is gone when the server restarts. It stores nothing about you. Page views
+are counted with cookieless [Vercel Web Analytics](https://vercel.com/docs/analytics/privacy-policy).
+
+![A front page: the Hacker News section, with a lead story and three columns of summaries](docs/front-page.webp)
+
+## What you can do with it
+
+- **Make it yours.** In the *composing room* (the settings page) you search for feeds by topic or site and add them in
+  one click, paste any feed address, or import an OPML file from another reader. Rename wires, choose how many stories
+  each one gets, drag them into order, and give your paper its own title and tagline.
+- **Read further down a wire.** The *Older* button under each section prints the next stories as more of the page.
+- **Discover something new.** *Random wire* prints a single feed drawn from a directory of about 200 well-known ones.
+- **Keep clippings.** The scissors under a story keep it in your scrapbook, typeset like a wire of its own. A clipping
+  keeps its own copy of the text, so it stays readable long after the story has left the feed.
+- **Share a cutting.** The link under a story copies the address of a page with that one story on it, and pasted into
+  a chat it unfurls as a picture of a newspaper cutting.
+- **Check the almanac.** Pick your city (or let the browser tell it) and the masthead's ear shows today's sunrise,
+  sunset and the moon's phase, worked out in the browser.
+
+## How the summaries work
+
+No AI service is involved, and no article is sent to a third party. The server takes the article's text (from the feed
+when it carries the full text, otherwise from the page, cleaned up with Mozilla's Readability) and ranks its sentences
+with [TextRank](https://en.wikipedia.org/wiki/Automatic_summarization#TextRank_and_LexRank), tuned for the way news is
+written: earlier sentences and sentences that echo the headline count for more, and quotes, questions and sentences
+that lean on the one before ("He said…", "This means…") count for less. The page then prints as many of the best
+sentences as each block on the page has room for, in their original order and word for word.
+
+It takes a few milliseconds per article. It is not perfect: some sites block it or need JavaScript to show their text.
+Then the story falls back to the feed's own description.
+
+## Run it yourself
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
 ```
 
-`feeds.json` holds the **house defaults**: the wires a first-time visitor starts with. From then on the reader's
-own copy rules, editable in the composing room.
+It needs Node.js 24. `feeds.json` holds the *house defaults*, the wires a first-time visitor starts with; from then on
+each reader's own copy rules:
 
 ```json
 {
@@ -27,7 +91,7 @@ own copy rules, editable in the composing room.
 }
 ```
 
-Other scripts:
+Settings such as the feed search's reach and private-network access are documented in `.env.example`.
 
 | Command | What it does |
 | --- | --- |
@@ -37,99 +101,41 @@ Other scripts:
 | `npm run summarize -- <url> [--words 120]` | Summarise any article from the command line, with timings and the top-ranked sentences |
 | `npm run directory` | Rebuild the bundled feed directory from the curated list, keeping only feeds that work |
 
-Environment variables are documented in `.env.example`.
+## Under the hood
 
-## The composing room
+The rest of this file is for anyone who wants to work on the code.
 
-[`/settings`](http://localhost:3000/settings) is where a reader edits their newspaper: search for feeds by topic,
-language or site and add them with one click, or add a feed by URL (its title is taken from the feed); rename
-feeds, give each its own story count, drag them into order (or use the arrow buttons), remove them with an undo;
-set the page title and tagline; export the configuration as a file and import it in another browser; export the
-wires as OPML for any other feed reader, or import an OPML file from one (its feeds join the page rather than
-replacing it, and the file's folders are flattened); or go back to the house defaults (after a confirmation). Every change is saved as it is made; text
-fields save half a second after the last keystroke and when they lose focus.
-
-The search proposes feeds from three places: a site's own feeds when the terms are a web address (announced
-`<link rel="alternate">` feeds and the usual paths), the bundled directory in `src/lib/feeds/directory.json`
-(200 well-known feeds), and feedly.com's public feed search for everything else. Set
-`NEWZPAGE_FEED_SEARCH=directory` on the server to keep searches entirely in-house.
-
-## A random wire
-
-The masthead's *Random wire* button goes to `/random`, which draws one feed from the bundled directory and
-redirects to `/wire?feed=…&name=…`: a page printing that single wire, ten stories deep, under the reader's own
-masthead, with the usual "Older" button. Any feed address works there. The page is composed exactly like the
-front page (same cache, same layout), but it is not counted as an edition and it changes nothing in the
-reader's configuration; a wire worth keeping is added in the composing room.
-
-## Clippings
-
-The scissors at the foot of a story keep it in the reader's scrapbook: [`/clippings`](http://localhost:3000/clippings),
-reached from the masthead, which typesets every clipping like a wire of its own, newest first, with the wire it
-came from in the dateline. A clipping carries its own copy of the summary (trimmed to the 24 best sentences) and
-photograph, so it stays readable after the rolling cache has forgotten the article. Pressing the scissors again
-lets a clipping go, after a confirmation, with an undo on the scrapbook page. Clippings can be exported as a file and pasted into
-another browser; the book holds 300 at most, and nothing in it is ever dropped without the reader asking.
-
-## Cuttings
-
-The link glyph at the foot of a story copies the address of its cutting (on a phone, the share sheet opens
-instead): `/story?url=…&feed=…&title=…`, a page that prints that one story on its own, in the paper's style,
-with a fuller summary than a column allows, and scissors to keep it in the scrapbook. The page is rendered on
-the server with Open Graph and Twitter card tags, and `/story/image` draws a 1200 by 630 preview of the
-cutting with Next's image renderer, so a link pasted into a chat unfurls as a newspaper cutting. Previews are
-cacheable for a day; cuttings ask search engines not to index them. The article is read and summarised by the
-same code as `/api/article`, behind the same address guard.
-
-## The almanac
-
-Traditional mastheads carried the weather in one ear. Newzpage carries sunrise, sunset and the moon's phase,
-worked out in the browser from a place the reader chooses: the ear offers "use my location" (browsers only share
-it over https), or a city can be picked in the composing room from a bundled list of about 190. Nothing is sent
-anywhere; the place is kept in `localStorage` to a hundredth of a degree and named after the nearest listed
-city. The sun follows the NOAA calculator's method (`src/lib/almanac/sun.ts`, within a minute or two, with
-the midnight sun and polar night recognised), the moon the Astronomical Almanac's low-precision series
-(`src/lib/almanac/moon.ts`), and the ear's tooltip spells the day out: hours of daylight, the moon's phase and
-how much of it is lit.
-
-## How an edition is composed
+### How an edition is composed
 
 The page is a static shell; the browser composes the edition:
 
 1. **Configuration** is read from `localStorage` (a first visit fetches `/api/defaults` once and keeps it).
-2. **Feeds** are requested from `/api/feed?url=…&limit=…`. The server fetches each feed with a conditional
-   request (ETag / Last-Modified), parses RSS 2.0, Atom 1.0 and RSS 1.0 into one shape, and returns the items
-   without their HTML. The feed's own description (an RSS channel description or an Atom subtitle) travels
-   along and is shown as a tooltip on the wire's title. It keeps parsed feeds in process memory for the feed's own `ttl` (5 minutes – 6 hours;
-   15 minutes when unspecified) and serves the last snapshot, marked stale, when a refresh fails.
-3. **Summaries** come from this browser's cache when it has them, otherwise from `/api/article?url=…&feed=…`.
-   The server uses the feed's full text when the feed carries it, and fetches the page otherwise (browser-like
-   headers, 12 s timeout, 3 MB cap, HTML only) with Mozilla's Readability extracting the article. Feed
-   descriptions are the fallback; failing that, the story is printed with a placeholder line and a link.
-   The result is a ranked analysis, not a fixed-length summary, so any block size can be composed from it.
-4. **Photographs**: candidates are collected from Media RSS, enclosures, inline `<img>` tags, `og:image`,
-   `twitter:image` and `link[rel=image_src]`; tracking pixels, logos, icons, vector graphics, tiny and
-   banner-shaped images are filtered out.
-5. **Layout**: the page maker (`src/lib/edition/pagemaker.ts`) sets each section in full-width bands. The lead
-   (first story in the top three with a photo and enough text) sets the first band's height; later bands are cut
-   into slots of varying column spans drawn from patterns with a seed from the story ids, so the page looks the
-   same on every reload. A slot holds one story or a short stack; the richest story of each band anchors its
-   widest slot; thin stories are stacked and demoted to run-in briefs. Word budgets are estimated from a height
-   model so every slot reaches the band height, then corrected from the rendered heights before paint
-   (`fitBudgets`): anchors are never cut, other slots gain or lose whole sentences, and residual slack is taken
-   up by stretching photographs and spacing stacked items. Photographs are rationed to about one story in three,
-   with wide blocks using 16:9 crops. Narrow blocks are set ragged-right; wide ones run two or three text columns.
-6. **Older**: a button under each section asks the feed for a larger slice (the wire's own story
-   count more each time, up to fifty items) and typesets the items that follow the last one already on the
-   page, further down the wire, as more bands below the existing ones, which stay put. Items that arrived since
-   the edition was printed are left for the next edition. The button always stays; when the wire has nothing
-   older it says so. Loading more does not count as a new edition.
-7. **Print**: photographs are turned into halftones with CSS filters, multiplied over the paper texture, with a
-   dot screen overlaid. Images that fail to load remove themselves.
+2. **Feeds** come from `/api/feed?url=…&limit=…`. The server fetches each feed with a conditional request
+   (ETag / Last-Modified), parses RSS 2.0, Atom 1.0 and RSS 1.0 into one shape, and keeps the result in memory for the
+   feed's own `ttl` (5 minutes to 6 hours; 15 minutes when unspecified), serving the last copy, marked stale, when a
+   refresh fails.
+3. **Summaries** come from the browser's cache, otherwise from `/api/article?url=…&feed=…`. Pages are fetched with a
+   12 s timeout and a 3 MB cap. The result is a ranked analysis rather than a fixed-length summary, so any block size
+   can be composed from it.
+4. **Photographs** are chosen from Media RSS, enclosures, inline images, `og:image` and `twitter:image`, with tracking
+   pixels, logos, icons and banner-shaped images filtered out.
+5. **Layout**: the page maker (`src/lib/edition/pagemaker.ts`) sets each section in full-width bands. The lead story
+   sets the first band's height; later bands are cut into slots of varying column spans, seeded from the story ids so
+   the page looks the same on every reload. Word budgets are estimated from a height model, then corrected from the
+   rendered heights before paint (`fitBudgets`), so every slot reaches the band's depth. Photographs are rationed to
+   about one story in three.
+6. **Print**: photographs become halftones with CSS filters, multiplied over the paper texture with a dot screen.
 
-## Storage
+### The summariser
 
-Everything a reader configures or that is computed for them is stored in their browser:
+`src/lib/summarize` segments text with `Intl.Segmenter` (repairing the splits ICU gets wrong, such as "Dr. Smith"),
+cleans out boilerplate, citation markers, bios and fragments, and detects the language from stopword density
+(English, Dutch, German and French). Sentences become TF-IDF vectors, cosine similarity forms a graph, and PageRank
+gives each sentence's centrality, which is multiplied by the news-specific priors described above. Maximal marginal
+relevance orders the picks so a second sentence about the same fact does not push out one about a different fact.
+`compose()` runs in the browser and walks that order until a block's word budget is spent.
+
+### Storage
 
 | Key | Contents |
 | --- | --- |
@@ -137,124 +143,57 @@ Everything a reader configures or that is computed for them is stored in their b
 | `newzpage.articles.index.v1` | index of cached analyses: size, last use, expiry |
 | `newzpage.article.v1.<hash>` | one cached analysis per article |
 | `newzpage.clippings.v1` | the reader's clippings: each story as printed, its wire, and when it was clipped |
-| `newzpage.almanac.v1` | the place the almanac is worked out for: latitude and longitude to a hundredth of a degree, a name, a time zone for a chosen city, and whether the browser or the reader gave it |
-| `newzpage.reader.v1` | when this browser first printed an edition, how many it has printed, and the last edition's fingerprint (the masthead's volume counts the months since the first edition; the number counts editions with new stories) |
+| `newzpage.almanac.v1` | the almanac's place: latitude and longitude to a hundredth of a degree, a name, and a time zone |
+| `newzpage.reader.v1` | when this browser first printed an edition, how many it has printed, and the last edition's fingerprint |
 
-The summary cache is **rolling**: at most 400 entries and about 3 MB (`SummaryCache` in
-`src/lib/client/summary-cache.ts`). When either limit is passed, or when the browser reports its quota is full,
-the least recently used entries are dropped until the new one fits. Entries expire after 30 days when they came
-from real text and after one hour when only the feed's description was available (the page could not be read, so
-it is worth trying again soon). The composing room has a "Forget cached summaries" button for a clean slate. A story that produced no copy
-at all (an unreachable page, a page without readable text) is never stored, in the browser or on the server, so
-it is tried again on the next load. Each entry
-carries the summariser version; bumping `SUMMARIZER_VERSION` in `src/lib/summarize/types.ts` invalidates them.
+The summary cache is rolling: at most 400 entries and about 3 MB, least recently used first out. Entries expire after
+30 days, or after an hour when only the feed's description was available. Bumping `SUMMARIZER_VERSION` in
+`src/lib/summarize/types.ts` invalidates them all.
 
-The server keeps only a bounded in-memory cache of feeds and analyses (so many readers do not fetch the same
-site repeatedly) that disappears on restart.
+### Deploying
 
-## The summariser
+The app runs anywhere Next.js runs; [newz.page](https://newz.page) is on Vercel.
 
-No external service is involved. `src/lib/summarize` implements extractive summarisation:
+- **Node.js 24** is required (`"engines": { "node": "24.x" }`); older runtimes cannot load jsdom's dependencies.
+- **Function duration**: fetching and extracting an article can take longer than ten seconds, so the API routes
+  declare `maxDuration` (60 s for articles).
+- **Analytics**: remove `<Analytics />` from `src/app/layout.tsx` when deploying elsewhere.
+- **Feed search** asks feedly.com's public search alongside the bundled directory; set `NEWZPAGE_FEED_SEARCH=directory`
+  to keep searches in-house.
+- **Safety**: because the server fetches addresses readers type in, it refuses anything that resolves to a loopback,
+  link-local or private address, checking every redirect (`NEWZPAGE_ALLOW_PRIVATE_URLS=1` lifts this on a home
+  network). The API is unauthenticated, so put a rate limiter in front of a public deployment.
 
-- **Segmentation** uses `Intl.Segmenter` for sentences and words, with a merge pass for abbreviations, initials
-  and month names that ICU splits on ("Dr. Smith", "Jan. 5"), and a repair for text that was glued together while
-  scraping ("passed.Opponents").
-- **Cleaning** removes citation markers, balances quotation marks split across sentences, and drops junk:
-  boilerplate (cookies, newsletters, "read more"), URLs, code and tables, headings without terminal punctuation,
-  fragments that start mid-sentence, author-bio paragraphs, duplicates, and a repeated headline.
-- **Language** is detected from stopword density (English, Dutch, German, French; the declared language wins when
-  plausible). It selects the stopword list, a light English stemmer, and the `lang` attribute used for hyphenation.
-- **Ranking** is TextRank: sentences are TF-IDF vectors, cosine similarity forms a graph, PageRank gives
-  centrality. That score is multiplied by priors that make a sentence good *as a summary sentence*: early position
-  (news is written top-down), overlap with the headline, moderate length, and penalties for anaphoric openers
-  ("He said…", "This means…"), questions and quotes.
-- **Selection** orders sentences by maximal marginal relevance so a second sentence about the same fact does not
-  displace one about a different fact. `compose()` (pure, runs in the browser) then walks that order until the
-  word budget of the block is spent, and prints the picks in reading order, grouped into short paragraphs.
-
-Runtime is a few milliseconds per article; fetching and DOM parsing dominate.
-
-## Deploying
-
-The app runs anywhere Next.js runs; it is deployed at [newz.page](https://newz.page) on Vercel. Two things matter:
-
-- **Node.js 24.** The project is developed and tested on Node 24, and `package.json` declares
-  `"engines": { "node": "24.x" }`, the form Vercel reads. Older runtimes break jsdom: its dependencies include ES
-  modules loaded with `require()`, which Node before 22.12 refuses (`ERR_REQUIRE_ESM`). Check the project's
-  Node.js version in Vercel (Settings → General) says 24.x. Should Readability still be unavailable, articles
-  are extracted with a DOM-free fallback (the paragraphs of the page's `<article>`), so summaries degrade rather
-  than vanish; hovering a placeholder line shows the reason a story has no copy.
-- **Function duration.** Fetching and extracting an article can take longer than a serverless platform's default
-  of ten seconds, so the API routes declare `maxDuration` (60 s for articles). On the Vercel Hobby plan that is the
-  maximum; lower plans' limits apply otherwise.
-
-The server keeps only an in-memory cache, so on serverless platforms every cold start begins empty; readers' browsers
-hold the long-lived summary cache, which is what makes this cheap enough.
-
-Page views are counted with Vercel Web Analytics (`@vercel/analytics`, mounted in the root layout). It is cookieless
-and records no personal data; the colophon tells readers so and links to Vercel's analytics privacy policy. Remove
-the `<Analytics />` element from `src/app/layout.tsx` when deploying elsewhere.
-
-## Serving readers you do not know
-
-Because the server fetches addresses that readers type in, it refuses anything that resolves to a loopback,
-link-local or private address (and follows redirects by hand so every hop is checked). Set
-`NEWZPAGE_ALLOW_PRIVATE_URLS=1` for a home network. The API is same-origin and unauthenticated; put a
-rate limiter in front of it if the deployment is public.
-
-## Why this shape
-
-This is the fourth start of the project. The earlier three (`newzpage-lambda`, `newzpage-legacy` and the previous
-contents of this repository) taught the same lessons from different angles:
-
-- **External summarisers were the weak point every time.** SMMRY (2019) and OpenAI (2024) cost money, need keys,
-  add seconds of latency per article, and make the cache a requirement rather than an optimisation. The 2022
-  attempt already had a self-written frequency-based summariser; it worked but scored on raw word counts over raw
-  `<p>` scrapes. This version keeps the idea and upgrades both halves: Readability for the text, TextRank plus
-  news-specific priors for the ranking.
-- **Infrastructure outgrew the reader.** A Spring Boot service on AWS, then Express plus a separate CRA frontend,
-  then MongoDB with three collections and a Docker Compose file. Now the server is stateless and each reader's
-  browser is their database, which also means any number of readers can share one deployment.
-- **Layout by JavaScript resize handlers** (2022) is replaced by CSS multi-column flow with `break-inside: avoid`,
-  which balances columns exactly the way a compositor would.
-
-## Layout of the code
+### Layout of the code
 
 ```
 feeds.json                    house defaults for first-time readers
-src/app                       Next.js entry: layout (fonts), static page shell, styles
+src/app                       Next.js entry: layout, the front page, styles
 src/app/api                   feed, article, search and defaults endpoints (the only server work)
-src/app/settings              the composing room (client-side, localStorage)
-src/app/random, src/app/wire  a feed drawn from the directory, redirected to a page printing that one wire
-src/app/clippings             the scrapbook: the reader's clippings, typeset like a wire
+src/app/settings              the composing room
+src/app/random, src/app/wire  a single wire, drawn at random or chosen by address
+src/app/clippings             the scrapbook
 src/app/story                 a cutting: one story on its own page, with a server-drawn preview image
-src/components                masthead, feed section, story block, photo, skeleton, colophon, front page
-src/lib/client                localStorage config store, rolling summary cache, API client, hooks
-src/lib/config-schema.ts      configuration shape shared by server defaults and browser copies
-src/lib/config.ts             feeds.json loader (server defaults)
-src/lib/feeds                 feed fetching and parsing, feed search: directory, site discovery, feedly; OPML in and out
-src/lib/articles              page fetching, Readability extraction, image candidate selection
-src/lib/summarize             segmentation, stopwords/language detection, TextRank, analyze (server) / compose (anywhere)
-src/lib/almanac               sunrise and sunset, the moon's phase, and the bundled list of cities
-src/lib/cache                 in-memory TTL/LRU cache for the server
-src/lib/edition               server builder (feed → items, item → analysis) and layout planner (stories → blocks)
-src/lib/util                  text, hashing, concurrency limiter, HTTP helpers with address guard, time formatting
+src/components                masthead, sections, stories, photographs, colophon
+src/lib/client                localStorage stores, the rolling summary cache, API client, hooks
+src/lib/feeds                 feed fetching and parsing, feed search, OPML
+src/lib/articles              page fetching, Readability extraction, photograph selection
+src/lib/summarize             segmentation, language detection, TextRank, analyse and compose
+src/lib/almanac               sunrise and sunset, the moon's phase, the list of cities
+src/lib/edition               edition builder and the page maker
+src/lib/cache, src/lib/util   in-memory cache, HTTP helpers with the address guard, text and time
 scripts/build-directory.ts    curated candidate list → validated directory.json
 ```
 
-## Known limits
+### Known limits
 
-- Sites that block non-browser clients (HTTP 403) or need JavaScript to render fall back to the feed description.
-- Feeds and pages are decoded from their declared charset; exotic encodings fall back to UTF-8.
-- Summaries are extractive: sentences are quoted verbatim, never rewritten. Long reads are summarised from
-  their first 400 sentences.
-- Stopword lists exist for English, Dutch, German and French; other languages are ranked without stopword removal.
+- Sites that block non-browser clients or need JavaScript to render fall back to the feed description.
+- Summaries are extractive: sentences are quoted verbatim, never rewritten. Long reads are summarised from their first
+  400 sentences.
+- Stopword lists exist for English, Dutch, German and French; other languages are ranked without them.
 - A browser that blocks storage (some private windows) still works, but forgets everything when the tab closes.
 
 ## Fonts
 
-Masthead: Traditional Gothic (Dieter Steffmann). Headlines: Playfair Display (OFL). Body: Libre Caslon Text
-(OFL), chosen over Old Standard TT because its sturdier strokes stay readable on the paper texture. All are
-served from `src/fonts`; nothing is loaded from third parties at runtime. The same folder holds TrueType copies
-of Playfair Display Bold and Libre Caslon Text, which the cutting's preview image is drawn with: the image
-renderer reads neither WOFF2 nor system fonts.
+Masthead: Traditional Gothic (Dieter Steffmann). Headlines: Playfair Display (OFL). Body: Libre Caslon Text (OFL). All
+are served from `src/fonts`; nothing is loaded from third parties at runtime.

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CogIcon from "./cog-icon";
+import GitHubIcon from "./github-icon";
 import { clock } from "@/lib/util/time";
 
 export default function Colophon({ printedAt }: { printedAt?: Date }) {
@@ -25,6 +26,11 @@ export default function Colophon({ printedAt }: { printedAt?: Date }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className="colophon__logo" src="/images/equites-digital.webp" alt="" width={570} height={570} />
           Equites Digital
+        </a>{" "}
+        ·{" "}
+        <a className="colophon__publisher" href="https://github.com/artus/newzpage" rel="noopener noreferrer">
+          <GitHubIcon />
+          Source on GitHub
         </a>
       </span>
     </footer>
