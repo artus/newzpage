@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { headers } from "next/headers";
 import { cache } from "react";
 import ClipButton from "@/components/clip-button";
 import Photo from "@/components/photo";
+import { admitArticle, TOO_MANY_REQUESTS } from "@/lib/edition/admission";
 import { getArticle } from "@/lib/edition/build";
 import { captionFor } from "@/lib/edition/caption";
 import { cutStory, cuttingQuery, cuttingRequest, unreadable, type Cutting, type CuttingRequest } from "@/lib/edition/cutting";
@@ -18,6 +20,7 @@ interface StoryPageProps {
 
 /** One read per request, shared by the metadata and the page; the server's own cache spares repeat visitors the wait. */
 const read = cache(async (url: string, feed: string | undefined, title: string | undefined): Promise<ArticleRecord> => {
+  if (!admitArticle(url, await headers()).ok) return unreadable({ url, feed, title }, TOO_MANY_REQUESTS);
   try {
     return await getArticle(url, feed, title);
   } catch (error) {

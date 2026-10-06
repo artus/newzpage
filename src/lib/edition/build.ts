@@ -84,6 +84,17 @@ export async function loadFeed(url: string): Promise<LoadedFeed> {
   return pending;
 }
 
+/** Whether a feed would be served from memory, without fetching anything. */
+export function isFeedFresh(url: string): boolean {
+  const cached = feeds.get(url);
+  return !!cached && cached.freshUntil > Date.now();
+}
+
+/** Whether an article's analysis would be served from memory, without fetching or ranking anything. */
+export function isArticleCached(url: string): boolean {
+  return articles.get(url) !== undefined;
+}
+
 /** Bylines scraped from pages carry labels and links around the name; keep only something name-like. */
 export function cleanByline(value: string | undefined): string | undefined {
   if (!value) return undefined;

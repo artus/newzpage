@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
+import { admitArticle, TOO_MANY_REQUESTS } from "@/lib/edition/admission";
 import { getArticle } from "@/lib/edition/build";
 import { cutStory, cuttingRequest, unreadable } from "@/lib/edition/cutting";
 import { cuttingImage, loadImageAssets } from "./cutting-image";
@@ -12,17 +13,20 @@ export const maxDuration = 60;
 export async function GET(request: NextRequest) {
   const wanted = cuttingRequest(Object.fromEntries(request.nextUrl.searchParams));
   if (!wanted) return new Response("url must be an http(s) address", { status: 400 });
+  const admitted = admitArticle(wanted.url, request.headers).ok;
   const [assets, cutting] = await Promise.all([
     loadImageAssets(),
-    getArticle(wanted.url, wanted.feed, wanted.title)
-      .then((record) => cutStory(record, wanted))
-      .catch((error: Error) => cutStory(unreadable(wanted, error.message), wanted)),
+    admitted
+      ? getArticle(wanted.url, wanted.feed, wanted.title)
+          .then((record) => cutStory(record, wanted))
+          .catch((error: Error) => cutStory(unreadable(wanted, error.message), wanted))
+      : cutStory(unreadable(wanted, TOO_MANY_REQUESTS), wanted),
   ]);
   return new ImageResponse(cuttingImage(cutting), {
     width: 1200,
     height: 630,
     fonts: assets.fonts,
     // Previews are fetched by many readers of one chat; the CDN may keep them for a day.
-    headers: { "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800" },
+    headers: { "Cache-Control": admitted ? "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800" : "no-store" },
   });
 }

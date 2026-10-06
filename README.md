@@ -37,9 +37,10 @@ read and in what order, the paper's title, your clippings, your almanac's place 
 Take it to another browser by exporting it as a file.
 
 The server only does what a browser cannot do on its own: fetch feeds and articles from other sites, extract the text
-and rank the sentences. It keeps a short-lived, in-memory cache of that public content so that many readers don't fetch
-the same site over and over, and that cache is gone when the server restarts. It stores nothing about you. Page views
-are counted with cookieless [Vercel Web Analytics](https://vercel.com/docs/analytics/privacy-policy).
+and rank the sentences. That work depends only on the public article, so the results are shared: the server keeps them
+in memory for a while and the CDN serves them to other readers of the same story. The server stores nothing about you.
+To keep one visitor from overloading it, it counts recent requests per IP address, in memory only and forgotten within
+minutes. Page views are counted with cookieless [Vercel Web Analytics](https://vercel.com/docs/analytics/privacy-policy).
 
 ![A front page: the Hacker News section, with a lead story and three columns of summaries](docs/front-page.webp)
 
@@ -162,7 +163,16 @@ The app runs anywhere Next.js runs; [newz.page](https://newz.page) is on Vercel.
   to keep searches in-house.
 - **Safety**: because the server fetches addresses readers type in, it refuses anything that resolves to a loopback,
   link-local or private address, checking every redirect (`NEWZPAGE_ALLOW_PRIVATE_URLS=1` lifts this on a home
-  network). The API is unauthenticated, so put a rate limiter in front of a public deployment.
+  network).
+- **Caching and rate limits**: articles, feeds and search results are the same for every reader, so their responses
+  carry `s-maxage` and the CDN serves repeat requests without running a function (articles for a day, feeds for five
+  minutes, searches for an hour; failures never). Work the server has not cached yet is rate-limited per IP address
+  (`src/lib/edition/admission.ts`): 300 articles in a burst, then one a second; 100 feeds, then one every two seconds;
+  40 searches, then one every two seconds. That covers the first visit to a large paper with room to spare. A refused
+  request gets HTTP 429 with `Retry-After`, and the browser waits and tries once more. The counts live in each
+  instance's memory, so on a serverless platform they stop one client hammering the API, not a distributed attack;
+  use the platform's firewall for that. Behind anything other than Vercel, make sure a proxy sets `X-Real-IP` or
+  `X-Forwarded-For`, or every reader shares one bucket.
 
 ### Layout of the code
 
