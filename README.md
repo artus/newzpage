@@ -197,3 +197,15 @@ scripts/build-directory.ts    curated candidate list → validated directory.jso
 
 Masthead: Traditional Gothic (Dieter Steffmann). Headlines: Playfair Display (OFL). Body: Libre Caslon Text (OFL). All
 are served from `src/fonts`; nothing is loaded from third parties at runtime.
+
+## License
+
+Newzpage is free software under the [GNU Affero General Public License v3.0](LICENSE). You may run it, study it,
+change it and share it. If you run a modified copy as a service others use over a network, you must offer those users
+its source code under the same license.
+
+If you would like to build on Newzpage commercially without those terms, a separate commercial license is available:
+get in touch through [Equites Digital](https://equites.digital).
+
+The fonts in `src/fonts` are not covered by this license; each keeps its own (the SIL Open Font License for Playfair
+Display and Libre Caslon Text, the author's terms for Traditional Gothic).

@@ -2,6 +2,7 @@
   "name": "newzpage",
   "version": "0.2.0",
   "private": true,
+  "license": "AGPL-3.0-only",
   "description": "An RSS reader that typesets your feeds as the front page of an old newspaper.",
   "scripts": {
     "dev": "next dev",
