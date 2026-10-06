@@ -4,6 +4,9 @@ import { isIP } from "node:net";
 export const USER_AGENT =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Newzpage/0.3 (+https://newz.page)";
 
+/** Feed readers identify themselves; some hosts (Hacker News) refuse a browser UA that Node's TLS handshake belies. */
+export const FEED_USER_AGENT = "Newzpage/0.3 (+https://newz.page)";
+
 export type HttpErrorCode = "timeout" | "network" | "http" | "too-large" | "not-html" | "unsupported";
 
 export class HttpError extends Error {
